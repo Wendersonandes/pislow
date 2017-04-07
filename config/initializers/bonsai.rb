@@ -8,8 +8,3 @@ else
   BONSAI_INDEX_NAME = "#{app_name}-#{Rails.env}"
 end
 
-begin
-  client.perform_request 'GET', 'foo/bar/1'
-rescue Elasticsearch::Transport::Transport::Error => e  
-  puts e
-end
