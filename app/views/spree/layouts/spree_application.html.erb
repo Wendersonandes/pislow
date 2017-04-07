@@ -22,7 +22,13 @@
      <% elsif controller.controller_name == "kids" %>
           <%= render partial: "spree/shared/header_kids" %>
      <% else %>
-
+          <% if (cookies["gender"]).include?("woman") %>
+                 <%= render partial: "spree/shared/header_woman" %>
+          <% elsif  (cookies["gender"]).include?("men") %>
+                <%= render partial: "spree/shared/header_men" %>
+           <% elsif  (cookies["gender"]).include?("kids") %>
+                 <%= render partial: "spree/shared/header_kids" %>
+       <% end %>
 
 
      <% end %>
