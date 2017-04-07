@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token, if: :devise_controller?
  
   @taxonomies = Spree::Taxonomy.all
+
+  @taxonomies_woman  = Spree::Taxonomy.where(name: "Mujer")
+  @taxonomies_man  = Spree::Taxonomy.where(name: "Hombre")
+  @taxonomies_kids  = Spree::Taxonomy.where(name: "Niños")
+
 end
 
 

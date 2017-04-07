@@ -74,8 +74,9 @@
                         <div class="navbar-collapse collapse">
                             <ul id="accordion" class="nav navbar-nav navbar-right panel-group">
 
-                              <%  @taxonomies  = Spree::Taxonomy.find_by(name: "Mujer").root.children %>
-                              <% @taxonomies.each do |taxonomy| %> 
+                             <% unless @taxonomies_woman.nil? %> 
+ 
+                              <% @taxonomies_woman.each do |taxonomy| %> 
                               
                                                               
                                 <!-- menu item -->
@@ -156,7 +157,7 @@
                                  
                                  
                                <% end  %>
-
+                              <% end  %>
 
 
 

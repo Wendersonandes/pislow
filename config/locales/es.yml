@@ -488,6 +488,7 @@ es:
                 image_process_failed: Error en procesar la imagen
 
         tab:
+            reviews: Valoraciones
             mega_menus: Mega menús
             elastic_product_settings: Elastic producto configuración
             profile: Perfil
