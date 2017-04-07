@@ -69,7 +69,93 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                     </div>
                     <!-- toggle navigation end -->
+                    <!-- main menu -->
+                    <div class="col-sm-8 padding-left accordion-menu text-left">                      
+                        <div class="navbar-collapse collapse">
+                            <ul id="accordion" class="nav navbar-nav navbar-right panel-group">
 
+                              <%  @taxonomies  = Spree::Taxonomy.find_by(name: "Mujer").root.children %>
+                              <% @taxonomies.each do |taxonomy| %> 
+                              
+                                                              
+                                <!-- menu item -->
+                                <li class="dropdown panel"><a href="#collapse_<%= taxonomy.name %>" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown"><%= taxonomy.name %> <i class="fa fa-angle-down"></i></a>
+                                    <!-- sub menu -->
+                                    <ul id="collapse_<%= taxonomy.name %>" class="dropdown-menu mega-menu panel-collapse collapse mega-menu-full">
+                                        <!-- sub menu column  -->
+                                        <li class="mega-menu-column col-sm-3">
+                                            <!-- sub menu item  -->
+                                            <ul>
+                                                <li><a href="/t/<%= taxonomy.permalink %>" class="highlight-button-mix btn btn-very-small btn-round button xs-no-margin">Ver todo</a></li>
+                                                
+                                                <li><a href="/t/<%= taxonomy.permalink %>?latest">Novedades</a></li>
+                                                <li><a href="/t/<%= taxonomy.permalink %>?utf8=✓&per_page=&search%5Bselective_style_any%5D%5B%5D=Trendy">Trendy</a></li>
+                                                <li><a href="/t/<%= taxonomy.permalink %>?utf8=✓&per_page=&search%5Bselective_style_any%5D%5B%5D=Premium">Premium</a></li>
+                                                <li><a href="/t/<%= taxonomy.permalink %>?sales" class="sales">Rebajas</a></li>
+                                                
+                                                
+                                            </ul>
+                                           
+                                            <!-- end sub menu item  -->
+                                        </li>
+                                        <!-- end sub menu column  -->
+
+                                                    <!-- sub menu column  -->
+                                                 <li class="mega-menu-column col-sm-3">
+                                                
+                                                        <!-- sub menu item  -->
+                                                        <ul>
+                                                             <% taxonomy.children.each do |taxon| %>
+                                                         
+                                                                <li>
+                                                                    <a href="/t/<%= taxon.permalink  %>"><%= taxon.name %></a>
+                                                                </li>
+                                                         
+                                                             <% end  %> 
+                                                        <!-- sub menu item  -->
+                                                        </ul>
+                                                        <!-- end sub menu item  -->
+                                                     
+                                                 </li>
+                                                  
+
+                                        <!-- end sub menu column  -->
+                                        <!-- sub menu column  -->
+                                        <li class="mega-menu-column col-sm-3 banner">
+                                            <!-- banner image  -->
+                                            <ul>
+                                                <li><%= image_tag 'maternity_collection.jpg' %> 
+                                                <a href="/t/woman_categories/maternity" class="highlight-button-dark btn margin-four text-align-center">MATERNIDAD</a>
+                                                    
+                                                    
+                                                                 
+                
+                                                </li>
+                                            </ul>
+                                            <!-- end banner image  -->
+                                        </li>
+                                        <!-- end sub menu column  -->
+                                        <!-- sub menu column  -->
+                                        <li class="mega-menu-column col-sm-3 banner">
+                                            <!-- banner image  -->
+                                            <ul>
+                                                <li>
+                                                <%= image_tag 'manhattan_collection.jpg' %>
+                                                 <a href="/t/woman_categories/maternity" class="highlight-button-dark btn margin-four text-align-center">Colección MANHATTAN</a>   
+
+                                                </li>
+                                             
+                                            </ul>
+                                            <!-- end banner image  -->
+                                        </li>
+                                        <!-- end sub menu column  -->
+                                    </ul>
+                                    <!-- end sub menu -->
+                                </li>
+                                <!-- end menu item -->
+                                 
+                                 
+                               <% end  %>
 
 
 
