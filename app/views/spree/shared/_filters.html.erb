@@ -1,0 +1,211 @@
+<% filters = @taxon ? @taxon.applicable_filters : [Spree::Core::ProductFilters.all_taxons] %>
+<% unless filters.empty? %>
+  <%= form_tag '', :method => :get, :id => 'sidebar_products_search' do %>  
+    <%= hidden_field_tag 'per_page', params[:per_page] %>
+
+
+      <aside  class="refinements" data-hasanyselected="false">
+          <h2>Filtrar</h2>
+          <a href="#" class="clear-filter" data-clear="all">Borrar todo</a> 
+          <div class="panel" data-id="price" data-hasselections="false">
+               <a href="#" class="refinement-header">
+                  <h3><span class="facet-name">Precio</span></h3>
+                </a>
+              <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+              <div id="slider-range"></div> 
+          
+          </div>
+          <% filters.each do |filter| %>
+            <% labels = filter[:labels] || filter[:conds].map {|m,c| [m,m]} %>
+            <% next if labels.empty? %>
+    
+    
+                <% if filter[:name] == "Talla"  or filter[:name] == "Color"%>
+                                    <!-- toggle item -->
+                     <div class="panel" id="collapse-<%= filter[:name] %>" data-hasselections="false" data-id="<%= filter[:name] %>" 
+                     data-displaystyle="two-column">
+                              
+                           <a data-toggle="collapse" data-parent="#collapse-<%=filter[:name]%>" href="#collapse-two-<%= filter[:name]%>" 
+                           class="refinement-header" >
+                                            <h3>
+                                                 <span class='facet-name '><i class="fa fa-angle-down"></i>
+                                                 <%= filter[:name]%></span>
+                                             </h3>
+                             </a>
+                                     
+                             <div id="collapse-two-<%=filter[:name]%>" class="panel-collapse collapse in">
+                                          <a href="#" data-clear="<%= filter[:name]%>" class="clear-filter">Borrar</a>
+                                             <div class="options two-column" data-displaystyle="two-column">
+                                                <ul class="filter_choices">
+                                                    <% labels.each do |nm,val| %>
+                                                      <% label = "#{filter[:name]}_#{nm}".gsub(/\s+/,'_') %>
+                                                      <li class="nowrap">
+                                                        <input type="checkbox"
+                                                               id="<%= label %>"
+                                                               name="search[<%= filter[:scope].to_s %>][]"
+                                                               value="<%= val %>"
+                                                               <%= params[:search] && params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? "checked" : "" %> />
+                                                        <label class="nowrap" for="<%= label %>"> <%= nm %> </label>
+                                                      </li>
+                                                    <% end %>
+                                                  </ul>  
+                                             </div>
+                                                                      
+                              
+                               </div>
+                       </div> 
+                 <% else %>
+
+                          <!-- toggle item -->
+                             <div class="panel" id="collapse-<%= filter[:name] %>" data-hasselections="false" data-id="<%= filter[:name] %>">
+                                      
+                                   <a data-toggle="collapse" data-parent="#collapse-<%=filter[:name]%>" href="#collapse-two-<%= filter[:name]%>" 
+                                   class="refinement-header" >
+                                                    <h3>
+                                                         <span class='facet-name '><i class="fa fa-angle-down"></i>
+                                                         <%= filter[:name]%></span>
+                                                     </h3>
+                                     </a>
+                                             
+                                     <div id="collapse-two-<%=filter[:name]%>" class="panel-collapse collapse in">
+                                                  <a href="#" data-clear="<%= filter[:name]%>" class="clear-filter">Borrar</a>
+                                                    <div class="options scrollable single-column">
+                                                     <ul class="filter_choices">
+                                                            <% labels.each do |nm,val| %>
+                                                              <% label = "#{filter[:name]}_#{nm}".gsub(/\s+/,'_') %>
+                                                              <li class="nowrap">
+                                                                <input type="checkbox"
+                                                                       id="<%= label %>"
+                                                                       name="search[<%= filter[:scope].to_s %>][]"
+                                                                       value="<%= val %>"
+                                                                       <%= params[:search] && params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? "checked" : "" %> />
+                                                                <label class="nowrap" for="<%= label %>"> <%= nm %> </label>
+                                                              </li>
+                                                            <% end %>
+                                                          </ul>        
+                                                     </div> 
+                                                                               
+                                      
+                                          </div>
+                               </div>  
+                             <!-- end toggle item -->            
+                     <% end %>
+         <% end %>
+
+
+                   <%= submit_tag Spree.t(:search), :name => nil %>
+
+      </aside>
+
+ <% end %>
+<% end %>
+
+<script>
+var $clearAll = $('.refinements > .clear-filter'),
+    $checks = $('.options input[type="checkbox"]'),
+    $clear = $('.refinements .panel .clear-filter');
+$checks.change(function () {
+    var $options = $(this).closest('.options'),
+        $clear = $options.prev();
+    //if the current checkbox is checked we can show the all and clear buttons
+    if (this.checked) {
+        $clear.show();
+        $clearAll.show();
+    } else {
+        //if it is an uncheck operation then set the visibility based on overall state of respective checkboxes
+        $clear.toggle($options.find('input[type="checkbox"]').is(':checked'))
+        $clearAll.toggle($checks.is(':checked'))
+    }
+})
+
+$clearAll.click(function (e) {
+    e.preventDefault();
+    $checks.prop('checked', false);
+    $(this).hide();
+    $clear.hide();
+})
+$clear.click(function (e) {
+    e.preventDefault();
+    $(this).next().find('input[type="checkbox"]').prop('checked', false);
+    $clearAll.toggle($checks.is(':checked'));
+    $(this).hide();
+})
+
+ </script>
+
+ <script>
+ // update a parameter in a URL
+ // or removes it if value is null
+ // browser should support forEach() function or use a polyfill
+
+  $(function() {
+      $( "#slider-range" ).slider({
+          range: true,
+          min: 5,
+          max: 500,
+          values: [ 75, 300 ],
+          /* jshint ignore:start */
+          values: [ <%= params.key?(:minprice) ? params[:minprice].to_i : 0 %>, <%= params.key?(:maxprice) ? params[:maxprice].to_i : 1000 %> ],
+          slide: function( event, ui ) {
+              $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] + "<%= current_currency %>" );
+          },
+          /* jshint ignore:end */
+          change: function( event, ui ) {
+              url = window.location.href;
+              newmin = ui.values[ 0 ];
+              newmax = ui.values[ 1 ];
+              url = updateURLParameter(url, 'minprice', newmin);
+              url = updateURLParameter(url, 'maxprice', newmax);
+              window.location.href = url;
+          }
+      });
+      $( "#amount" ).val(  $( "#slider-range" ).slider( "values", 0 ) +
+  " - " + $( "#slider-range" ).slider( "values", 1 ) + "<%= current_currency %>");
+  });
+
+  function updateURLParameter(url, param, paramVal)
+{
+    var TheAnchor = null;
+    var newAdditionalURL = "";
+    var tempArray = url.split("?");
+    var baseURL = tempArray[0];
+    var additionalURL = tempArray[1];
+    var temp = "";
+
+    if (additionalURL)
+    {
+        var tmpAnchor = additionalURL.split("#");
+        var TheParams = tmpAnchor[0];
+            TheAnchor = tmpAnchor[1];
+        if(TheAnchor)
+            additionalURL = TheParams;
+
+        tempArray = additionalURL.split("&");
+
+        for (i=0; i<tempArray.length; i++)
+        {
+            if(tempArray[i].split('=')[0] != param)
+            {
+                newAdditionalURL += temp + tempArray[i];
+                temp = "&";
+            }
+        }
+    }
+    else
+    {
+        var tmpAnchor = baseURL.split("#");
+        var TheParams = tmpAnchor[0];
+            TheAnchor  = tmpAnchor[1];
+
+        if(TheParams)
+            baseURL = TheParams;
+    }
+
+    if(TheAnchor)
+        paramVal += "#" + TheAnchor;
+
+    var rows_txt = temp + "" + param + "=" + paramVal;
+    return baseURL + "?" + newAdditionalURL + rows_txt;
+}
+  
+</script>

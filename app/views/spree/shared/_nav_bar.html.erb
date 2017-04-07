@@ -1,0 +1,89 @@
+      
+                      
+                         <!-- credit button for subscriptions -->
+                         <div  class="credit_subs" >
+                             <a href="/faqs#mypoints">125 ptos</a>
+                        </div> 
+
+                      <!-- shopping cart -->
+                        <div class="top-cart">
+                            <!-- nav shopping bag -->
+                         
+                        
+                            <%= link_to  '/cart' , :class=> 'shopping-cart', id:"link-to-cart" do %><% end %>
+
+                            <script>Spree.fetch_cart('<%= j spree.cart_link_url %>')</script>
+                            
+                            <!-- end nav shopping bag -->
+                            <!-- shopping bag content -->
+                       
+                                
+                                    
+<!--                                         <a title="Remove item" class="remove" href="#">×</a>
+                                        <a href="#">
+                                            <img width="90" height="90" alt="" src="http://placehold.it/90x90">Leather Craft
+                                        </a>
+                                        <span class="quantity">1 × <span class="amount">$160</span></span>
+                                        <a href="#">Editar</a> -->
+                                    
+                        
+                        </div>
+
+                         <!--wishlist -->
+                         <div class="top-cart">
+                            <!-- wishlist list -->
+                            <div class="wishlist">
+                                 
+                                <% if spree_current_user %>
+                                  <%= link_to '/wishlist' do%> <i class="fa fa-heart"></i><% end %> 
+                                <% else %>
+                                   <%= link_to '/login' do%> <i class="fa fa-heart"></i><% end %> 
+                                <% end %>                        
+                          
+
+                            </div>
+                            <!-- end nav shopping bag -->
+                         </div>                   
+                        
+                         <!-- end wishlist -->
+                      <div class="top-cart">
+
+                            <!-- nav shopping bag -->
+                            <a href="#" class="usersettings">
+                                <i class="fa fa-user"></i>
+                            </a>
+                            
+                            <!-- end nav shopping bag -->
+                            <!-- shopping bag content -->
+                            <div class="usersettings-content">
+                               
+                                <ul class="usersettings-list">
+                                     <% if spree_current_user %> 
+                                        <li class="margin-top-medium"> <%= link_to Spree.t(:'Mi cuenta'), '/account' %></li>
+                                     <% else %>
+                                        <li class="margin-top-medium"> <%= link_to Spree.t(:'Accede o crea una cuenta'), '/login' %></li>
+                                     <% end %>
+                                     
+                                    <% if spree_current_user %> 
+                                        <li><%= link_to Spree.t(:'my_clothes'), '/myclothes' %></li>
+                                        <li> <%= link_to Spree.t(:'Salir'), '/logout' %></li>
+                                    <% end %>
+                                </ul>
+                             </div>
+                          
+             
+                        </div>
+                         <!-- end user settings -->
+                        <!--user settings -->
+                        <div  class="mail_nav" style="margin-top: -40px">
+                                  <% if spree_current_user %>                                 
+                                   Hola,  <%= spree_current_user.email %>
+                                  <% end %>
+                        </div> 
+
+
+
+
+                 
+                        
+

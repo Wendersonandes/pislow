@@ -1,0 +1,550 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  out_of_stock_product_requests: Peticiones producto fuera de stock
+  bank_accounts: Cuentas Bancos
+  new_bank_account: Nueva cuenta bancaria
+  product_label: Etiqueta producto
+  variant_label: Etiqueta variante
+  scan_and_go: Scanear y listo
+  shipwire:
+ 
+    name: nombre
+    not_synced: No sincronizado
+
+  spree:
+    mega_menu_items: Items Mega menú
+    new_admin_mega_menu_mega_menu_item: Nuevo item del mega menú
+    mega_menus: Mega menús
+    new_mega_menu: Nuevo mega menú
+    stock_requests: Peticiones de stock
+    created_at: Creado
+    ago: hace
+    show_all: Mostrar todo
+    download: Descargar
+    variant: Variante
+    back_in_stock_subject: Ei! Que ilusión,  %{product_name} ya está disponible de nuevo
+    successful_stock_request: Gracias! Te avisaremos cuando tu producto esté disponible :)
+    stock_requests_description: Ver las peticiones de los usuarios para los productos sin stock
+    new_stock_request: Petición de notificación de nuevo stock 
+    submit_stock_request: Enviar 
+    requested: Solicitada
+
+    shipment_state: Estado del envío
+    recently_bought_items: Últimos productos pedidos
+    
+    finalize_stock_transfer:
+        confirm: Confirmar
+
+    products_ran_out_of_stock: Productos fuera de stock
+    products_ran_out_of_stock_description: Lista de productos que ya no están disponibles en stock
+    expected: Esperado
+    shipment_adjustments: Ajustes de envío
+    price_assegurance_mandatory: Precio a partir de que es obligatorio el seguro
+    no_shipping_supplier: No envio al usuario desde proveedor
+    state: Provincia
+    created_by: Creado por
+    added: Añadido
+    variant_to_add: variante a añadir
+    ready_to_ship: Preparado para envío
+    requested: Requerido
+
+    adjustment_labels:
+        tax_rates:
+            sales_tax: "%{name}"
+            vat: "%{name} (Incluído en el precio)"
+            sales_tax_with_rate: "%{name} %{amount}"
+            vat_with_rate:  IVA (Incluído en el precio)
+            sales_tax_refund: 'Refund: %{name}'
+            vat_refund: "Refund: %{name} (Incluído en el precio)"
+            sales_tax_refund_with_rate: "Refund: %{name} %{amount}"
+            vat_refund_with_rate: "Refund: %{name} %{amount} (Incluído en el precios)"
+
+    shipping_method_codes: Códigos método de envío
+    taxon_rule:
+        choose_taxons: Elije taxonomonías
+        label: Etiqueta
+    promotion_rule: Promoción Regla
+    promotionable: Promocionable
+    promotion_action: Promoción Acción
+    promotion_action_types:
+        make_shipping_method_free: 
+            description: Hacer el método de envío gratuito
+            name: Códigos método de envío
+        create_adjustment:
+            description: Crea un ajuste de crédito de promoción en el pedido
+            name: Crear un ajuste de pedido completo
+        create_item_adjustments:
+            description: Crea un ajuste de crédito de promoción en una línea de pedido
+            name: Crear un ajuste de elemento por línea
+        create_quantity_adjustments:
+            description: Crea un ajuste en una línea de pedido en función de la cantidad
+            name: Crear el ajuste por cantidad
+        free_shipping:
+            description: Realiza todos los envíos para el pedido gratis
+            name: Envío gratis
+    promotion_actions: Acciones
+    promotion_code_batch_mailer:
+        promotion_code_batch_finished:
+            subject: Promoción código batch finalizado
+            message: "Todos %{number_of_codes} códigos han siso creados para promoción: "
+        promotion_code_batch_errored:
+            subject: Promoción código batch con errores
+            message: "Promoción código batch error (%{error}) for promoción: "
+    promotion_code_batches:
+        errored: "Error: %{error}"
+        finished: "All %{number_of_codes} códigos han siso creados."
+        processing: "Procesamiento:% {number_of_codes_processed} /% {number_of_codes}"
+    promotion_form:
+            match_policies:
+                all: Coincidir con todas estas reglas
+                any: Coincide con cualquiera de estas reglas
+    promotion_rule: Promoción Regla
+    promotion_rule_types:
+        subscription_order_promotion_rule:
+            description: Promoción por subscripción pedido
+            name: subscripción
+        subscription_promotion_rule:
+            description: Promoción por subscripción
+            name: subscripción
+        first_order:
+            description: Debe ser el primer pedido del usuario
+            name: Primer pedido
+        item_total:
+            description: Total pedido cumple estes criterios
+            name: Total item
+        landing_page:
+            description: El cliente debe haber visitado la página especificada
+            name: Landing Page
+        one_use_per_user:
+            description: Sólo un uso por usuario
+            name: Un uso por usuario
+        option_value:
+            description: El pedido incluye los productos especificados con el (los) valor (es) de la opción correspondiente
+            name: Opción Valor(es)
+        product:
+            description: El pedido incluye el (los) producto (s) especificado (s)
+            name: Producto(s)
+        user:
+            description: Disponible sólo para los usuarios especificados
+            name: Usuario
+        user_logged_in:
+            description: Disponible sólo para usuarios registrados
+            name: Usuario Loggeado
+        taxon:
+            description: El pedido incluye productos con taxonomías especificados
+            name: Taxonomía(s)
+        nth_order:
+            description: Aplique una promoción a cada n-ésimo pedido que un usuario haya completado..
+            name: n-ésimo orden
+            form_text: "Aplicar esta promoción a los usuarios n-ésimo pedido: "
+        first_repeat_purchase_since:
+            description: Disponible sólo para usuarios que no han comprado en un tiempo
+            name: Primera compra repetida desde
+            form_text: "Aplicar esta promoción a usuarios cuya última orden fue hace más de X días:: "
+        user_role:
+            description: El pedido incluye el usuario con roles especificados
+            name: Usuario Rol(es)
+    promotions: Promociones
+    promotion_successfully_created: Promoción creada con éxito!
+    number_of_codes: Número de códigos
+    new_promotion_code_batch: Nuevo batch Codigo promoción
+    add_comment: Añadir comentario
+    comment: Comentario
+    supplier: Proveedor
+    contact_information: Información de contacto
+    supplier_information: Información de proveedor
+    order_approved: Pedido aprobado
+    no_shipments_found: No se han encontrado envíos 
+    back_to_customer_return: Volver a devolución cliente
+    items_to_be_reimbursed: Items a reembolsar
+    items_reimbursed: Items reembolsados
+    calculated_reimbursements: Reembolsos calculados
+    incomplete: Incompleto
+    accepted: Aceptado
+    save: Guardar
+    stock: Stock
+    return_item_rma_ineligible: Rma inelegible de la devolución
+    rejected: Rechazado
+    authorized: Autorizado
+    total_pre_tax_refund:  Total pre tasas devolución
+    shipment_numbers: Numeros envío
+    shipment_date: Fecha envío
+    send_mailer: Enviar mail
+    add_to_stock_location: Añadir a localización de stock
+    editing_supplier: Editando proveedor
+    back_to_suppliers: Vuelta a los proveedores
+    contact_address: Dirección de contacto
+    supplier_details: Detalle proveedor
+    back_to_shipments_list: Volver a la lista de envios
+    shipping_rate:
+        display_price:
+                display_price_with_explanations: Mostrar precio con detalle
+    number: Number
+    state: Estatus
+    item_cost: Item Coste
+    cost: Coste
+    tax_total: Total tasas
+    final_price: Precio final
+    supplier_commission: Comisión proveedor
+    created_at: Creado en
+    shipment_number: Número envio
+    listing_shipments: Lista de envios
+    suppliers: Proveedores
+    stock_locations: Localizaciones de stock 
+    shipments: Envíos
+    new_supplier: Nuevo proveedor
+    listing_suppliers: Lista proveedores
+    drop_ship_settings: Drop Ship
+    default_commission_flat_rate: Precio fijo comisión por defecto
+    default_commission_percentage: Porcentaje comisión por defecto
+    send_supplier_email: Enviar mail al proveedor
+    automatically_deliver_orders_to_supplier: Enviar automaticamente los pedidos al proveedor
+    show_only_open_transfers: Mostrar sólo transferencias abiertas
+    marketplace_settings: Marketplace
+    allow_signup: Permitir signup
+    select_a_reason: Seleciona un motivo 
+    download_promotion_code_list: Descargar Lista de códigos promoción
+    labeling: Etiquetado
+    add_line_item: Añadir linea item
+    cancellation: Cancelado
+    until: Hasta
+    send_size: Pedir talla
+    end_rental_day: Fin del periodo de alquiler
+    days_start_rental: Diás a sumar para empezar el inicio del alquiler 
+    available_points: Puntos disponibles
+    let_order: Pedir
+    total_points: Total puntos
+    hidden: escondida
+    user_roles: roles de usuario
+    permissions: Permisos
+    new_user_role: Nuevo rol de usuario
+    subscription: Subscripción
+    back_to_reports_list: Volver al listado
+    percentage_secondhand_buy: Porcentaje precio compra segunda mano(sobre PVP)
+    rental_value_day: Valor para calcular el alquiler Semanal
+    rental_value_month: Valor para calcular el alquiler Mensual
+    what_you_do: Dinos si quieres continuar, comprar o devolver tus prendas
+    send_mail_points: Enviar mail puntos
+    days_change_size: Días para cambio de talla
+    rental_settings: Configuraciones de Alquiler
+    new_comment_type: Nuevo tipo de comentario
+    rental: Alquiler
+    rental_setting: Alquiler
+    actions:
+        receive: Recibir
+        ship: Envio
+        split: Split
+        delete: Borrar
+        add: Añadir
+        import: Importar
+    order_mailer:
+        confirm_email:
+            order_confirm: ¡Pedido confirmado!
+    inventory_canceled: Inventario cancelado
+    now_you_have: Ahora dispones de
+    inventory_states: 
+        returned: Devuelto
+        on_hand: A mano
+        shipped: Enviado
+        backordered: backordered
+    we_notify_you_when_we_will_pass_to_take_garment: Te avisaremos para ir a recoger tu paquete, recuerda tenerlo preparado.
+    how_I _prepare_return_package: ¿Cómo preparo mi paquete?
+    buy: Comprar
+    unfinalize_all_adjustments: No Finalizar todos los ajustes
+    finalize_all_adjustments: Finalizar todos los ajustes
+    new_adjustment_reason: Nueva razón de ajuste
+    items_in_rmas: Items en Rmas
+    sent: Enviar
+    use_my_points: Usar mis puntos
+    pay: Pagar
+    update_your_plan: Actualiza tu plan 
+    sorry_you_do_not_have_enought_points: Lo sentimos, no tienes puntos suficientes
+    we_love_you_continue_with_your_garment_now_you_have: Nos encanta que sigas con tu prenda, ahora dispones de 
+    continue_shopping: Continuar compra
+    points: Puntos
+    special_sales: Ventas especiales
+    monthly: Mensual
+    daily: Diario
+    weekly: Semanal
+    free_cleaning: Limpieza gratuita
+    free_shipping: Envío gratuito
+    manage_plans: Administra los planes
+    back_to_plans_list: Volver a la lista de los planes
+    editing_plan: Editar plan
+    this_field_is_required: Esta campo es obligatorio 
+    every: Cada 
+    api_plan_id: Id Api api
+    interval: Intervalo
+    trial_period_days: Días del periodo de prueba
+    interval_count: Cuenta Intervalo
+    new_plan: Nuevo plan
+    editing_recurring: Editar recurring
+    plans: Planes
+    plan: Plan
+    subscribe: Subscríbete
+    subscriptions: Subscripciones
+    subscription_events: Eventos Subscripciones
+    recurring: Subscripcion
+    recurrings: Subscripciones
+    new_recurring: Nueva subscripción
+    back_to_recurrings_list: Volver al listado de subscripciones
+    public_key: Clave pública
+    product_recommendations: Recomendaciones de producto
+    new_product_recommendation: Nueva recomendación de producto
+    product_recommendation:
+        scoring_types:
+            mark: Marcaje
+
+    ups_settings: Ups configuracion
+    ups_login: Login Ups
+    ups_password: Password Ups
+    ups_key: Key Ups
+    shipper_number: Número de shipper
+    fedex_settings: Fedex configuracion
+    fedex_login: Login Fedex
+    fedex_password: Password Fedex
+    fedex_account: Cuenta Fedex
+    fedex_key: Key Fedex
+    usps_settings: Usps configuracion
+    usps_login: Login Usps
+    canada_post_settings: Canada post configuración
+    canada_post_login: Login Canada post
+    canada_post_pws_userid: Canada post pws userid
+    canada_post_pws_password: Canada post pws password
+    canada_post_pws_customer_number: Canada post pws número de cliente
+    canada_post_pws_contract_number: Canada post pws número de contrato
+    units: unidades
+    unit_multiplier: unidad multiplicar
+    default_weight: Peso por defecto
+    handling_fee: Tasa de manipulación
+    max_weight_per_package: Tamaño máximo por paquete
+    comment_types: Tipo de comentarios
+    back_to_comment_types_list: Volver a la lista de tipos de comentarios
+    active_shipping_settings: Activar Configuración Envío 
+    new_store: Nueva tienda
+    admin_login: Login de administrador
+    facebook: "Facebook"
+    google_oauth2: "Google+"
+    user_was_not_valid: "El usuario no es válido."
+    add_another_service: 'Añadir otro servicio para inicio de sesión:'
+    authentications:
+      destroy: 'Método de autenticación eliminado con éxito.'
+    back_to_authentication_methods_list: "Volver a la lista de métodos de autenticación"
+    edit_social_method: 'Editando metodo de autenticación'
+    new_social_method: 'Nuevo método de autenticación'
+    no_authentication_methods_found: "No se encuentran ningún método de autenticación"
+    one_more_step: 'Un paso más para completar tu registro desde %{kind}'
+    remove_authentication_option_confirmation: '¿Está seguro que quiere eliminar este método de autenticación?'
+    sign_into_account: 'Puedes iniciar sesión usando:'
+    sign_in_through_one_of_these_services: 'Conéctate con '
+    social_api_key: 'API Clave'
+    social_api_secret: 'API Secreto'
+    social_authentication_methods: 'Métodos de autenticación'
+    social_authentication_methods_description: 'Configurar métodos de autenticación de OAuth'
+    social_provider: 'Proveedor social'
+    please_confirm_your_email: 'Por favor confirme su email para continuar'
+    sign_in_with: 'Autenticado con %{provider}'
+    you_have_signed_in_with_these_services: "Has iniciado sesión con"
+    login: "Login"
+    login_as_existing: "Introduce tus datos"
+    password: "Contraseña"
+    back_to_resource_list: Volve a la lista de recursos
+    order_number: Número de pedido
+    shipment_number: Número de pedido
+    i18m:
+        locales_displayed_on_frontend_select_box: Localización mostrada en la caja de selección de frontend
+    invoices_settings: Configuracion Recibos
+    invoice_font_face: Fuente Recibos
+    next_invoice_number: Número siguiente Recibos
+    invoice_logo_scale: Escala logo Recibos
+    new_refund_reason: Nueva razón de devolución
+    refund_reason: Razón de devolución
+    reimbursement_type: Tipo de reembolso
+    return_reason: Razón de retorno
+    adjustment_reason: Razón de ajuste
+    product_packages: Paquetes de productos
+    parts: Partes de producto
+    no_images_found: No se han encontrado imágines
+    skus: SKUs
+    can_be_part: Puede ser parte de 
+    individual_sale: rebaja individual
+    info_product_has_multiple_skus: Info productos con múltiples SKUs
+    secret_key: Clave secreta
+    publishable_key: Clave pública
+    signature: Firma
+    variant_search_placeholder: Buscar variante
+    variant_properties: Propiedades de variante
+    add_variant_properties: añadir propiedades de variante
+    cancel_inventory: Cancelar inventario
+    comments: Comentarios
+    no_resource: Sin Recurso
+    create_one: Crear uno
+    backorderable_header: Mostrar como disponible sin stock
+    manage_stock: Administrar el stock
+    select_a_stock_location: Seleccionar Localización del stock
+    no_packages_found: No se han encontrado Paquetes
+    new_package: Nuevo paquete
+    back_to_images_list: Volver al listado de imágenes
+    talla_y_color: TALLA Y COLOR
+    add_to_wishlist: Guardar
+    total_sales: Ventas totales
+    average_order_value: Valor de pedidos medio
+    back_to_taxonomies_list: Volver a la lista de taxonomías
+    add_taxon: Añadir taxonomía
+    currency_code: Código de moneda
+    use_app_default: Usar el de por defecto
+    title: Título
+    assegurance: Seguro de ropa
+    cleaning: Limpieza
+    use_billing_address: Dirección de facturación igual a la de envío
+    order_mutex_error: Se ha producido un error en el pedido, vuelva a intentarlo
+    add_ahother_shipping_address: Introduzca una dirección de envío distinta
+    default_wishlist_name: "Guardados"
+    no_myclothes: No tienes prendas
+    my_clothes: Mis prendas
+    what_you_do: ¿Qué quieres hacer?
+    Continue_with: Continuar con la prenda
+    buy_with_sale: Comprar con descuento
+    return_rent: Devolver
+    change_size: Cambiar de Talla
+    hidding: Oculto
+    cleaning_service_price: Precio servicio de limpieza
+    cleaning_service_porcentage: Porcentaje servicio de limpieza
+    assegurance_service_price: Precio servicio de seguro
+    assegurance_service_porcentage: Porcentaje servicio de seguro
+    precio_seguro: Precio seguro ropa
+    solidus_wishlist:
+        spree:
+            default_wishlist_name: "Guardados"
+    braintree:
+        configurations:
+            title: Título
+        
+    api:
+        key: Clave
+        access: Acceso
+        no_key: Sin clave
+        generate_key: Generar clave
+        regenerate_key: Regenerar clave
+        clear_key: Limpiar clave
+
+    helpers:
+        products:
+            price_diff_add_html: ' '
+
+    admin:
+        suppliers:
+            edit:
+                add_bank_account: Añadir cuenta bancaria
+        promotions:
+            starts_at: Empieza en 
+            expires_at: Expira en 
+            form:
+                general: General
+                activation: Activación
+            activations_new:
+                auto: auto
+                single_code: Código individual
+                multiple_codes: Códigos múltiples
+                path: Ruta  
+            activations_edit:
+                single_code_html: Código individual html 
+                auto: auto
+
+        subscriptions:
+            form:
+                subscription: Subscripción
+                subscription_line_item: Item de subscripción
+            new:
+                back: Volver
+                title: Título
+            index:
+                new_subscription: Nueva subscripción
+        images:
+            index:
+                upload_images: Subir imágenes
+                choose_files: Elegir archivos
+                drag_and_drop: Arrastrar y pegar
+                image_process_failed: Error en procesar la imagen
+
+        tab:
+            mega_menus: Mega menús
+            elastic_product_settings: Elastic producto configuración
+            profile: Perfil
+            stock_locations: Localizaciones de Stock
+            Localizaciones de stock: Localizaciones de Stock
+            shipments: Envíos
+            suppliers: Proveedores
+            Envíos: Envíos
+            Proveedores: Proveedores
+            already_sign_up: Ya está registrado 
+            sents: Envíos
+            sent: Envío
+            locales: Locales
+            stores: Tiendas
+            cms: CMS
+            subscriptions: Subscripciones
+            option_types: Opciones de tipos
+            properties: Propiedades
+            taxonomies: Taxonomías
+            display_order: Orden 
+            relation_types: Tipos de relaciones
+            prototypes: prototipos
+            settings: Configuraciones
+            stock: Stock
+            stock_items: Stocks unidades
+            stock_transfers: Stocks traspasos
+            Pages: Páginas
+            roles: Roles
+            general: General
+            payments: Pagos
+            areas: Áreas
+            taxes: Tasas
+            checkout: Checkout
+            shipping: Envío
+            braintree: Braintree
+            rma: RMA
+           
+        variants:
+                new:
+                    new_variant: Nueva variante  
+                form:
+                    pricing_hint: Sugerencia de precios
+                edit:
+                    edit_variant: Editar variante
+                table_filter:
+                    show_deleted: Mostrar eliminados
+        users:
+            user_page_actions:
+                create_order: Crear pedido
+        user:
+            store_credit: Almacén crédito 
+
+        taxons:
+            display_order: Mostrar pedido 
+        prices:
+            any_country: Cualquier país
+            index:
+                new_price: Precio nuevo      
+                amount_greater_than: Cantidad más que
+                amount_less_than: Cantidad menos que 

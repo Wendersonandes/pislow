@@ -1,0 +1,14 @@
+# This migration comes from spree_barcodes (originally 20170102085803)
+class CreateSpreeBarcodes < ActiveRecord::Migration
+  def change
+    create_table :spree_barcodes do |t|
+      t.string     :code
+      t.string     :format
+      t.references :variant
+      t.references :product
+      t.integer    :position
+
+      t.timestamps null: true
+    end
+  end
+end

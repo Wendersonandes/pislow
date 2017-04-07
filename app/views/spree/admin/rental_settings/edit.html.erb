@@ -1,0 +1,86 @@
+
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+	<%= Spree.t("rental_settings") %>
+<% end %>
+
+<div class="row">
+<%= form_tag(admin_rental_settings_path, :method => :put) do %>
+
+	<fieldset class="no-border-top">
+			<div class="field">
+				<%= text_field_tag('preferences[cleaning_service_price]', Spree::Rentals::Config[:cleaning_service_price]) %>
+				<label><%= Spree.t("cleaning_service_price") %></label>
+
+			</div>
+			<div class="field">
+				<%= number_field_tag('preferences[cleaning_service_porcentage]',  Spree::Rentals::Config[:cleaning_service_porcentage]) %>
+				<label><%= Spree.t("cleaning_service_porcentage") %>(Se cogerá primero el porcentaje si existe, sino el precio)</label>
+
+			</div>
+			<div class="field">
+				<%= text_field_tag('preferences[assegurance_service_price]',  Spree::Rentals::Config[:assegurance_service_price]) %>
+				<label><%= Spree.t("assegurance_service_price") %></label>
+
+			</div>
+			<div class="field">
+				<%= number_field_tag('preferences[assegurance_service_porcentage]',  Spree::Rentals::Config[:assegurance_service_porcentage]) %>
+				<label><%= Spree.t("assegurance_service_porcentage") %>(Se cogerá primero el porcentaje si existe, sino el precio</label>
+
+			</div>
+			<div class="field">
+				<%= number_field_tag('preferences[days_change_size]',  Spree::Rentals::Config[:days_change_size]) %>
+				<label><%= Spree.t("days_change_size") %></label>
+
+			</div>
+			<div class="field">
+				<%= number_field_tag('preferences[days_start_rental]',  Spree::Rentals::Config[:days_start_rental]) %>
+				<label><%= Spree.t("days_start_rental") %></label>
+
+			</div>
+			<div class="field">
+				<%= number_field_tag('preferences[rental_value_day]',  Spree::Rentals::Config[:rental_value_day]) %>
+				<label><%= Spree.t("rental_value_day") %></label>
+
+			</div>
+			<div class="field">
+				<%= number_field_tag('preferences[rental_value_month]',  Spree::Rentals::Config[:rental_value_month]) %>
+				<label><%= Spree.t("rental_value_month") %></label>
+
+			</div>
+
+			<div class="field">
+				<%= number_field_tag('preferences[percentage_secondhand_buy]',  Spree::Rentals::Config[:percentage_secondhand_buy]) %>
+				<label><%= Spree.t("percentage_secondhand_buy") %></label>
+
+			</div>
+
+			<div class="field">
+				<%= number_field_tag('preferences[percentage_discount_buy]',  Spree::Rentals::Config[:percentage_discount_buy]) %>
+				<label><%= Spree.t("percentage_discount_buy,
+				") %></label>
+
+			</div>
+
+			<div class="field">
+				<%= check_box_tag('preferences[send_mail_points]', "1", Spree::Rentals::Config[:send_mail_points]) %>
+				<label><%= Spree.t("send_mail_points") %></label>
+			</div>
+			<div class="field">
+				<%= check_box_tag('preferences[price_assegurance_mandatory]', "1", Spree::Rentals::Config[:price_assegurance_mandatory]) %>
+				<label><%= Spree.t("price_assegurance_mandatory") %></label>
+			</div>
+			<div class="field">
+				<%= check_box_tag('no_shipping_supplier]', "1", Spree::Rentals::Config[:no_shipping_supplier]) %>
+				<label><%= Spree.t("no_shipping_supplier") %></label>
+			</div>
+
+		<div class="form-buttons filter-actions actions" data-hook="buttons">
+			<%= button Spree.t('actions.update') %>
+			<span class="or"><%= Spree.t(:or) %></span>
+			<%= link_to Spree.t('actions.cancel'), edit_admin_general_settings_url, :class => 'button' %>
+		</div>
+	</fieldset>
+<% end %>
+</div>

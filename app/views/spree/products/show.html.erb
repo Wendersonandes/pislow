@@ -1,0 +1,281 @@
+<% cache [I18n.locale, current_pricing_options, @product] do %>
+  <div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
+    <% @body_id = 'product-details' %>
+
+
+        <!-- content section -->
+
+            <div class="container margin-three">
+                <div class="row">
+                        <div class="zoom-gallery">
+                            <!-- product images -->
+                            <div class="col-md-2 col-sm-12 sm-margin-bottom-ten">
+
+                                <div class="products-thumb text-center">
+                                    
+                                        <div id="product-images" data-hook="product_images">
+                                            <div id="thumbnails" data-hook>
+                                                
+                                                <%= render :partial => 'thumbnails'%>
+                                           
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12  sm-margin-bottom-ten">
+                                <div id="main-image" data-hook>
+                                    <%= render :partial => 'image' %>      
+                                </div>
+
+                            </div>
+                        </div>
+                  <div class="col-md-4 col-sm-12 col-md-offset-1 no-margin-left">
+                        <!-- product name -->
+                        <span class="product-name-details text-uppercase font-weight-600 letter-spacing-2 black-text"><%= @product.name %></span><br>
+                        <!-- end product name -->
+                        <!-- product short description -->
+                        <div class="product_description">
+                            <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+                        </div>
+                        <!-- end product short description -->
+
+                      <div data-hook="promotions">
+                        <%= render :partial => 'promotions' %>
+                      </div>
+
+                       <div class="col-md-12 col-sm-12 no-padding margin-five">
+                            <!-- add to bag button -->
+                            <div id="cart-form" data-hook="cart_form">
+                                      <%= render :partial => 'cart_form' %>
+                                    
+                                    <!-- end add to bag button -->
+                                    <div class="col-md-7 col-sm-7 product-details-social no-padding margin-top">
+                                    <!-- social media sharing -->
+                                        <span class="black-text text-uppercase text-small vertical-align-middle margin-right-five"><%=Spree.t(:compartir)%></span>
+                                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://plus.google.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                                        <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                                        
+
+                                        <!-- end social media sharing -->
+                                    </div>
+                             </div>      
+                        </div>
+                        
+
+                    </div>             
+            </div>
+          </div>
+
+
+        <div class="border-top padding-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 margin-left-right-one">
+                        <!-- tab -->
+                        <div class="tab-style1">
+                            <div class="col-md-12 col-sm-12 no-padding">
+                            <% unless @product_properties.empty? %>  
+                                <!-- tab navigation -->
+                                <ul class="nav nav-tabs nav-tabs-light text-left">
+                                    <li class="active"> <a href="#tab_sec1" data-toggle="tab">Diseñador</a></li>
+                                    <li ><a href="#tab_sec2" data-toggle="tab"><%= Spree.t(:detalle) %></a></li>
+    
+                                    <li><a href="#tab_sec3" data-toggle="tab">Valoraciones</a></li>
+                                </ul>
+                                <!-- tab end navigation -->
+                            </div>
+                            <% end %>
+                            <!-- tab content section -->
+                            <div class="tab-content">
+                                <!-- tab content -->
+                                <div class="tab-pane fade in active" id="tab_sec1">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 margin-left-small">
+                                            <% @product.taxons.each do |taxon| %>
+                                              <% if taxon.icon.present? %>
+                                               <div class="row margin-bottom-small">
+                                                
+                                                     <%= link_to(image_tag(taxon.icon(:normal) , :class => 'img-circle '), seo_url(taxon))  %>
+                                                </div>
+                                                <div class="row">
+                                                   <h4> <%= link_to taxon.name , seo_url(taxon) %></h4>
+                                                    
+                                                    <p><%= taxon.description %></p>
+                                                </div>
+                                             <% end %>
+                                            <% end %>
+
+                
+                                            
+        
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- end tab content -->
+                                <!-- tab content -->
+                                <div class="tab-pane med-text fade in " id="tab_sec2">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 margin-left-small">
+                                              <table id="product-properties" class="table-display" data-hook>
+                                                <tbody>
+                                                  <% @product_properties.each do |product_property| %>
+                                                    <% css_class = cycle('even', 'odd', :name => "properties") %>
+                                                    <tr class="<%= css_class %>">
+                                                      <td><strong><%= product_property.property.presentation %></strong></td>
+                                                      <td><%= product_property.value %></td>
+                                                    </tr>
+                                                  <% end %>
+                                                  <% reset_cycle('properties') %>
+                                                </tbody>
+                                              </table>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end tab content -->
+                                <!-- tab content -->
+                                <div class="tab-pane fade in" id="tab_sec3">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 review-main margin-left-small ">
+                                            <div class="review">
+                                              
+                                              <%= render :partial => 'spree/shared/reviews'%>
+
+                
+                                            </div>
+        
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- end tab content -->
+                            </div>
+                            <!-- end tab content section -->
+                        </div>
+                        <!-- end tab -->
+                    </div>
+                </div>
+            </div>
+        </div>
+<%= render :partial => 'taxons' %> 
+<!--  ______________________________________________________________________ -->
+<!-- Related products -->
+<!--  ______________________________________________________________________ -->
+    <% if @product.has_related_products?('') %>
+        <section class="border-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3 class="section-title">Completa tu look</h3>
+                    </div>
+                </div>
+                <div class="row">
+                   <% @product.relations.each do |relation| %>
+                    <!-- related products slider -->
+                    <div id="shop-products" class="owl-carousel owl-theme dark-pagination owl-no-pagination owl-prev-next-simple">
+                        <!-- shop item -->
+                        <div class="item">
+                            <div class="home-product text-center position-relative overflow-hidden">
+                              <% related_product = Spree::Product.find_by_id( relation.related_to_id )%>
+                                     <div class="related-product">
+                                       <%= link_to image_tag(related_product.display_image.attachment(:small)) , product_path(related_product) %>
+                       
+                                     </div>
+
+                                <%= link_to truncate(related_product.name, length: 50),  product_path(related_product) %>
+                                    <br>
+                                    <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                       <span class="price-product" itemprop="price"><%= display_price(related_product) %></span>
+                                    </span>
+                                
+                                <div class="quick-buy">
+                                      <div class="product-share">
+                                          
+                                                 <% if spree_current_user %>
+                                                     
+                                                   
+                                                        <%= form_for Spree::WishedProduct.new do |f| %>
+                                                            
+                                                              <%= f.hidden_field :variant_id, value: related_product.master.id %>
+                                                              <%= f.hidden_field :quantity %>
+                                                          
+                                                              <button type="submit" class="highlight-button btn btn-small no-margin-right quick-buy-btn" title="Guardar"><i class="fa fa-heart-o"></i>
+                                                              </button>
+                                                        <% end %>
+                                                     
+
+
+                                                  <% else %>
+                                                      <a href="/login" class="highlight-button btn btn-small no-margin-right quick-buy-btn" title="Guardar"><i class="fa fa-heart-o"></i></a>
+
+                                                   <% end %>
+                               
+                                             </div>
+                                        </div>
+                            </div>
+                        </div>
+                        <!-- end shop item -->
+
+                    </div>
+                    <!-- end related products slider -->
+                      <% end %>
+                </div>
+            </div>
+        </section>
+    <% end %>
+<!--  ______________________________________________________________________ -->
+        <!--Productos recomendados --> 
+<!--  ______________________________________________________________________ -->
+
+        <section class="border-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3 class="section-title">Quizás te guste</h3>
+                    </div>
+                </div>
+                <div class="row">
+                 
+                    <!-- related products slider -->
+                    <div id="shop-products" class="owl-carousel owl-theme dark-pagination owl-no-pagination owl-prev-next-simple">
+                        <!-- shop item -->
+                        <div class="item">
+                            <div class="home-product text-center position-relative overflow-hidden">
+                         
+                                     <div class="related-product">
+                                
+                       
+                                     </div>
+
+                                    <br>
+                                    <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                       <span class="price-product" itemprop="price"></span>
+                                    </span>
+                                
+                                <div class="quick-buy">
+                                      <div class="product-share">
+
+                               
+                                             </div>
+                                 </div>
+                            </div>
+                        </div>
+                        <!-- end shop item -->
+
+                    </div>
+        
+                    <!-- end related products slider -->
+              
+                </div>
+
+            </div>
+        </section>
+        <!-- end content section --> 
+
+  </div>
+<% end %>

@@ -1,0 +1,232 @@
+<%paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+                paginated_products ||= products%>
+
+<% content_for :head do %>
+  <% if paginated_products.respond_to?(:total_pages) %>
+      <%= rel_next_prev_link_tags paginated_products %>
+  <% end %>
+<% end %>
+
+
+
+ <% if products.empty? %>
+      <div class="content page-title page-title-small border-bottom-light margin-top-products">
+         <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
+                     <h1 class="black-text"><%= Spree.t(:no_products_found) %></h1>
+                </div>
+            </div>
+         </div>
+      </div>      
+                           
+<% elsif params.key?(:keywords) %>
+      <div class="content page-title page-title-small  margin-top-products">
+         <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
+                   <h1 class="black-text"> <%= Spree.t(:search_results, keywords: h(params[:keywords])) %></h1>
+                 </div>
+            </div>
+         </div>
+      </div> 
+<% else %> 
+      <div class="content page-title page-title-small  margin-top-products">
+         <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
+                     
+                </div>
+            </div>
+         </div>
+      </div>                            
+<% end %>
+                  
+ <div>  
+   <div class="container">
+      <div class="row">
+
+              <div id="shop-widgets-filters" class="shop-widgets-filters">
+                  <div class="col-md-2 col-sm-4 sidebar margin-right-50">
+                       <%= render partial: 'spree/shared/filters' %> 
+                   </div>   
+              </div>
+                 <div class="col-md-2 col-sm-4 sidebar margin-right-50 float-right">
+                       <select id="sorting_products" >
+                           <option value="0" selected>Ordenar por</option>
+                           <option value="1" >Novedades</option>
+                           <option value="2">Precio de menor a mayor</option>
+                           <option value="3">Precio de mayor a menor</option>
+                       </select>
+                  </div> 
+
+             <% if products.any? %>
+       
+                  
+                    <ul id="products"  data-hook>
+                     <div class="product-listing margin-three">
+                      <% products.each do |product| %>
+
+                  <!-- shop item -->
+                         <div class="col-md-3 col-sm-3">
+                           <div class="">
+
+                              <% url = spree.product_path(product, taxon_id: @taxon.try(:id)) %>
+                              <li id="product_<%= product.id %>"  class="home-product text-center position-relative overflow-hidden margin-ten no-margin-top" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+                                  <% cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do %>
+                                    <div class="product-image">
+                                      <%= link_to image_tag(product.display_image.attachment(:small), itemprop: "image"), url, itemprop: 'url' %>
+                                    </div>
+                                    <%= link_to truncate(product.name, length: 50), url, class: 'info', itemprop: "name", title: product.name %>
+                                    <br>
+                                    <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                       <span class="price-product" itemprop="price"><%= display_price(product) %></span>
+                                       <span class="price-buy-product" itemprop="price" >€ 46 compra</span>
+                                    </span>
+                                  <% end %>
+                                  <div class="quick-buy">
+                                      <div class="product-share">
+                                          
+                                          <% if spree_current_user %>
+                                             
+                                           
+                                                <%= form_for Spree::WishedProduct.new do |f| %>
+                                                    
+                                                      <%= f.hidden_field :variant_id, value: product.master.id %>
+                                                      <%= f.hidden_field :quantity %>
+                                                  
+                                                      <button type="submit" class="highlight-button btn btn-small no-margin-right quick-buy-btn" title="Guardar"><i class="fa fa-heart-o"></i>
+                                                   </button>
+                                                <% end %>
+                                             
+
+
+                                          <% else %>
+                                              <a href="/login" class="highlight-button btn btn-small no-margin-right quick-buy-btn" title="Guardar"><i class="fa fa-heart-o"></i></a>
+
+                                            <% end %>
+                                          <!-- insert_top 'div.product-body' -->
+                                          <%= link_to url, remote: true, class: "quickshop" do %>
+                                            <a href="#modal-popup2" class="highlight-button btn btn-small no-margin-right quick-buy-btn popup-with-zoom-anim no-margin-bottom" title="Añadir al carrito">Vista Rápida</a>
+                                          <% end %>
+                                          
+                                                <!-- modal popup -->
+                                                <div id="modal-popup2" class="zoom-anim-dialog mfp-hide col-lg-3 col-md-6 col-sm-7 col-xs-11 center-col bg-white text-center modal-popup-main">
+                                              
+                                                
+
+                                               
+
+                                                </div>
+                                               <!-- end modal popup -->
+                                    </div>
+                                   </div>
+                                </li>
+                            </div>
+                         </div>
+                      <% end %>
+                      <% reset_cycle("classes") %>
+
+                     </div>
+                    </ul>
+              <% end %>
+
+        <% if paginated_products.respond_to?(:total_pages) %>
+          <%= paginate paginated_products %>
+        <% end %>
+
+        <div id="open-filters">
+               <i class="fa fa-filter"></i>
+               <span>Filter</span>
+        </div>
+
+     </div>
+    </div>  
+  </div>
+</div>
+
+ <script>
+    $(function() { aweProductSidebar(); });
+</script>  
+
+<script>
+
+
+
+    $(document).ready(function () {
+        
+
+        $("#sorting_products").change(function () {
+            localStorage.setItem('sorting_products', document.getElementById("sorting_products").value);
+
+            var item = $(this).find(":selected").val();
+
+            $.ajax({
+                url: "/Cook/AddCookies",
+                data: { item: item },
+                type: 'POST',
+                success: function (data) {
+                }
+            });
+
+           var value = $(this).val();
+            
+            if (value == 1) {
+         
+              url = window.location.href;
+              url = updateURLParameterNEW(url, 'sort_latest', '');
+               window.location.href = url;
+
+            }
+            else if (value == 2) {
+             
+              url = window.location.href;
+              url = updateURLParameterNEW(url,'sort_price_low', '');
+               window.location.href = url;
+            }
+            else if (value == 3) {
+             
+              url = window.location.href;
+              url = updateURLParameterNEW(url,'sort_price_high', '');
+               window.location.href = url;
+            } 
+                
+
+        });
+
+    });
+
+
+function updateURLParameterNEW(url, param, paramVal)
+{
+    var TheAnchor = null;
+    var newAdditionalURL = "";
+    var tempArray = url.split("?");
+    var baseURL = tempArray[0];
+    var additionalURL = tempArray[1];
+    var temp = "";
+  
+
+        var tmpAnchor = baseURL.split("#");
+        var TheParams = tmpAnchor[0];
+            TheAnchor  = tmpAnchor[1];
+
+        if(TheParams)
+            baseURL = TheParams;
+  
+
+    if(TheAnchor)
+        paramVal += "#" + TheAnchor;
+
+    var rows_txt = temp + "" + param + "=" + paramVal;
+    return baseURL + "?" + newAdditionalURL + rows_txt;
+}
+  
+</script>  
+
+                
+
+
+
+
+

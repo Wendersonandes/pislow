@@ -1,0 +1,143 @@
+<header id="header" class="row" data-hook>
+        <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav bg-mid-gray " role="navigation">
+           
+                <div class="gender container ">
+                                    <!-- Gender -->
+                            <div class="gender_col col-sm-1 col-xs-3 height-nav margin-top-small bg-white"><%= link_to Spree.t(:'Mujer'), '/woman' , class: "no-margin no-padding btn-small-white-border-selected bg-transparent"  %></div>
+                            <div class="gender_col col-sm-1 col-xs-3 margin-top-small"><%= link_to Spree.t(:'Hombre'), '/men' , class: "no-margin no-padding btn-small-white-border bg-mid-gray"  %></div>
+                            <div class="gender_col col-sm-1 col-xs-3 margin-top-small"><%= link_to Spree.t(:'Niños'), '/kids' , class: "no-margin no-padding btn-small-white-border bg-mid-gray"  %></div>
+                            <!-- end Gender -->
+                            
+                                       
+                </div>
+        
+        </nav>
+        <!-- navigation panel -->
+        <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom bg-white shop-nav margin-top-nav " role="navigation">
+            <div class="container">
+                     <!-- search and cart  -->
+                    <div class="col-md- no-padding-left search-cart-header pull-right">                      
+                        
+                        <div id="top-search">
+                            <!-- nav search -->
+                                                        <!-- nav search -->
+                            <a href="#search-header" class="header-search-form"><i class="fa fa-search search-button"></i></a>
+                            <!-- end nav search -->
+
+                            <a href="#search-header" class=></a>
+                            <!-- end nav search -->
+                        </div>
+                        <!-- search input-->
+                        <form id="search-header" method="post" action="#" name="search-header" class="mfp-hide search-form-result">
+                            <div class="search-form position-relative">
+
+                                <%= form_tag spree.products_path, :method => :get do %>          
+                                <% end %>
+
+                                <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
+                                <%= form_tag spree.products_path, :method => :get do %>
+                                  <% cache(cache_key_for_taxons) do %>
+                                    <%= select_tag :taxon,
+                                          options_for_select([[Spree.t(:all_departments), '']] +
+                                                                @taxons.map {|t| [t.name, t.id]},
+                                                                @taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon' %>
+                                  <% end %>
+                                  <%= search_field_tag :keywords, params[:keywords], :placeholder => "Busco..." , :class => "search-input", :style => "font-family:'Inconsolata'"  %>
+                                  <%= submit_tag Spree.t(:search), :name => nil %>
+                                <% end %>
+
+
+                            </div>
+                        </form>
+                        <!-- end search input -->
+                        
+                        <%= render :partial => 'spree/shared/nav_bar' %>               
+                        
+                    </div>
+                    <!-- end search and cart  -->
+                
+                <div class="row">
+                  
+                    <!-- logo -->
+                    <div id= "logo" class="col-md-2 pull-left margin-one"> <% link_to Spree.t(:home), spree.root_path %>
+                    <%= logo %></div>
+                    <!-- end logo -->  
+                    
+                    
+                    <!-- toggle navigation -->
+                    <div class="navbar-header col-sm-6 col-xs-2 pull-right">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    </div>
+                    <!-- toggle navigation end -->
+
+
+
+
+
+                                <!-- menu item -->
+                                <li class="dropdown panel"><a href="#collapse4" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown">Marcas <i class="fa fa-angle-down"></i></a>
+                                    <!-- sub menu -->
+                                    <ul id="collapse4" class="dropdown-menu mega-menu panel-collapse collapse mega-menu-full">
+                                        <!-- sub menu column  -->
+                                        <li class="mega-menu-column col-sm-3">
+                                            <!-- sub menu item  -->
+                                            <ul>
+                                                <li class="dropdown-header">Urban</li>
+                                                <li><a href="shop-with-sidebar.html">Novedades</a></li>
+                                                <li><a href="shop-with-sidebar.html">Trendy</a></li>
+                                                <li><a href="shop-with-sidebar.html">Premium</a></li>
+
+
+                                            </ul>
+                                            <!-- end sub menu item  -->
+                                        </li>
+                                        <!-- end sub menu column  -->
+                                        <!-- sub menu column  -->
+                                        <li class="mega-menu-column col-sm-3">
+                                            <!-- sub menu item  -->
+                                            <ul>
+                                                <li class="dropdown-header">CLassic</li>
+                                                <li><a href="shop-with-sidebar.html">Carolina Herrera</a></li>
+                                                <li><a href="shop-with-sidebar.html">Nina ricci</a></li>
+                                                <li><a href="shop-with-sidebar.html">Premium</a></li>
+
+                                            </ul>
+                                            <!-- end sub menu item  -->
+                                        </li>
+                                        <!-- end sub menu column  -->
+                                        <!-- sub menu column  -->
+                                        <li class="mega-menu-column col-sm-3">
+                                            <!-- sub menu item  -->
+                                            <ul>
+                                                <li class="dropdown-header">Chic</li>
+                                                <li><a href="shop-with-sidebar.html">pepaloves</a></li>
+                                                <li><a href="shop-with-sidebar.html">zara</a></li>
+                                                <li><a href="shop-with-sidebar.html">lola clothes</a></li>
+
+                                            </ul>
+                                            <!-- end sub menu item  -->
+                                        </li>
+                                        <!-- end sub menu column  -->
+
+                                    </ul>
+                                    <!-- end sub menu -->
+                                </li>
+                                <!-- end menu item -->
+                                <!-- menu item -->
+                                <li class="dropdown panel"><a href="/t/woman_categories/clothes_woman?utf8=✓&per_page=&search%5Bcondition_any%5D%5B%5D=Segunda+mano">Saldos</a></li>
+                                <!-- end menu item -->
+                                <!-- menu item -->
+                                <li class="dropdown panel simple-dropdown"><a href="/magazine" >Magazine</a></li>
+                                <!-- end menu item -->
+                               <!-- menu item -->
+                                <li class="dropdown panel simple-dropdown"></li>
+                                <!-- end menu item -->
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end main menu -->
+                </div>
+            </div>
+        </nav>
+</header>        
+        <!-- end navigation panel -->

@@ -1,0 +1,40 @@
+
+<% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+<nav id="taxonomies" class="sidebar-item" data-hook>
+      <aside  class="refinements" data-hasanyselected="false">
+          <h2>Filtrar</h2>
+          <a href="#" class="clear-filter" data-clear="all">Borrar todo</a>
+		  <% @taxonomies.each do |taxonomy| %>
+              <!-- toggle item -->
+               <div class="panel panel-default" id="collapse-<%= taxonomy.name %>" data-hasselections="false">
+                        
+                     <a data-toggle="collapse" data-parent="#collapse-<%= taxonomy.name %>" href="#collapse-two-<%= taxonomy.name %>" class="refinement-header" >
+                                      <h3>
+                                         <% cache [I18n.locale, taxonomy, max_level] do %>
+                                           <span class='taxonomy-root facet-name '><i class="fa fa-angle-down"></i><%= taxonomy.name %></span>
+                                       </h3>
+                       </a>
+                               
+                       <div id="collapse-two-<%= taxonomy.name %>" class="panel-collapse collapse in">
+                                    <a href="#" data-clear="category" class="clear-filter">Borrar</a>
+                                     <div class="options scrollable single-column">
+                                         <%= taxons_tree_checkbox(taxonomy.root, @taxon, max_level) %>         
+                                     </div> 
+                        </div>
+                   </div>
+               <!-- end toggle item -->
+   
+         <% end %>      
+		  <% end %>
+
+
+    </aside>
+
+  <div id="open-filters">
+     <i class="fa fa-filter"></i>
+     <span>Filter</span>
+  </div>
+</nav>
+
+
+

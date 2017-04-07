@@ -1,0 +1,22 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+
+
+                   <div class="container position-relative" style="background-image:url(<%= show_alchemy_picture_path el.ingredient(:picture) %>); background-size:100%; height:700px; background-repeat: no-repeat;">
+
+                       
+                            <div class="slider-text-middle-main " style="width: 50%;">
+                                <div class="padding-left-right-px animated fadeInUp"
+                                  style="display: table-cell;    vertical-align: top;     padding-top: 20%;">
+                                   
+                                    <span class="display-block black-text xs-margin-bottom-seven bg-white padding-seven text-align-center">
+                                    <h1 style="text-transform: initial"><%= el.render :headline %></h1>  
+                                     <span class="black-text"><%= el.render :text %></span>
+                                    </span>
+                                    
+                                </div>
+                            </div>
+                     
+                    </div>
+  <%- end -%>
+<%- end -%>

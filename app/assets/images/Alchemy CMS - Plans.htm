@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://localhost:3000/store/admin/pages/8/edit -->
+<html class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Alchemy CMS - Plans</title>
+    <link rel="shortcut icon" href="http://localhost:3000/assets/alchemy/favicon-d43ea91e0db8fa5ce3c61af7f2da5277934e46fc6732bf71b7807eb4a529e4d1.ico">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="8bwlrIQZCOZY5tOLMI2tZUx+0rkCRuJNb95Br6C84h3Z1qZw+1p831+rtC16EDPTNMdip6Wnj2+HA32rcIwbnQ==">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" media="screen" href="./Alchemy CMS - Plans_files/all-1573e8f197bb60caf62f7a71232f15a233f15ae9d45da25cb9d515094975e071.css" data-turbolinks-track="true">
+    <link rel="stylesheet" media="print" href="./Alchemy CMS - Plans_files/print-ad9728690e391fa06f32ca4491ca8d9087adde3e955f83b0d476212e2749da0c.css" data-turbolinks-track="true">
+    
+    <script>
+      // Global Alchemy JavaScript object.
+      var Alchemy = {};
+      // Setting TinyMCE path.
+      var tinyMCEPreInit = {
+        base: '/assets/tinymce',
+        suffix: '.min'
+      };
+      // Store regular expression for external link url matching.
+      Alchemy.link_url_regexp = /^(mailto:|\/|[a-z]+:\/\/)/;
+      // Holds the default Alchemy TinyMCE configuration
+      Alchemy.Tinymce = {
+        defaults: {
+          plugins: 'alchemy_link,anchor,autoresize,charmap,code,directionality,fullscreen,hr,link,paste,tabfocus,table',
+          skin: "alchemy",
+          width: "100%",
+          resize: true,
+          autoresize_min_height: "105",
+          autoresize_max_height: "480",
+          menubar: false,
+          statusbar: true,
+          toolbar: ["bold italic underline | strikethrough subscript superscript | numlist bullist indent outdent | removeformat | fullscreen","pastetext charmap hr | undo redo | alchemy_link unlink anchor | code"],
+          fix_list_elements: true,
+          convert_urls: false,
+          entity_encoding: "raw",
+          paste_as_text: true,
+          element_format: "html",
+        }
+      };
+    </script>
+    <script>
+  Alchemy.routes = {
+
+    admin_picture_path: function(id) {
+      return '/store/admin/pictures/1'.replace(/1/, id);
+    },
+
+    admin_trash_path: function(page_id) {
+      var url = '/store/admin/trash';
+      if (page_id) url += '?page_id=' + page_id;
+      return url;
+    },
+
+    fold_admin_element_path: function(id) {
+      return '/store/admin/elements/1/fold'.replace(/1/, id);
+    },
+
+    list_admin_elements_path: '/store/admin/elements/list',
+    order_admin_contents_path: '/store/admin/contents/order',
+    order_admin_elements_path: '/store/admin/elements/order',
+    order_admin_pages_path: '/store/admin/pages/order',
+    link_admin_pages_path: '/store/admin/pages/link'
+
+  };
+</script>
+
+    <script src="./Alchemy CMS - Plans_files/all-d531de0d75f7166bb4391e0633f32a18fdd18ef245f36f61fad3e60decf12a0c.js" data-turbolinks-track="true"></script>
+      <meta name="turbolinks-cache-control" content="no-cache">
+
+  </head>
+  <body id="alchemy" class="pages edit collapsed-menu" data-feedly-mini="yes" cz-shortcut-listen="true">
+    <noscript>
+      &lt;h1&gt;¡Javascript está deshabilitado!&lt;/h1&gt;
+      &lt;p&gt;Alchemy necesita Javascript para funcionar correctamente. Por favor habilítalo en las opciones de tu navegador.&lt;/p&gt;
+    </noscript>
+    <div id="overlay">
+      <div id="overlay_text_box">
+        <span id="overlay_text">Por favor espere</span>
+      </div>
+    </div>
+    <div id="left_menu">
+      <div id="main_navi">
+            <div class="main_navi_entry">
+    <a href="http://localhost:3000/store/admin/dashboard">
+        <img src="./Alchemy CMS - Plans_files/icon-f8df421b3a23701eb90332481121d3a43e21eae7dd0d3bf326b9376d3527b047.svg" alt="Icon">
+      <label>Pizarra</label>
+</a>    
+</div>
+            <div class="main_navi_entry active has_sub_navigation">
+    <a href="http://localhost:3000/store/admin/pages">
+        <span class="module icon pages"></span>
+      <label>Páginas</label>
+</a>      <div class="sub_navigation">
+        <div class="subnavi_tab">
+          <a href="http://localhost:3000/store/admin/pages">Páginas</a>
+        </div>
+        <div class="subnavi_tab">
+          <a href="http://localhost:3000/store/admin/layoutpages">Páginas globales</a>
+        </div>
+  </div>
+
+</div>
+            <div class="main_navi_entry">
+    <a href="http://localhost:3000/store/admin/languages">
+        <span class="module icon languages"></span>
+      <label>Idiomas</label>
+</a>    
+</div>
+            <div class="main_navi_entry">
+    <a href="http://localhost:3000/store/admin/sites">
+        <span class="module icon sites"></span>
+      <label>Sitios</label>
+</a>    
+</div>
+            <div class="main_navi_entry">
+    <a href="http://localhost:3000/store/admin/tags">
+        <span class="module icon tags"></span>
+      <label>Etiquetas</label>
+</a>    
+</div>
+            <div class="main_navi_entry has_sub_navigation">
+    <a href="http://localhost:3000/store/admin/pictures">
+        <span class="module icon library"></span>
+      <label>Librería</label>
+</a>      <div class="sub_navigation">
+        <div class="subnavi_tab">
+          <a href="http://localhost:3000/store/admin/pictures">Imágenes</a>
+        </div>
+        <div class="subnavi_tab">
+          <a href="http://localhost:3000/store/admin/attachments">Archivos</a>
+        </div>
+  </div>
+
+</div>
+            <div class="main_navi_entry">
+    <a href="http://localhost:3000/admin/orders">
+        <img src="./Alchemy CMS - Plans_files/alchemy_module_icon-ba7d8365cfe0dd68488e3cf6751f5f15f829b013a0e39d837c28065a5c349a95.png" alt="Alchemy module icon">
+      <label>Shop</label>
+</a>    
+</div>
+        
+      </div>
+      <div id="logout">
+          <a data-alchemy-hotkey="alt+q" data-alchemy-dialog="{&quot;modal&quot;:true,&quot;size&quot;:&quot;300x155&quot;,&quot;title&quot;:&quot;Salir de Alchemy&quot;}" href="http://localhost:3000/store/admin/leave"><span class="icon exit module"></span><label>salir</label></a>
+      </div>
+    </div>
+    <div id="top_menu">
+      <div id="header">
+          <div id="locked_pages">
+              <div class="page_status_and_name" id="page_8_status">
+  <span class="page_name" title="Plans">
+    Plans
+</span>
+  <span class="page_language" title="Español">
+    es-ES
+  </span>
+
+  <span class="page_status with-hint">
+  <span class="icon public"></span>
+  <span class="hint-bubble">La página está publicada.</span>
+</span>
+<span class="page_status with-hint">
+  <span class="icon not_visible"></span>
+  <span class="hint-bubble">Página no visible en el menú.</span>
+</span>
+<span class="page_status with-hint">
+  <span class="icon not_restricted"></span>
+  <span class="hint-bubble">La página no está restringida.</span>
+</span>
+
+</div>
+
+
+          </div>
+        <div id="user_info">
+          
+          <div class="select2-container alchemy_selectbox tiny" id="s2id_change_locale"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-1">ES</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen1" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-1" id="s2id_autogen1"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen1_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-1" id="s2id_autogen1_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-1">   </ul></div></div><select name="change_locale" id="change_locale" class="alchemy_selectbox tiny select2-offscreen" tabindex="-1" title=""><option value="de">DE</option>
+<option value="en">EN</option>
+<option selected="selected" value="es">ES</option>
+<option value="fr">FR</option>
+<option value="it">IT</option>
+<option value="nl">NL</option>
+<option value="ru">RU</option></select>
+        </div>
+      </div>
+      <div id="toolbar">
+        <div class="toolbar_buttons">
+  <div class="button_with_label">
+    <form id="unlock_page_form" action="http://localhost:3000/store/admin/pages/8/unlock?redirect_to=%2Fstore%2Fadmin%2Fpages" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="8bwlrIQZCOZY5tOLMI2tZUx+0rkCRuJNb95Br6C84h3Z1qZw+1p831+rtC16EDPTNMdip6Wnj2+HA32rcIwbnQ==">
+      <button class="icon_button" title="Dejar la página y desbloquearla para otros usuarios." data-alchemy-hotkey="alt+x">
+        <span class="icon close"></span>
+      </button>
+      <label>Salir de la página</label>
+</form>  </div>
+  <div class="toolbar_spacer"></div>
+  <div class="button_with_label">
+    <form id="visit_page_form" action="http://localhost:3000/store/admin/pages/8/visit" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="8bwlrIQZCOZY5tOLMI2tZUx+0rkCRuJNb95Br6C84h3Z1qZw+1p831+rtC16EDPTNMdip6Wnj2+HA32rcIwbnQ==">
+      <button class="icon_button" title="Visitar página">
+        <span class="icon visit_page"></span>
+      </button>
+      <label>Visitar página</label>
+</form>  </div>
+  <div class="button_with_label">
+    <a class="icon_button" data-alchemy-hotkey="alt+i" data-alchemy-dialog="{&quot;modal&quot;:true,&quot;title&quot;:&quot;Información de la página&quot;,&quot;size&quot;:&quot;520x320&quot;}" href="http://localhost:3000/store/admin/pages/8/info"><span class="icon info"></span></a>
+    <label>Información de la página</label>
+  </div>
+  <div class="button_with_label">
+      <a class="icon_button" title="Editar propiedades de la página" data-alchemy-hotkey="alt+e" data-alchemy-dialog="{&quot;modal&quot;:true,&quot;title&quot;:&quot;Editar propiedades de la página&quot;,&quot;size&quot;:&quot;450x680&quot;}" href="http://localhost:3000/store/admin/pages/8/configure"><span class="icon settings"></span></a>
+    <label>Propiedades de la página</label>
+  </div>
+    <div class="button_with_label">
+      <form id="publish_page_form" action="http://localhost:3000/store/admin/pages/8/publish" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="8bwlrIQZCOZY5tOLMI2tZUx+0rkCRuJNb95Br6C84h3Z1qZw+1p831+rtC16EDPTNMdip6Wnj2+HA32rcIwbnQ==">
+        <button name="button" type="submit" class="icon_button" title="Publicar la página y eliminar la versión cacheada del servidor.">
+          <span class="icon publish"></span>
+</button>        <label>Publicar página</label>
+</form>    </div>
+  <div class="toolbar_spacer"></div>
+  <div class="select_with_label">
+    <label>Tamaño de vista previa</label>
+    <div class="select2-container alchemy_selectbox medium" id="s2id_preview_size"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-2">auto</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen2" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-2" id="s2id_autogen2"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen2_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-2" id="s2id_autogen2_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-2">   </ul></div></div><select name="preview_size" id="preview_size" class="alchemy_selectbox medium select2-offscreen" tabindex="-1" title=""><option value="auto">auto</option>
+<option value="240">240px (teléfono pequeño)</option>
+<option value="320">320px (iPhone)</option>
+<option value="480">480px (tablet pequeña)</option>
+<option value="768">768px (iPad - Vertical)</option>
+<option value="1024">1024px (iPad - Horizontal)</option>
+<option value="1280">1280px (Escritorio)</option></select>
+  </div>
+  <div class="toolbar_spacer"></div>
+  <div class="button_with_label">
+    <a title="Recargar vista previa" class="icon_button" id="reload_preview_button" href="http://localhost:3000/store/admin/pages/8/edit#"><span class="icon reload"></span></a>
+    <label>Recargar vista previa</label>
+  </div>
+</div>
+<div class="toolbar_buttons right">
+  <div class="button_with_label" id="element_window_button">
+    <a title="Ocultar elementos" class="icon_button" href="http://localhost:3000/store/admin/pages/8/edit"><span class="icon element_window"></span></a>
+    <label>Ocultar elementos</label>
+  </div>
+</div>
+
+      </div>
+    </div>
+    <div id="flash_notices" style="display: block">
+  
+
+</div>
+
+    <div id="main_content">
+      
+
+
+
+    <div id="alchemy_elements_window" style="height: 655px;"><div id="overlay_toolbar"><div class="button_with_label"><a title="Nuevo elemento" class="icon_button" href="http://localhost:3000/store/admin/pages/8/edit#" data-alchemy-hotkey="alt+n"><span class="icon new_element"></span></a><br><label>Nuevo elemento</label></div><div class="button_with_label" id="clipboard_button"><a title="Portapapeles" class="icon_button" href="http://localhost:3000/store/admin/pages/8/edit#"><span class="icon clipboard"></span></a><br><label>Mostrar portapapeles</label></div><div class="button_with_label" id="element_trash_button"><a title="Mostrar papelera" class="icon_button" href="http://localhost:3000/store/admin/pages/8/edit#"><span class="icon trash full"></span></a><br><label>Mostrar papelera</label></div></div><div id="element_area" style="height: 609px;">  <div class="sortable_cell for_other_elements_cell ui-sortable" id="cell_for_other_elements" data-droppable-elements="article slider html product_category product">
+    <div id="element_14" data-element-id="14" data-element-name="html" class="element-editor with-contents not-nestable not-taggable expanded draggable">
+
+  <div class="element-header has-hint">
+  <span class="element-handle ui-sortable-handle">
+    <span class="icon element"></span>
+      <span class="icon element_public"></span>
+  </span>
+  <span class="element-title">
+    <span class="preview_text_element_name">Html</span>
+    <span class="preview_text_quote">
+                 &lt;section&gt;
+            &lt;div class="c
+    </span>
+  </span>
+  <span class="hint-with-icon"><span class="icon questionmark"></span><span class="hint-bubble">html</span></span>
+  <span class="ajax-folder">
+    <a data-element-toggle="14" class="fold_element" title="Ocultar los contenidos del elemento." id="element_14_folder" href="http://localhost:3000/store/admin/pages/8/edit#"></a>
+  </span>
+</div>
+
+
+    <div class="element-toolbar">
+  <span class="element_tools">
+    <div class="button_with_label">
+      <a class="icon_button" data-remote="true" rel="nofollow" data-method="post" href="http://localhost:3000/store/admin/clipboard/insert?remarkable_id=14&amp;remarkable_type=elements"><span class="icon element_copy"></span></a>
+      <label>Copiar este elemento</label>
+    </div>
+    <div class="button_with_label">
+      <a class="icon_button" data-remote="true" rel="nofollow" data-method="post" href="http://localhost:3000/store/admin/clipboard/insert?remarkable_id=14&amp;remarkable_type=elements&amp;remove=true"><span class="icon cut"></span></a>
+      <label>Cortar este elemento.</label>
+    </div>
+    <div class="button_with_label">
+      <a class="icon_button" data-remote="true" rel="nofollow" data-method="delete" href="http://localhost:3000/store/admin/elements/14/trash"><span class="icon remove"></span></a>      <label>Poner el elemento en la papelera</label>
+    </div>
+    <div class="button_with_label publish-element-button">
+      <a class="icon_button" data-remote="true" rel="nofollow" data-method="patch" href="http://localhost:3000/store/admin/elements/14/publish"><span class="icon element-hide"></span></a>
+        <label>Ocultar elemento</label>
+    </div>
+  </span>
+</div>
+
+
+    <form id="element_14_form" class="element-content" action="http://localhost:3000/store/admin/elements/14" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch">
+
+      <div id="element_14_errors" class="element_errors"></div>
+
+      <div id="element_14_content" class="element-content-editors">
+          <div class="content_editor essence_html_editor" data-content-id="38">
+  <label><span class="hint-with-icon"><span class="icon questionmark"></span><span class="hint-bubble">Content</span></span>&nbsp;Content</label>
+  <textarea name="contents[38][ingredient]" id="contents_38_ingredient" style="margin-top: 4px; margin-bottom: 4px; height: 565px;">           &lt;section&gt;
+            &lt;div class="container"&gt;   
+                    &lt;div class="margin-one text-align-center"&gt;
+                        &lt;h0 &gt;Tú eres diferente. Nosotros te damos opciones&lt;/h0&gt;
+                     &lt;/div&gt;   
+             
+                &lt;div class="row margin-three"&gt;
+                    &lt;div class="pricing"&gt;
+                        &lt;!-- pricing item --&gt;
+                        &lt;div class="col-md-3 sm-margin-bottom-five sm-no-margin-top sm-margin-bottom-ten padding-left-right-small "&gt;
+                            &lt;div class="pricing-box sm-border"&gt;
+                                &lt;div class="pricing-title no-border bg-orange-degrated margin-one"&gt;
+                                    &lt;h3&gt;Paga por lo que alquiles&lt;/h3&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-price bg-orange-degrated margin-one"&gt;
+                                    &lt;h5&gt;Desde&lt;/h5&gt; &lt;span class="price-unit"&gt;€&lt;/span&gt;10&lt;span class="price-tenure"&gt;/mes&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-orange-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        Para mujeres que quieren sorprenden con nuevos looks ocasionales&lt;/h7&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-orange-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        Alquiler de 7 días o de 1 mes (prorrogable)&lt;/h7&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-orange-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        &lt;li&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;Cambio de talla gratuíto&lt;/li&gt;&lt;/h7&gt;
+
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-action padding-four"&gt;
+                                    &lt;a href="/t/woman_categories" class="highlight-button btn btn-medium button" href="#"&gt;Ver productos&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- end pricing item --&gt;
+                                                &lt;!-- pricing item --&gt;
+                        &lt;div class="col-md-3 sm-margin-bottom-five sm-no-margin-top sm-margin-bottom-ten padding-left-right-small "&gt;
+                            &lt;div class="pricing-box sm-border"&gt;
+                                &lt;div class="pricing-title no-border bg-blue-degrated margin-one"&gt;
+                                    &lt;h3&gt;Plan estilo&lt;/h3&gt;&lt;br/&gt;&lt;h5&gt;Subscripción&lt;/h5&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-price bg-blue-degrated margin-one"&gt;
+                                     &lt;span class="price-unit"&gt;€&lt;/span&gt;10&lt;span class="price-tenure"&gt;/mes&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        Para mujeres que quieren sorprenden con nuevos looks ocasionales&lt;/h7&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;Mensual&lt;/h7&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        &lt;li&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;Cambio de talla gratuíto&lt;/li&gt;&lt;/h7&gt;
+
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-action padding-four"&gt;
+                                    &lt;a class="highlight-button btn btn-medium button" href="#"&gt;Seleccionar!&lt;/a&gt;
+                                    &lt;a class="title-box btn" style="text-decoration: underline;" href="#"&gt;Saber más&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- end pricing item --&gt;
+                                                &lt;!-- pricing item --&gt;
+                        &lt;div class="col-md-3 sm-margin-bottom-five sm-no-margin-top sm-margin-bottom-ten padding-left-right-small " style="margin-top: -5px"&gt;
+                            &lt;div class="pricing-box border-black-imp"&gt;
+                                
+                                &lt;div class="pricing-title no-border bg-blue-degrated argin-one"&gt;
+                                &lt;h3 style="color:#fff"&gt;Popular &lt;/h3&gt;&lt;br/&gt;
+                                    &lt;h3&gt;Plan Premium&lt;/h3&gt;&lt;br/&gt;&lt;h5&gt;Subscripción&lt;/h5&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-price bg-blue-degrated margin-one"&gt;
+                                   &lt;span class="price-unit"&gt;€&lt;/span&gt;10&lt;span class="price-tenure"&gt;/mes&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        Para mujeres que quieren sorprenden con nuevos looks ocasionales&lt;/h7&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;Mensual&lt;/h7&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        &lt;li&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;Cambio de talla gratuíto&lt;/li&gt;&lt;/h7&gt;
+
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                     &lt;div class="pricing-action padding-four"&gt;
+                                    &lt;a class="highlight-button btn btn-medium button" href="#"&gt;Seleccionar!&lt;/a&gt;
+                                    &lt;a class="title-box btn" style="text-decoration: underline;" href="#"&gt;Saber más&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- end pricing item --&gt;
+                                                &lt;!-- pricing item --&gt;
+                        &lt;div class="col-md-3 sm-margin-bottom-five sm-no-margin-top sm-margin-bottom-ten padding-left-right-small "&gt;
+                            &lt;div class="pricing-box sm-border"&gt;
+                                &lt;div class="pricing-title no-border bg-blue-degrated margin-one"&gt;
+                                    &lt;h3&gt;Plan Celebrity&lt;/h3&gt;&lt;br/&gt;&lt;h5&gt;Subscripción&lt;/h5&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-price bg-blue-degrated margin-one"&gt;
+                                    &lt;span class="price-unit"&gt;€&lt;/span&gt;10&lt;span class="price-tenure"&gt;/mes&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        Viste como una estrella y estrena los looks de temporada cada mes de los mejores diseñadores&lt;/h7&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;Mensual&lt;/h7&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-features bg-blue-degrated margin-one"&gt;
+                                    &lt;ul&gt;&lt;h7&gt;
+                                        &lt;li&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;Cambio de talla gratuíto&lt;/li&gt;&lt;/h7&gt;
+
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                                &lt;div class="pricing-action padding-four"&gt;
+                                    &lt;a class="highlight-button btn btn-medium button" href="#"&gt;Seleccionar!&lt;/a&gt;
+                                    &lt;a class="title-box btn" style="text-decoration: underline;" href="#"&gt;Saber más&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;!-- end pricing item --&gt;
+
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt; </textarea>
+</div>
+
+
+      </div>
+
+</form>
+
+    <div class="element-footer">
+
+  <button type="submit" form="element_14_form" class="button" data-alchemy-button="">
+    Guardar
+  </button>
+</div>
+
+</div>
+  </div>
+</div></div></div>
+    <script>
+      // Store current locale for javascript translations.
+      Alchemy.locale = 'es';
+      // Setting the correct locale for select2 dropdown replacement.
+      $.extend($.fn.select2.defaults, $.fn.select2.locales['es']);
+    </script>
+    <div class="overall-upload">
+  <div class="progress">
+    <span class="progress-status">0%</span>
+    (<span class="uploaded-files-count">0</span>/<span class="total-files-count">0</span>)
+  </div>
+  <div class="upload-progress-container"></div>
+</div>
+<script>
+  Alchemy.uploader_defaults = {
+    file_size_limit: 100,
+    file_upload_limit: 50  }
+</script>
+
+    
+
+<script type="text/javascript" charset="utf-8">
+
+  $(function() {
+    $('#unlock_page_form, #visit_page_form, #publish_page_form').on('submit', function(event) {
+      var not_dirty = Alchemy.checkPageDirtyness(this);
+      if (!not_dirty) Alchemy.pleaseWaitOverlay(false);
+      return not_dirty;
+    });
+    Alchemy.Sitemap.watchPagePublicationState();
+    Alchemy.PageLeaveObserver();
+    Alchemy.ElementsWindow.init('/store/admin/elements?page_id=8', {
+      texts: {
+        title: 'Elementos',
+        dirtyTitle: '¡Atención!',
+        dirtyMessage: 'Tienes elementos sin guardar. ¿Realmente quieres cerrar la ventana de elementos?',
+        ok_label: 'Sí',
+        cancel_label: 'No',
+        hideElements: 'Ocultar elementos',
+        showElements: 'Mostrar elementos'
+      },
+      toolbarButtons: [
+        {
+          title: 'Nuevo elemento',
+          label: 'Nuevo elemento',
+          hotkey: 'alt+n',
+          iconClass: 'new_element',
+          onClick: function() {
+            Alchemy.openDialog('/store/admin/elements/new?page_id=8', {
+              title: 'Nuevo elemento',
+              size: '320x125'
+            });
+          }
+        },
+        {
+          title: 'Portapapeles',
+          label: 'Mostrar portapapeles',
+          iconClass: 'clipboard',
+          buttonId: 'clipboard_button',
+          onClick: function() {
+            Alchemy.openDialog('/store/admin/clipboard?remarkable_type=elements', {
+              title :'Portapapeles',
+              size: '400x305'
+            });
+          }
+        },
+        {
+          title: 'Mostrar papelera',
+          label: 'Mostrar papelera',
+          iconClass: 'trash full',
+          buttonId: 'element_trash_button',
+          onClick: function() {
+            Alchemy.TrashWindow.open(8, 'Papelera');
+          }
+        }
+      ]
+    }, function() {
+      Alchemy.ImageLoader('#element_area');
+      Alchemy.SortableElements(8, 'pFqrHFDTY40A9TW15qnKSwn0/IPnB48VObD+8oenmBaMMCjAL5AXtAe4UhOsNFT9cU1MnUDm4jfRbcL2V5dhlg==');
+      Alchemy.ElementEditors.init();
+      Alchemy.SelectBox('.element-editor');
+      Alchemy.Tinymce.init([]);
+      $('#cells').tabs().tabs('paging', { follow: true, followOnSelect: true } );
+      Alchemy.ElementDirtyObserver('#element_area');
+      if (window.location.hash) {
+        $(window.location.hash).trigger('FocusElementEditor.Alchemy');
+      }
+    });
+
+    Alchemy.PreviewWindow.init('/store/admin/pages/8');
+
+    $('#preview_size').bind('open.selectBoxIt', function (e) {
+      $('#top_menu').css('z-index', 5000);
+    });
+
+    $('#preview_size').bind('blur.selectBoxIt', function (e) {
+      $('#top_menu').css('z-index', 30);
+    });
+
+    $('select#preview_size').on('change', function(e) {
+      var width = this.value;
+      if (this.value === 'auto') {
+        width = Alchemy.PreviewWindow.currentWidth;
+      }
+      Alchemy.PreviewWindow.currentWindow.css('width', width);
+    });
+
+    $(window).resize(function() {
+      Alchemy.PreviewWindow.resize();
+      Alchemy.ElementsWindow.resize();
+    });
+  });
+
+</script>
+
+
+<iframe name="alchemy_preview_window" src="./Alchemy CMS - Plans_files/8.html" id="alchemy_preview_window" frameborder="0" style="width: 1191px; height: 653px;"></iframe><span role="status" aria-live="polite" class="select2-hidden-accessible"></span><span role="status" aria-live="polite" class="select2-hidden-accessible"></span><div id="feedly-mini" title="feedly Mini tookit"></div></body></html>

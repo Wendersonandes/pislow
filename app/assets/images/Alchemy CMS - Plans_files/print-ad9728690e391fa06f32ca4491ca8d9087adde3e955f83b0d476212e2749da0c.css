@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/*
+
+ */
+@font-face {
+  font-family: 'Alchemy Icons';
+  src: url(/assets/alchemy/icons-cd395a358511139d74cd0f72f905c7e2ddadac7c8aaea8dfd63dcfef027e91f6.eot?sgh5oh);
+  src: url(/assets/alchemy/icons-cd395a358511139d74cd0f72f905c7e2ddadac7c8aaea8dfd63dcfef027e91f6.eot?#iefixsgh5oh) format("embedded-opentype"), url(/assets/alchemy/icons-5e1fa82a312c9729f329185841982538e939f438effb431106d5537c77158e50.ttf?sgh5oh) format("truetype"), url(/assets/alchemy/icons-c1ee9a5e683579c918edf358f47b3edcc51dc41bbd74f1c87dd960e1ce32da83.woff?sgh5oh) format("woff"), url(/assets/alchemy/icons-fee34c43ebf0d8f56f4c3600f82b3aa24d02e6e4e42b0f00f07cdd67d098863d.svg?sgh5oh#Alchemy-Icons) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 12, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-angle-double-right,
+.icon-angle-left,
+.icon-angle-right,
+.icon-plus,
+.icon-minus,
+.icon-cross,
+.icon-plus-2,
+.icon-minus-2,
+.icon-pencil,
+.icon-tag,
+.icon-info,
+.icon-warning,
+.icon-checkmark,
+.icon-ccw,
+.icon-trash,
+.icon-cross-2,
+.icon-pictures,
+.icon-menu,
+.icon-magnifying-glass,
+.icon-fullscreen-exit,
+.icon-help,
+.icon-fullscreen,
+.icon-cog {
+  font-family: 'Alchemy Icons';
+  speak: none;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 16px;
+  color: #666;
+  text-align: center;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 53, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-angle-double-right:before {
+  content: "";
+}
+
+/* line 54, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-angle-left:before {
+  content: "";
+}
+
+/* line 55, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-angle-right:before {
+  content: "";
+}
+
+/* line 56, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-plus:before {
+  content: "";
+}
+
+/* line 57, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-minus:before {
+  content: "";
+}
+
+/* line 58, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-cross:before {
+  content: "";
+}
+
+/* line 59, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-plus-2:before {
+  content: "";
+}
+
+/* line 60, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-minus-2:before {
+  content: "";
+}
+
+/* line 61, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-pencil:before {
+  content: "";
+}
+
+/* line 62, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-tag:before {
+  content: "";
+}
+
+/* line 63, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-info:before {
+  content: "";
+}
+
+/* line 64, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-warning:before {
+  content: "";
+}
+
+/* line 65, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-checkmark:before {
+  content: "";
+}
+
+/* line 66, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-ccw:before {
+  content: "";
+}
+
+/* line 67, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-trash:before {
+  content: "";
+}
+
+/* line 68, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-cross-2:before {
+  content: "";
+}
+
+/* line 69, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-pictures:before {
+  content: "";
+}
+
+/* line 70, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-menu:before {
+  content: "";
+}
+
+/* line 71, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-magnifying-glass:before {
+  content: "";
+}
+
+/* line 72, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-fullscreen-exit:before {
+  content: "";
+}
+
+/* line 73, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-help:before {
+  content: "";
+}
+
+/* line 74, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-fullscreen:before {
+  content: "";
+}
+
+/* line 75, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/icon-font.scss */
+.icon-cog:before {
+  content: "";
+}
+
+/* line 8, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/print.scss */
+div#main_menu,
+div#top_menu,
+div#corner,
+div#flash_notices,
+div.pagination span,
+div.pagination a {
+  display: none;
+}
+
+/* line 17, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/print.scss */
+div#archive_all {
+  padding: 0;
+}
+
+/* line 21, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/print.scss */
+span.icon.true:before {
+  content: 'x';
+}
+
+/* line 25, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/print.scss */
+div.pagination {
+  text-align: right;
+}
+
+/* line 29, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/print.scss */
+div.pagination em.current {
+  border: none;
+  text-shadow: none;
+}
+
+/* line 34, /Users/mariajosegonzalesantelo/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/bundler/gems/alchemy_cms-6c9cde036c42/app/assets/stylesheets/alchemy/print.scss */
+div.pagination em:before {
+  content: 'Page ';
+}

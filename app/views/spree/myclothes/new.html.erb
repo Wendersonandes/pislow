@@ -1,0 +1,307 @@
+ <div class="row" class="bg-gray">
+
+	 <div id="wishlist_header" class="padding-small ">
+
+	     <h1 class="float-initial display-inline"><%= Spree.t(:my_clothes)%></h1>
+	 </div>
+     <div class="mycloes-conten bg-white border-gray margin-top-small padding-two-all float-left">
+        <h4>
+        Estas son tus prendas!!! Si quieres continuar con tus prendas, comprarlas o devolverlas podrás hacerlo aquí cuando finalice tu alquiler, marca tus opciones y dale a enviar.<br/>
+        Si necesitas cambiar la talla marca la opción y dale a pedir talla.<a href="/faqs#change_size"> Plazos y condiciones.</a></h4>
+     </div>
+
+
+</div>	 
+<div id="myclothes" class="bg-gray">
+   
+  <div class="row border-gray margin-two bg-white"> 
+  		<div class="row margin-left-small padding-one"> 
+  		        <h2 class="bold float-left"><%= Spree.t(:order) %>:9123790272 <%= Spree.t(:monthly) %></h2>
+         		<a class="btn btn-medium btn-primary margin-left-medium" id="button_send " >
+   				Enviar</a>
+   		</div>
+
+           <!-- show item -->
+		   <div class="col-md-3 col-sm-3 padding-small">
+
+		        <%= image_tag 'mono_1.jpg' %> 
+
+		       <h8 class="padding-top-small-only ">Mono verde de piel</h8>
+		       <p class="no-padding-section" ><i class="fa fa-tag"></i>Size: M, Color: Blue<br/> 
+		        <%= Spree.t(:until) %> 7 de abril </p>
+
+		       
+		        <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                     <span class="price-product" itemprop="price">€ 32</span>
+                     <span class="price-buy-product bold" itemprop="price" >compra €46 <strike> €120,10</strike></span><br/>
+                </span>
+
+
+
+		       <!-- Button trigger modal -->
+              <a class="button popup-with-move-anim btn btn-very-small-dark no-margin float-initial font-family-inherit" href="#modal-clothes_product1" id="myclothes_product1"><%= Spree.t(:Continue_with) %></a>
+
+               <!-- modal popup -->
+              <div id="modal-clothes_product1" class="zoom-anim-dialog mfp-hide col-lg-3 col-md-6 col-sm-7 col-xs-11 center-col bg-white text-center modal-popup-main text-align-left no-cursor width-150">
+   
+
+	              <span class="slider-subtitle5 black-text no-margin-bottom">Elige una opción</span>
+	              <h4 class="gray-text" >
+	              Recuerda que si no nos dices nada, al final del mes se renovará automáticamente</h4>
+	                <div class=" text-align-left padding-three">
+	                         <div class="padding-one display-left">
+			                	 <%= radio_button_tag :myclothes_product1,"continue",true, id:"myclothes_continue"%><h3><%= Spree.t(:Continue_with) %></h3>
+			                 </div>
+			                 <div id="myclothes_continue_text" class="text-modal">Genial <i class="icon-happy orange-text"></i>, sigue disfrutando de tu prenda un mes más</div>	               	
+	                </div>
+	                <div class=" text-align-left padding-three">
+	                		 <div class="padding-one display-left">
+			                	 <%= radio_button_tag  :myclothes_product1, "buy",false, id: "myclothes_buy"%><h3><%= Spree.t(:buy) %></h3>
+			                 </div>
+			                 <div id="myclothes_buy_text"  class="text-modal">
+			                 	Cómprala por tan sólo <strong> €46,20</strong>
+			                 	<strike> €120,10</strike>
+			                 </div>
+			         </div>
+	                <div class=" text-align-left padding-three">
+	                		 <div class="padding-one display-left">
+			                	 <%= radio_button_tag  :myclothes_product1, "return_rent" ,false, id: "myclothes_return_rent"%><h3><%= Spree.t(:return_rent) %></h3>
+			                 </div>
+			                 <div id="myclothes_return_rent_text"  class="text-modal">Es muy sencillo, solo has de marcar esta opción, guardar la prenda en la caja y nosotros pasaremos a recogerla <i class="fa fa-truck"></i> </div>
+			         </div>          
+
+                 </div>
+
+
+               <!-- Button trigger modal -->
+              <a class="button popup-with-move-anim btn btn-very-small-dark margin-top-small float-initial font-family-inherit " href="modal-clothes_product3_change_size" id="myclothes_change_size_product3">
+              <%= Spree.t(:change_size) %></a>
+               <!-- modal popup -->
+                <div id="modal-clothes_product3_change_size" class="zoom-anim-dialog mfp-hide col-lg-3 col-md-6 col-sm-7 col-xs-11 center-col bg-white text-center modal-popup-main text-align-left no-cursor width-150">
+
+	              <span class="slider-subtitle5 black-text no-margin-bottom">Cambio de Talla</span>
+	              <h4 class="gray-text" >
+	              Prepara el paquete con la prenda y pasaremos a recogerla para darte la nueva talla</h4>
+	                <div class=" text-align-left padding-three">
+	                  
+
+	                   <!-- include variants sizes availables to change-->
+
+
+	                   	<a class="highlight button popup-with-move-anim btn btn-very-small-dark no-margin float-initial font-family-inherit" href="" ><%= Spree.t(:send_size) %></a>
+
+	                </div>
+
+                 </div>
+
+                <!-- end modal popup -->
+
+            </div>
+           <!-- end show item -->
+
+         <!-- show item -->
+		   <div class="col-md-3 col-sm-3 padding-small">
+
+		        <%= image_tag 'mono_2.jpg' %> 
+
+		       <h8 class="padding-top-small-only ">Mono verde de piel</h8>
+		       <p class="no-padding-section" ><i class="fa fa-tag"></i>Size: M, Color: Blue<br/> 
+		        <%= Spree.t(:until) %> 20 de abril </p>
+
+		       
+		        <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                     <span class="price-product" itemprop="price">€ 32</span>
+                     <span class="price-buy-product bold" itemprop="price" > compra €46 <strike> €120,10</strike></span><br/>
+                </span>
+		       <!-- Button trigger modal -->
+              <a class="button popup-with-move-anim btn btn-very-small-dark no-margin float-initial font-family-inherit" href="#modal-clothes_product2" id="myclothes_product2"><%= Spree.t(:Continue_with) %></a>
+               <!-- modal popup -->
+              <div id="modal-clothes_product2" class="zoom-anim-dialog mfp-hide col-lg-3 col-md-6 col-sm-7 col-xs-11 center-col bg-white text-center modal-popup-main text-align-left no-cursor width-150">
+   
+
+	              <span class="slider-subtitle5 black-text no-margin-bottom">Elige una opción</span>
+	              <h5 class="gray-text">
+	              Recuerda que si no nos dices nada, al final del mes se renovará automáticamente</h5>
+	                <div class=" text-align-left padding-three">
+	                         <div class="padding-one display-left">
+			                	 <%= radio_button_tag :myclothes_product2,"continue",true, id:"myclothes_continue"%><h3><%= Spree.t(:Continue_with) %></h3>
+			                 </div>
+			                 <div id="myclothes_continue_text" class="text-modal">Genial <i class="icon-happy orange-text"></i>, sigue disfrutando de tu prenda un mes más</div>	               	
+	                </div>
+	                <div class=" text-align-left padding-three">
+	                		 <div class="padding-one display-left">
+			                	 <%= radio_button_tag  :myclothes_product2, "buy",false, id: "myclothes_buy"%><h3><%= Spree.t(:buy) %></h3>
+			                 </div>
+			                 <div id="myclothes_buy_text"  class="text-modal">
+			                 	Cómprala por tan sólo <strong> €46,20</strong>
+			                 	<strike> €120,10</strike>
+			                 </div>
+			         </div>
+	                <div class=" text-align-left padding-three">
+	                		 <div class="padding-one display-left">
+			                	 <%= radio_button_tag  :myclothes_product2, "return_rent" ,false, id: "myclothes_return_rent"%><h3><%= Spree.t(:return_rent) %></h3>
+			                 </div>
+			                 <div id="myclothes_return_rent_text"  class="text-modal">Es muy sencillo, solo has de marcar esta opción, guardar la prenda en la caja y nosotros pasaremos a recogerla <i class="fa fa-truck"></i> </div>
+			         </div>
+         
+                 </div>
+                <!-- end modal popup -->
+            </div>
+           <!-- end show item -->
+   </div>
+     <div class="row border-gray margin-two bg-white"> 
+  		<div class="row margin-left-small padding-one"> 
+  		        <h2 class="bold float-left"><%= Spree.t(:order) %>:9123790272 <%= Spree.t(:weekly) %></h2>
+         		<a class="btn btn-medium btn-primary margin-left-medium" id="button_send " >
+   				Enviar</a>
+   		</div>
+
+           <!-- show item -->
+		   <div class="col-md-3 col-sm-3 padding-small">
+
+		        <%= image_tag 'mono_1.jpg' %> 
+
+		       <h8 class="padding-top-small-only ">Mono verde de piel</h8>
+		       <p class="no-padding-section" ><i class="fa fa-tag"></i>Size: M, Color: Blue<br/> 
+		        <%= Spree.t(:until) %> 7 de abril </p>
+
+		       
+		        <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                     <span class="price-product" itemprop="price">€ 32</span>
+                     <span class="price-buy-product bold" itemprop="price" >compra €46 <strike> €120,10</strike></span><br/>
+                </span>
+
+
+
+		       <!-- Button trigger modal -->
+              <a class="button popup-with-move-anim btn btn-very-small-dark no-margin float-initial font-family-inherit" href="#modal-clothes_product3" id="myclothes_product3"><%= Spree.t(:Continue_with) %></a>
+
+               <!-- modal popup -->
+              <div id="modal-clothes_product3" class="zoom-anim-dialog mfp-hide col-lg-3 col-md-6 col-sm-7 col-xs-11 center-col bg-white text-center modal-popup-main text-align-left no-cursor width-150">
+   
+
+	              <span class="slider-subtitle5 black-text no-margin-bottom">Elige una opción</span>
+	              <h4 class="gray-text" >
+	              Recuerda que si no nos dices nada, al final del mes se renovará automáticamente</h4>
+	                <div class=" text-align-left padding-three">
+	                         <div class="padding-one display-left">
+			                	 <%= radio_button_tag :myclothes_product3,"continue",true, id:"myclothes_continue"%><h3><%= Spree.t(:Continue_with) %></h3>
+			                 </div>
+			                 <div id="myclothes_continue_text" class="text-modal">Genial <i class="icon-happy orange-text"></i>, sigue disfrutando de tu prenda un mes más</div>	               	
+	                </div>
+	                <div class=" text-align-left padding-three">
+	                		 <div class="padding-one display-left">
+			                	 <%= radio_button_tag  :myclothes_product3, "buy",false, id: "myclothes_buy"%><h3><%= Spree.t(:buy) %></h3>
+			                 </div>
+			                 <div id="myclothes_buy_text"  class="text-modal">
+			                 	Cómprala por tan sólo <strong> €46,20</strong>
+			                 	<strike> €120,10</strike>
+			                 </div>
+			         </div>
+	                <div class=" text-align-left padding-three">
+	                		 <div class="padding-one display-left">
+			                	 <%= radio_button_tag  :myclothes_product3, "return_rent" ,false, id: "myclothes_return_rent"%><h3><%= Spree.t(:return_rent) %></h3>
+			                 </div>
+			                 <div id="myclothes_return_rent_text"  class="text-modal">Es muy sencillo, solo has de marcar esta opción, guardar la prenda en la caja y nosotros pasaremos a recogerla <i class="fa fa-truck"></i> </div>
+			         </div>          
+
+                 </div>
+
+
+               <!-- Button trigger modal -->
+              <a class="button popup-with-move-anim btn btn-very-small-dark margin-top-small float-initial font-family-inherit " href="modal-clothes_product3_change_size" id="myclothes_change_size_product3">
+              <%= Spree.t(:change_size) %></a>
+               <!-- modal popup -->
+                <div id="modal-clothes_product3_change_size" class="zoom-anim-dialog mfp-hide col-lg-3 col-md-6 col-sm-7 col-xs-11 center-col bg-white text-center modal-popup-main text-align-left no-cursor width-150">
+
+	              <span class="slider-subtitle5 black-text no-margin-bottom">Cambio de Talla</span>
+	              <h4 class="gray-text" >
+	              Prepara el paquete con la prenda y pasaremos a recogerla para darte la nueva talla</h4>
+	                <div class=" text-align-left padding-three">
+	                  
+
+	                   <!-- include variants sizes availables to change-->
+
+
+	                   	<a class="highlight button popup-with-move-anim btn btn-very-small-dark no-margin float-initial font-family-inherit" href="" ><%= Spree.t(:send_size) %></a>
+
+	                </div>
+
+                 </div>
+
+                <!-- end modal popup -->
+
+            </div>
+           <!-- end show item -->
+
+         <!-- show item -->
+		   <div class="col-md-3 col-sm-3 padding-small">
+
+		        <%= image_tag 'mono_2.jpg' %> 
+
+		       <h8 class="padding-top-small-only ">Mono verde de piel</h8>
+		       <p class="no-padding-section" ><i class="fa fa-tag"></i>Size: M, Color: Blue<br/> 
+		        <%= Spree.t(:until) %> 20 de abril </p>
+
+		       
+		        <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                     <span class="price-product" itemprop="price">€ 32</span>
+                     <span class="price-buy-product bold" itemprop="price" > compra€ 46 <strike> €120,10</strike></span><br/>
+                </span>
+		       <!-- Button trigger modal -->
+              <a class="button popup-with-move-anim btn btn-very-small-dark no-margin float-initial font-family-inherit" href="#modal-clothes_product4" id="myclothes_product4"><%= Spree.t(:Continue_with) %></a>
+               <!-- modal popup -->
+              <div id="modal-clothes_product4" class="zoom-anim-dialog mfp-hide col-lg-3 col-md-6 col-sm-7 col-xs-11 center-col bg-white text-center modal-popup-main text-align-left no-cursor width-150">
+   
+
+	              <span class="slider-subtitle5 black-text no-margin-bottom">Elige una opción</span>
+	              <h5 class="gray-text">
+	              Recuerda que si no nos dices nada, al final del mes se renovará automáticamente</h5>
+	                <div class=" text-align-left padding-three">
+	                         <div class="padding-one display-left">
+			                	 <%= radio_button_tag :myclothes_product4,"continue",true, id:"myclothes_continue"%><h3><%= Spree.t(:Continue_with) %></h3>
+			                 </div>
+			                 <div id="myclothes_continue_text" class="text-modal">Genial <i class="icon-happy orange-text"></i>, sigue disfrutando de tu prenda un mes más</div>	               	
+	                </div>
+	                <div class=" text-align-left padding-three">
+	                		 <div class="padding-one display-left">
+			                	 <%= radio_button_tag  :myclothes_product4, "buy",false, id: "myclothes_buy"%><h3><%= Spree.t(:buy) %></h3>
+			                 </div>
+			                 <div id="myclothes_buy_text"  class="text-modal">
+			                 	Cómprala por tan sólo <strong> €46,20</strong>
+			                 	<strike> €120,10</strike>
+			                 </div>
+			         </div>
+	                <div class=" text-align-left padding-three">
+	                		 <div class="padding-one display-left">
+			                	 <%= radio_button_tag  :myclothes_product4, "return_rent" ,false, id: "myclothes_return_rent"%><h3><%= Spree.t(:return_rent) %></h3>
+			                 </div>
+			                 <div id="myclothes_return_rent_text"  class="text-modal">Es muy sencillo, solo has de marcar esta opción, guardar la prenda en la caja y nosotros pasaremos a recogerla <i class="fa fa-truck"></i> </div>
+			         </div>
+         
+                 </div>
+                <!-- end modal popup -->
+            </div>
+           <!-- end show item -->
+   </div>
+</div>
+
+<div class="footer_links margin-top" data-hook="wishlist_footer_links">
+	<div class="row">
+	<a class="continue button gray" href='/products'>
+			<%= Spree.t(:continue_shopping) %> </a>
+	<% if respond_to?(:email_to_friend_url) %>
+	  <%= link_to Spree.t('email_to_friend.send_to_friend'), email_to_friend_url('wishlist', @wishlist), class: 'btn btn-default' %>
+	<% end %>
+	</div>
+</div>
+<script>
+     $(document).ready(function(){
+      $("[id*='myclothes_continue_text']").show();
+      $("[id*='myclothes_buy_text']").hide();
+      $("[id*='myclothes_return_rent_text']").hide();
+      
+      $("[id*='myclothes_continue']").prop("checked", true);
+      });
+    
+</script>  

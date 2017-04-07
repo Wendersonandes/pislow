@@ -1,0 +1,27 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require spree/backend
+ *= require_self
+ *= require_tree .
+ *= require spree/backend/solidus_legacy_return_authorizations
+ *= require spree/backend/solidus_geocoding
+
+ *= require spree/backend/solidus_user_roles
+ *= require spree/backend/solidus_editor
+ *= require spree/backend/spree_barcodes
+
+ *= require spree/backend/solidus_product_recommendations
+
+ *= require spree/backend/solidus_recommendations
+ *= require spree/backend/solidus_trackers
+ *= require spree/backend/solidus_paypal_braintree
+ *= require spree/backend/solidus_product_labeling
+
+
+ *= require spree/backend/spree_drop_ship
+ *= require spree/backend/spree_report_products_ran_out_of_stock
+
+*/

@@ -1,0 +1,133 @@
+<!-- app/views/spree/checkout/_form_wrapper.html.erb -->
+
+<div data-hook="checkout_form_wrapper">
+
+
+  <%= form_for order, :url => update_checkout_path(state), :html => { :id => "checkout_form_#{state}" } do |form| %>
+    <% unless Spree::Auth::Config[:registration_step] and !current_spree_user %>
+                   
+             <div class="row padding-left-very-small no-padding-right" data-hook="checkout_content" >
+              <div class="panel-group toggles-style3 bg-white">
+
+                        
+                            <!-- ADDRESS -->
+                       <% if state == 'address' %>
+                            <!-- toggle item -->
+                                <div class="panel panel-default " >
+                                        <div role="tablist" id="type3-headingOne" class="panel-heading">
+                                             <h2 class="panel-title"><%=Spree.t(:email)%><%= form.text_field :email, style: "width:50%"%></h2>
+                                         </div>
+                                  </div>    
+                              <!-- end toggle item -->
+                                                          
+                                <div class="panel panel-default " id="address" data-hook >
+                                    <div role="tablist" id="type3-headingOne" class="panel-heading">
+                                        <a data-toggle="collapse" data-parent="#collapse-one" href="#collapse-three-link2"><h2 class="panel-title"><%=Spree.t(:shipping_address)%> <span class="pull-right"><i class="fa fa-minus"></i></span></h2></a>
+                                    </div>
+                                    <div id="collapse-three-link2" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                           
+                                            <%= render "spree/checkout/#{state}", :form => form %>
+                                        </div>
+                                    </div>
+                                </div>
+                             <!-- END ADDRESS -->   
+                           
+                            
+                        <% end %>
+                        <!-- end toggle item -->
+                            
+                            
+
+                            <!-- toggle item -->
+                            <% if state == 'payment' %>
+
+                          <!-- DELIVERY -->
+                            <div class="panel panel-default" id="delivery">
+                                <div role="tablist" id="type3-headingTwo" class="panel-heading">
+                                    <div id="address_safeandcontinue"></div>
+                                    <a data-toggle="collapse" data-parent="#collapse-one" href="#collapse-three-link3" class="collapsed"><h2 class="panel-title"><%=Spree.t(:shipping)%><span class="pull-right"><i class="fa fa-minus"></i></span></h2></a>
+
+                                </div>
+                                <div id="collapse-three-link3" class="panel-collapse collapse  in">
+                                    <div class="panel-body">
+                                      
+                                        <%= render "spree/checkout/delivery", :form => form %>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <!-- END DELIVERY -->
+                           
+                           <!-- ASSEGURANCE -->
+                            <div class="panel panel-default ">
+                                <div role="tablist" id="type3-headingThree" class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#collapse-one" href="#collapse-three-link4"><h2 class="panel-title"><%=Spree.t(:assegurance)%><span class="pull-right"><i class="fa fa-minus"></i></span></h2></a>
+                                </div>
+                                <div id="collapse-three-link4" class="panel-collapse collapse  in">
+                                    <div class="panel-body">
+                                        <div style="font-size:16px; font-weight: bold;color:initial;"> 
+                                        <input type="checkbox" id="assegurance_service" value="Incluir">
+                                        Incluir seguro
+                                        <text class="chacrate-cost"> 5 EUR</text></div>
+                                        
+                                         <%= link_to 'Más info', '/faqs#cleaning', :class => 'text-decoration-underline' %>
+                                        <div class="comments_checkout">
+                                            <p class="assegurance_on">
+                                            Genial<i class="icon-happy orange-text"></i>! Ya tienes tus prendas aseguradas</p>
+                                            <p class="assegurance_off"><i class="fa fa-info-circle"></i>Este servicio es opcional para prendas por debajo de 300 euros, pero si deseas puedes añadirlo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           <!-- END DSSEGURANCE-->
+
+                           <!-- CLEANING -->
+                            <div class="panel panel-default ">
+                                <div role="tablist" id="type3-headingThree" class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#collapse-one" href="#collapse-three-link5"><h2 class="panel-title"><%=Spree.t(:cleaning)%><span class="pull-right"><i class="fa fa-minus"></i></span></h2></a>
+                                </div>
+                                <div id="collapse-three-link5" class="panel-collapse collapse  in">
+                                    <div class="panel-body">
+                                        <div style="font-size:16px; font-weight: bold;color:initial;">  <input type="checkbox" id="cleaning_service" value="Incluir" checked>
+                                        Incluir servicio de limpieza 
+                                        <text class="rate-cost" >5 EUR</text></div>
+                                        
+                                        <%= link_to 'Más info', '/faqs#assegurance', :class => 'text-decoration-underline' %>
+
+                                        <div class="comments_checkout">
+                                            <p class="cleaning_on"><i class="fa fa-info-circle"></i>Este servicio es opcional, pero si quieres más comodidad nosotros limpiamos la prenda por ti</p>
+                                            <p class="cleaning_off">Vale sin problema<i class="icon-happy orange-text"></i>, recuerda devolvérnos la prenda limpia y en buenas condiciones</p>
+                                        </div>
+                                      </div>
+                                  </div>
+                            </div>      
+                            <!-- END CLEANING -->
+                          
+                            <div class="panel panel-default " id="address" data-hook >
+                                <div role="tablist" id="type3-headingThree" class="panel-heading">
+                                    <a data-toggle="collapse" data-parent="#collapse-one" href="#collapse-three-link6"><h2 class="panel-title"><%=Spree.t(:payment)%><span class="pull-right"><i class="fa fa-minus"></i></span></h2></a>
+                                </div>
+                                <div id="collapse-three-link6" class="panel-collapse collapse  in">
+                                    <div class="panel-body">
+    
+                                       
+                                        <%= render "spree/checkout/#{state}", :form => form %>
+  
+                                    </div>
+                                </div>
+                            </div>
+                 
+                            <% end %>
+                            <!-- end toggle item -->
+                    </div>
+                </div>
+         <% end %> 
+  <% end %>
+</div>
+
+   
+
+
+
+
+

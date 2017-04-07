@@ -1,0 +1,87 @@
+ <div class="row">
+
+	 <div id="wishlist_header" class="padding-small margin-bottom">
+	  <h1 class="float-initial display-inline"><%= @wishlist.name %></h1>
+	 </div>
+</div>	 
+<div id="wishlist" >
+  <div class="row"> 
+  <% if @wishlist.wished_products.size > 0 %>
+      <% @wishlist.wished_products.each do |wish|
+           variant = wish.variant
+           product = variant.product %>
+  
+		   <div class="col-md-3 col-sm-3 padding-small">
+				<% if @wishlist.user == spree_current_user %> 
+		        	<%= link_to '', wish, method: :delete, class: 'fa fa-remove' %>
+		        <% end -%>
+
+		        <% if variant.images.present? %>
+		         
+		          <%= link_to (image_tag variant.images.first.attachment.url(:small)), product %>
+		      
+		        <% elsif variant.product.images.present? %>
+		           
+		             	<%= link_to (image_tag variant.product.images.first.attachment.url(:small)), product %> 
+		           
+		        <% end %>
+             			 
+		         <% if variant.can_supply? %>
+		                	<div class="stock_available_wishlist bg-white-degrated">Estoy disponible</div>
+		         <% else %>
+		                	<div class="stock_available_wishlist bg-red-degrated-light" style="color:white" ><i class="fa fa-exclamation-circle" style="color:white"></i>Avisarme cuando esté</div>
+		          <% end %>
+               <br/>
+		       <h8 class="padding-top-small-only "><%= link_to product.name, product %></h8>
+		       <p class="no-padding-section" ><i class="fa fa-tag"></i><%= variant_options variant %></p>   
+
+		       
+		       <div class="display-none">
+		        <%= display_price(variant) %> 
+		       </div> 
+		        <%= form_for wish do |f| %>
+		          <%= f.number_field :quantity , :class => "display-none" %>
+
+		        <% end %>
+		        <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                      <span class="price-product" itemprop="price"><%= wish.display_total %> </span>
+                      <span class="price-buy-product" itemprop="price" >€ 46 compra</span>
+                 </span>
+
+		      
+				
+				
+
+		     
+
+				      <% if @wishlist.user == spree_current_user %>  
+							      
+							     
+							 <%= form_for :order, url: populate_orders_url do |f|%>
+
+									 <%= hidden_field_tag 'variant_id', variant.id, size: 3 %>
+							          <%= number_field_tag 'quantity', wish.quantity, size: 3 , :class => "display-none" %>
+							          <%= link_to Spree.t(:add_to_cart), '#', onclick: '$(this).parent().submit(); return false;', class: 'btn btn-very-small-dark no-margin float-initial ' %>
+						       <% end %> 
+						          
+				      <% end -%>
+              </div>
+       <% end -%>
+      </div>
+      
+  <% else -%>
+    <tr>
+      <td colspan="6"><%= Spree.t(:your_wishlist_is_empty) %></td>
+    </tr>
+  <% end -%>
+</div>
+<div class="footer_links" data-hook="wishlist_footer_links">
+	<div class="row">
+	<%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %>
+	<% if respond_to?(:email_to_friend_url) %>
+	  <%= link_to Spree.t('email_to_friend.send_to_friend'), email_to_friend_url('wishlist', @wishlist), class: 'btn btn-default' %>
+	<% end %>
+	</div>
+</div>
+
+

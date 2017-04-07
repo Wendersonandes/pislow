@@ -1,0 +1,67 @@
+
+            
+ <%= preview_product %>
+
+            <div class="container margin-three">
+                <div class="row">
+
+                    <!-- product images -->
+                    <div class="col-md-2 col-sm-12 zoom-gallery sm-margin-bottom-ten">
+
+                        <div class="products-thumb text-center">
+                            
+                                <div id="product-images" data-hook="product_images">
+                                    <div id="thumbnails" data-hook>
+                                        <%= render :partial => 'spree/products/thumbnails'%>
+                                      </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-12 zoom-gallery sm-margin-bottom-ten">
+                        <div id="main-image" data-hook>
+                            <%= link_to render :partial => 'spree/products/imagezoom' do %> 
+                                <%= render :partial => 'spree/products/image'%>  <% end %> 
+                              
+                        </div>
+
+                    </div>
+                    <div class="col-md-5 col-sm-12 col-md-offset-1 no-margin-left">
+                        <!-- product rating -->
+                        <div class="rating margin-five no-margin-top">
+                            <i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star black-text"></i><i class="fa fa-star-o black-text"></i><span class="rating-text text-uppercase">5 Reviews</span><span class="rating-text text-uppercase pull-right">SKU: <span class="black-text">290397</span></span>
+                        </div>
+                        <!-- end product rating -->
+                        <!-- product name -->
+                        <span class="product-name-details text-uppercase font-weight-600 letter-spacing-2 black-text"><%= @product.name %></span><br>
+                        <!-- end product name -->
+                        <!-- product short description -->
+                        <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
+                        <!-- end product short description -->
+
+                      <div data-hook="promotions">
+                        <%= render :partial => 'spree/products/ promotions' %>
+                      </div>
+
+                       <div class="col-md-12 col-sm-12 no-padding margin-five">
+                            <!-- add to bag button -->
+                            <div id="cart-form" data-hook="cart_form">
+                                        
+                                    
+                                    <!-- end add to bag button -->
+                                    <div class="col-md-7 col-sm-7 product-details-social no-padding margin-top">
+                                    <!-- social media sharing -->
+                                        <span class="black-text text-uppercase text-small vertical-align-middle margin-right-five"><%=Spree.t(:compartir)%></span>
+                                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://plus.google.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                                        <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                                        
+
+                                        <!-- end social media sharing -->
+                                    </div>
+                             </div>      
+                        </div>
+                        
+
+                    </div>             
+            </div>
+          </div>

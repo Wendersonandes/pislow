@@ -1,0 +1,28 @@
+
+<div class="content page-title page-title-small border-bottom-light">
+    <div class="container">
+       <div class="row">
+         <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
+            <div class="col-md-3" >
+             	<h1 class="black-text"><%= @taxon.name %></h1>
+             </div>
+
+              <% if @taxon.icon.present? %>
+	              <div class="col-md-3" >
+						<%= link_to(image_tag(@taxon.icon(:normal) , :class => 'img-circle '), seo_url(@taxon))  %> 
+				  </div>		
+				  <div class="col-md-4" >                   
+	                    <%= @taxon.description %>
+	              </div>
+			  <% end %>
+         </div>
+       </div>
+    </div>
+</div> 
+
+
+
+<div data-hook="taxon_products">
+  <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+</div>
+

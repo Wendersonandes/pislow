@@ -1,0 +1,106 @@
+<% if current_order.nil? || current_order.line_items.empty? %>
+
+    <div id="form_dynamic_cart">
+      <p><%= Spree.t(:your_cart_is_empty) %></p>
+    </div>
+    <div id="footer_dynamic_cart">
+      <div id="minicart-details" data-hook="minicart_details" class="clearfix">
+        <div id="minicart_total">
+          <h4><%=  Spree.t(:total) %>:</h4> <span class="order-total">0,00</span><br>
+        </div>
+      </div>
+
+      <div id="minicart-footer" data-hook='minicart_item_actions'>
+        <p><%= link_to Spree.t(:continue_shopping), spree.products_path, :class => 'btn btn-primary' %></p>
+      </div>
+    </div>
+
+<% else %>
+
+    <div id="form_dynamic_cart">
+      <%= form_for current_order, :url => spree.update_cart_path, :html => {:id => 'update-minicart'}, :remote => true do |order_form| %>
+
+          <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+
+          <ul id='minicart-items' class="clearfix">
+            <%= order_form.fields_for :line_items do |item_form| %>
+                <%= render :partial => 'spree/shared/minicart_line_items', :locals => { :variant => item_form.object.variant, :line_item => item_form.object, :item_form => item_form } if item_form.object.variant %>
+            <% end %>
+          </ul>
+
+      <% end %>
+    </div>
+
+    <div id="footer_dynamic_cart">
+      <div id="minicart-details" data-hook="minicart_details" class="clearfix">
+
+        <% if current_order.shipment_adjustments.nonzero.exists? || current_order.shipments.any? %>
+            <div id="minicart_shipping">
+              <h6><%= Spree.t(:shipping) %>:</h6>
+              <span class="order-total"><%= Spree::Money.new(current_order.shipments.to_a.sum(&:cost), currency: current_order.currency).to_html %></span><br>
+            </div>
+        <% end %>
+
+        <% if current_order.line_item_adjustments.exists? %>
+          <div id="minicart_tax_promotion">              
+              <% current_order.line_item_adjustments.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
+                  <% if adjustments.sum(&:amount) != 0 %>
+                      <h6><%= Spree.t(:promotion) %>: <%= label %> </h6>
+                      <span class="order-total"><%= Spree::Money.new(adjustments.sum(&:amount), :currency => current_order.currency) %></span>
+                  <% end %>
+              <% end %>
+          </div>
+        <% end %>
+       
+
+        <% if current_order.adjustments.nonzero.eligible.exists? %>
+          <div id="minicart_promotions">              
+            <% current_order.adjustments.nonzero.eligible.each do |adjustment| %>
+                <h6><%= adjustment.label  %></h6>
+                <span class="order-total"><%= adjustment.display_amount.to_html %></span>
+            <% end %>
+          </div>
+        <% end %>
+        
+        
+        
+        <%= form_for current_order, :url => spree.update_cart_path, :html => {:id => 'update-coupon'}, :remote => true do |order_form| %>
+            <div id="minicart_coupon_code">          
+              <%= order_form.text_field :coupon_code, :size => 10, :placeholder => Spree.t(:coupon_code) %>
+                <%= button_tag :class => 'btn-primary', :id => 'update-button' do %>
+                  <%= Spree.t(:update) %>
+                <% end %>
+            </div>
+            <div class="loading" id="coupon_loading"></div>
+        <% end %>
+        
+
+<!--   _________________________________  -->
+<!--   Change this with new order total_points  -->
+<!--  SHOW ONLY IS NOT 0                   -->
+<!--   _________________________________  -->
+
+        <% if try_spree_current_user.try(:has_spree_role?, "subscriber") %>
+            <div id="minicart_total">
+              <h6><%= Spree.t(:available_points) %> 130 </h6><br/> 
+              <h4><%= Spree.t(:total_points) %>:</h4> <span class="order-total">120 ptos</span><br>
+             
+            </div>
+        <% end %>
+  <!--   _________________________________  -->
+  
+        <% unless current_order.display_total.nil? %>
+            <div id="minicart_total">
+              <h4><%= Spree.t(:total) %>:</h4> <span class="order-total"><%= current_order.display_total %></span><br>
+            </div>
+        <% end %>
+      </div>
+
+        <p class="buttons margin-three margin-left-medium float-initial">
+           <%= link_to Spree.t(:'let_order'), '/checkout' , :class=> 'btn btn-medium-dark-white no-margin padding-ten-sides ' , :id=> "link-to-checkout" %>
+        </p>
+
+
+                            
+    </div>
+<% end %>

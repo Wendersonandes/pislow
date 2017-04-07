@@ -1,0 +1,104 @@
+
+  
+                    <div class="margin-four text-align-center">
+                        <h0 >Tú eres diferente. Nosotros te damos opciones</h0>
+                     </div>   
+             
+                <div class="row margin-three">
+                    <div class="pricing">
+                       <!-- pricing item -->
+                        <div class="col-md-3 sm-margin-bottom-five sm-no-margin-top sm-margin-bottom-ten padding-left-right-small ">
+                            <div class="pricing-box sm-border">
+                                <div class="pricing-title no-border bg-orange-degrated margin-one">
+                                    <h3>Paga por lo que alquiles</h3>
+                                </div>
+                                <div class="pricing-price bg-orange-degrated margin-one">
+                                    <h5>Desde</h5> <span class="price-unit">€</span>10<span class="price-tenure">/mes</span>
+                                </div>
+                                <div class="pricing-features bg-orange-degrated margin-one">
+                                    <ul><h7>
+                                        Si quieres sorprender con un look ocasional para esos momentos especiales</h7>
+                                    </ul>
+                                </div>
+                                <div class="pricing-features bg-orange-degrated margin-one">
+                                    <ul><h7>
+                                        Alquiler de 7 días o de 1 mes (prorrogable)</h7>
+                                    </ul>
+                                </div>
+                                <div class="pricing-features bg-orange-degrated margin-one">
+                                    <ul><h7>
+                                        <li><i class="fa fa-check"></i>Cambio de talla gratuíto</li></h7>
+
+                                    </ul>
+                                </div>
+                                <div class="pricing-action padding-four">
+                                    <a href="/t/woman_categories" class="highlight-button btn btn-medium button" href="#">Ver productos</a>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <!-- end pricing item -->
+
+                        <% @plans.each do |plan| %>
+                       
+                                 <!-- pricing item -->
+                                  <div class="col-md-3 sm-margin-bottom-five sm-no-margin-top sm-margin-bottom-ten padding-left-right-small ">
+                                      <div class="pricing-box sm-border">
+                                          <% if plan.default == true %>
+                                                <h3 style="margin-top:-30px">Popular</h3>
+                                              <% end %>  
+                                          <div class="pricing-title no-border bg-blue-degrated margin-one">
+
+                                              <h3><%= plan.name %></h3><br/><h5>Subscripción</h5>
+                                          </div>
+                                          <div class="pricing-price bg-blue-degrated margin-one">
+                                               <span class="price-unit"></span><%= number_to_currency plan.amount %><span class="price-tenure">/mes</span><br/>
+                                               <span class="price-tenure" style="font-size=16px"><%= plan.points %>puntos</span>
+                                          </div>
+                                          <div class="pricing-features bg-blue-degrated margin-one">
+                                               <ul><h7>
+                                                <%= plan.description %></h7>
+                                            </ul>
+                                          </div>
+                                          <div class="pricing-features bg-blue-degrated margin-one">
+                                              <ul><h7><%= Spree.t(plan.interval.pluralize(plan.interval_count)) %></h7>
+                                              </ul>
+                                          </div>
+                                          <div class="pricing-features bg-blue-degrated margin-one text-align-left padding-left-small ">
+                                               <ul><h7>
+                                                <% if plan.special_sales == true %>
+                                                  <li><i class="fa fa-check"></i>Ventas especiales</li>
+                                                <% end %>
+                                                <li><i class="fa fa-check"></i>Cambio de talla gratuíto</li>
+                                                <% if plan.free_shipping == true %>
+                                                    <li><i class="fa fa-check"></i>Envío y recogida gratuíto</li>
+                                                <% end %>
+                                                <% if plan.free_cleaning == true %>
+                                                    <li><i class="fa fa-check"></i>Limpieza incluida</li>
+                                                <% end %>
+                                                </h7></ul>
+                                          </div>
+                                          <div class="pricing-action padding-four">
+                                                 <% if spree_current_user %>
+                                                    <% if subscription = @user_subscriptions.find {|s| s.plan_id == plan.id } %>
+                                                      <%= button_link_to Spree.t(:unsubscribe), recurring_plan_subscription_url(plan, subscription), method: :delete, confirm: "Do you want to unsubscribe ?" %>
+                                                    <% else %>
+                                                      <%= button_link_to 'Subscríbete!', new_recurring_plan_subscription_url(plan) , :class => 'highlight-button btn btn-medium button'%>
+                                                    <% end %>
+
+                                                 <% else %>
+                                                   <%= button_link_to 'Subscríbete!', new_recurring_plan_subscription_url(plan) , :class => 'highlight-button btn btn-medium button'%>
+                                                  <% end %>
+                                              
+                                              <%= button_link_to 'Saber más', recurring_plan_url(plan) , :class => 'title-box btn' , :style => 'text-decoration: underline;margin-top:10px'%>
+                                          </div>
+                                      </div>
+                                  </div>
+                               
+                                 <% end %>   
+                                  <!-- end pricing item -->
+
+                       
+
+                    </div>
+                </div>

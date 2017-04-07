@@ -1,0 +1,50 @@
+<div id="checkout" data-hook>
+    <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+   <div class="title_checkout" >
+    <h1>  <%=Spree.t(:order) %>
+    <%  @order.state  %></h1>
+
+   </div>
+
+           
+          <% @order.checkout_steps[0...-1].each do |state| %>
+            <% next if state == 'confirm' %>
+            <div class="checkout_content <%= 'disabled-step' if state != @order.state or in_registration_step? %>" data-step="<%= state %>" data-hook="checkout_content" id="checkout_<%= state %>">
+              <%= render :partial => 'spree/checkout/form_wrapper', :locals => { :order => @order, :state => state } %>
+            </div>
+          <% end %>
+
+<!-- Order details -->
+           <fieldset id="order_details_checkout" data-hook>
+              <div class="clear"></div>
+              <legend align="center"><%= Spree.t(:confirm) %></legend>
+              <%= render :partial => 'spree/shared/order_details_checkout', :locals => { :order => @order } %>
+            </fieldset>
+<!-- FIN: Order details -->
+
+
+</div>
+
+<script>
+  Spree.current_order_id = "<%= @order.number %>"
+  Spree.current_order_token = "<%= @order.guest_token %>"
+</script>
+
+<% if I18n.locale != :es %>
+  <script src="<%= assets_prefix %>/jquery.validate/localization/messages_<%= I18n.locale %>.js"></script>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      <% if @order.state == 'payment' %>
+          $("#shipping")[0].scrollIntoView();
+          $( "#checkout_address input" ).prop( "disabled", true ); 
+          $( "#checkout_address select" ).prop( "disabled", true ); 
+      <% elsif  @order.state == 'address' %>
+          $("#checkout_address")[0].scrollIntoView();
+          $( "#checkout_form_payment input" ).prop( "disabled", true ); 
+          $( "#checkout_form_payment select" ).prop( "disabled", true );  
+      <% end %>
+    
+  });
+</script>

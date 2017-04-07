@@ -1,0 +1,78 @@
+        <!-- head section -->
+        <section class="content-top-margin page-title page-title-small border-top-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-duration="300ms">
+                        <!-- page title -->
+                        <h1 class="black-text">Contáctanos</h1>
+                        <!-- end page title -->
+                    </div>
+                    <div class="col-md-4 col-sm-12 breadcrumb text-uppercase wow fadeInUp xs-display-none" data-wow-duration="600ms">
+                        <!-- breadcrumb -->
+                        <ul>
+                            <li><%= link_to Spree.t(:'Inicio'), spree.root_path %> </li>
+                            <li>Contáctanos</li>
+                        </ul>
+                        <!-- end breadcrumb -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end head section -->
+
+    <!-- content section -->
+
+
+        <section class="wow fadeIn cover-background contactimage">
+            <div class="opacity-medium bg-dark-gray"></div>
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="col-md-5 col-sm-6 center-col text-center">
+                        <p class="title-large text-uppercase letter-spacing-1 white-text font-weight-600">Quieres unirte a pislow y ofrecer tus productos con el servicio FaaS o colaborar con nosotros</p>
+                        <a class="btn-small-white btn btn-medium inner-link" href="#contact-form">Envíanos un mensaje</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact-form" class="wow fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <p class="text-med text-uppercase letter-spacing-1 black-text font-weight-600">Formulario de Contacto</p>
+                        <p class="text-med">Te contestaremos lo antes posible.</p>
+                        <p class="text-med">Envíanos el detalle de tu solicitud en el mensaje.</p>
+                    </div>
+                    <div class="col-md-6 col-sm-6  col-md-offset-2">
+                    <%= form_for @contact, :url => contacts_path, :html => { :novalidate => '', :class => 'form-horizontal'} do |f| %>
+                       
+                            <div id="success" class="no-margin-lr"></div>
+                             <%= f.text_field :name, class: 'form-control required',:id =>  "name", :placeholder => Spree.t(:name)  %>
+                            <%= f.email_field :email, class: 'form-control required', :id => "email", :placeholder => t(:email_address) %>
+
+                            <%= f.text_area :message, class: 'form-control required', :rows => "6", :id => "comments_area", :placeholder => t(:your_comment_here) %>
+
+                            
+                              <%= recaptcha_tags({hl:I18n.locale}) %>
+                           
+
+                            <label class="checkbox required micro" id="label_contact_term_and_cond" for="contact_term_and_cond" required>
+                                <input type="checkbox" id="contact_term_and_cond" name="contact[term_and_cond]" required="required" value="1" />
+                                <%= t(:contact_term_and_cond) %>
+                            </label>
+                            <%= f.submit Spree.t(:submit), :alt => Spree.t(:submit), :class => 'highlight-button-dark btn btn-small button xs-margin-bottom-five', :id => 'contact_us_contact_submit', :title => Spree.t(:submit) %>
+                     <% end %>
+                          <% if I18n.locale != :en %>
+                          <% content_for :head do %>
+                              <script src="<%= assets_prefix %>/jquery.validate/localization/messages_<%= I18n.locale.to_s.downcase.gsub("-", "") %>.js"></script>
+                          <% end %>
+                         <% end %> 
+                    </div>
+                </div>
+            </div>
+
+ 
+        </section>
+
+        <!-- end content section -->
+

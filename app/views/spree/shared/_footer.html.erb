@@ -1,0 +1,86 @@
+
+<footer id="footer" data-hook>
+   
+            <div class="container footer-middle">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 footer-link1 xs-display-none">
+                        <!-- headline -->
+                        <h5>Sobre nosotros</h5>
+                        <!-- end headline -->
+                        <!-- text -->
+                        <p class="footer-text">Ofrecemos el consumo de moda FaaS, mucho más sostenible y de ahorro para el usuario. Todo son ventajas!!!</p>
+                        <!-- end text -->
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4 footer-link2 col-md-offset-3">
+                        <!-- headline -->
+                        <h5>Empresa</h5>
+                        <!-- end headline -->
+                        <!-- link -->
+                        <ul>
+                            <li> <%= link_to Spree.t(:'Quienes somos'), '/about-us' %></li>
+                            <li> <%= link_to Spree.t(:'Nuestros Partners'), '/partners' %></li>
+                            <li> <%= link_to Spree.t(:'Embajadores'), '/ambassadors' %></li>
+                            <li> <%= link_to Spree.t(:'Nuestro compromiso'), '/commitment' %></li>
+                            <li> <%= link_to Spree.t(:'Trabaja con nosotros'), '/careers' %></li>
+                        </ul>
+                        <!-- end link -->
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-4  footer-link3">
+                        <!-- headline -->
+                        <h5>Guia de uso</h5>
+                        <!-- end headline -->
+                        <!-- link -->
+                        <ul>
+                            <li> <%= link_to Spree.t(:'Como alquilar'), '/faqs#rent' %></li>
+                            <li> <%= link_to Spree.t(:'Pago'), '/faqs#payment' %></li>
+                            <li> <%= link_to Spree.t(:'Envío'), '/faqs#shipping' %></li>
+                            <li> <%= link_to Spree.t(:'Cambios y devoluciones'), '/faqs#changes' %></li>
+                            <li> <%= link_to Spree.t(:'Limpieza'), '/faqs#cleanning' %></li>
+                        </ul>
+                        <!-- end link -->
+                    </div>
+                </div>
+                <div class="wide-separator-line bg-mid-gray no-margin-lr margin-three no-margin-bottom"></div>
+                <div class="row margin-two no-margin-bottom">
+                    <div class="col-md-6 col-sm-12 sm-text-center sm-margin-bottom-four">
+                        <!-- link -->
+                        <ul class="list-inline footer-link text-uppercase">
+                            <li><%= link_to Spree.t(:'Nosotros'), '/about-us' %></li>
+                            <li><%= link_to Spree.t(:'Magazine'), '/magazine' %></li>
+
+                            <li><%= link_to Spree.t(:'Condiciones de uso'), '/user_conditions' %></li>
+                            <li><%= link_to Spree.t(:'Contacto'), '/contact-us' %></li>
+                        </ul>
+                        <!-- end link -->
+                    </div>
+                    <div class="col-md-6 col-sm-12 footer-social text-right sm-text-center">
+                        <!-- social media link -->
+                        <a target="_blank" href="https://www.facebook.com/PiSlowCompany/"><i class="fa fa-facebook"></i></a>
+                        <a target="_blank" href="http://www.twitter.com/pislowcompany"><i class="fa fa-twitter"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/PiSlowCompany/"><i class="fa fa-instagram"></i></a>
+                        <a target="_blank" href="https://www.youtube.com/pislowcompany"><i class="fa fa-youtube"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/company/pi-low?trk=biz-companies-cym"><i class="fa fa-linkedin"></i></a>
+                        <!-- end social media link -->
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid bg-dark-gray footer-bottom">
+                <div class="container">
+                    <div class="row margin-one">
+                        <!-- copyright -->
+                        <div class="col-md-6 col-sm-6 col-xs-12 copyright text-left letter-spacing-1 xs-text-center xs-margin-bottom-one">
+                            &copy; 2017 Pislow Company.
+                        </div>
+                        <!-- end copyright -->
+                        <!-- logo -->
+                        <div class="col-md-6 col-sm-6 col-xs-12 footer-logo text-right xs-text-center">
+                            <% link_to Spree.t(:home), spree.root_path %> <%= image_tag 'icons/icon_blanco.png' %> </a>
+                        </div>
+                        <!-- end logo -->
+                    </div>
+                </div>
+            </div>
+            <!-- scroll to top --> 
+            <a href="javascript:;" class="scrollToTop"><i class="fa fa-angle-up"></i></a> 
+            <!-- scroll to top End... --> 
+</footer>

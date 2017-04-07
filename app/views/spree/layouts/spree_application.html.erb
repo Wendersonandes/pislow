@@ -1,0 +1,95 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render :partial => 'spree/shared/head' %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+  </head>
+  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+
+ <!-- Code to conditionally load a header -->
+     
+     <% if controller.controller_name == "woman" %>
+          <%= render partial: "spree/shared/header_woman" %>
+     <% elsif controller.controller_name == "men" %>
+          <%= render partial: "spree/shared/header_men" %>
+     <% elsif controller.controller_name == "kids" %>
+          <%= render partial: "spree/shared/header_kids" %>
+     <% else %>
+
+
+
+     <% end %>
+
+     
+
+       <% if controller.controller_name == "static_content" or controller.controller_name == "woman" or controller.controller_name == "men" or controller.controller_name == "kids" or 
+        controller.controller_name == "contacts" or 
+        controller.controller_name == "home" or 
+        controller.controller_name == "pages" %> 
+             <div id=" wrapper" class="bg-white row" data-hook>
+
+                   <div id="content" class="columns " data-hook>
+                    <%= taxon_breadcrumbs(@taxon) %>
+                    <%= flash_messages %>
+                    <%= yield %>
+                   </div>
+             </div> 
+          <%= yield :templates %>
+
+       <% elsif controller.controller_name == "products" or controller.controller_name == "taxons" or 
+        controller.controller_name == "plans"%> 
+          <div id=" wrapper" class="bg-white row" data-hook>
+
+               <div id="content" class="container columns margin-top-section" data-hook>
+                  <%= taxon_breadcrumbs(@taxon) %>
+                  <%= flash_messages %>
+                  <%= yield %>
+               </div> 
+              <%= yield :templates %>
+           </div> 
+       <% elsif controller.controller_name == "checkout" or controller.controller_name == "myclothes"%>
+          <div id=" wrapper" class="bg-whitegray row" data-hook>
+             <div id="content" class="container columns margin-top-section" data-hook>
+              <%= taxon_breadcrumbs(@taxon) %>
+              <%= flash_messages %>
+              <%= yield %>
+             </div> 
+              <%= yield :templates %>
+          </div>
+       <% elsif controller.controller_name == "orders"%>
+          <div id=" wrapper" class="bg-whitegray row" data-hook>
+             <div id="content" class="container columns margin-top-section margin-two-bottom padding-small width-middle bg-white" data-hook>
+
+                  <%= taxon_breadcrumbs(@taxon) %>
+                  <%= flash_messages %>
+                  <%= yield %>
+
+             </div> 
+              <%= yield :templates %>
+          </div>
+
+       <% else %>
+          <div id=" wrapper" class="bg-whitegray row" data-hook>
+             <div id="content" class="container columns margin-top-section margin-two-bottom padding-small bg-white" data-hook>
+
+                  <%= taxon_breadcrumbs(@taxon) %>
+                  <%= flash_messages %>
+                  <%= yield %>
+
+             </div> 
+              <%= yield :templates %>
+          </div> 
+
+       <% end %>
+
+
+      <%= render :partial => 'spree/shared/footer' %>
+  </body>
+</html>

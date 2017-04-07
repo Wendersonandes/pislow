@@ -1,0 +1,30 @@
+<div id="checkout" data-hook>
+	  <%= render partial: 'spree/shared/error_messages', locals: { target: @user } %>
+	  <div class="title_checkout" >
+	    <h1>  <%=Spree.t(:order) %>
+	    <%  @order.state  %></h1>
+
+	   </div>
+
+
+		<div id="registration" data-hook>
+		  <div class="row no-padding-left no-padding-right" data-hook="checkout_content" >
+		  		<div class="panel-group toggles-style3 bg-white">
+		  		     
+		    			<%= render template: 'spree/user_sessions/new' %>
+		               
+		          </div>
+		     </div>
+		  
+		</div>
+
+
+<!-- Order details -->
+           <fieldset id="order_details_checkout" data-hook>
+              <div class="clear"></div>
+              <legend align="center"><%= Spree.t(:confirm) %></legend>
+              <%= render :partial => 'spree/shared/order_details_checkout', :locals => { :order => @order } %>
+            </fieldset>
+<!-- FIN: Order details -->
+
+</div>

@@ -1,0 +1,182 @@
+<%= form_for :order, :url => populate_orders_path do |f| %>
+  <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+
+    <% if @product.variants_and_option_values_for(current_pricing_options).any? %>
+      <div id="product-variants" class="columns five alpha">
+
+
+  
+
+<!--     <label for="optD">Option D
+      <input type="radio" id="optD" name="dropp" value="Option D">
+    </label> -->
+ 
+
+          <div class="dropp ">
+            <div class="dropp-header">
+              <span class="dropp-header__title js-value">SELECCIONA TALLA</span> 
+              <a href="#" class="dropp-header__btn js-dropp-action">
+                <i class="icon"></i>
+              </a> 
+            </div>
+            <div class="dropp-body" style="overflow-y:scroll;">
+                   <% @product.variants_and_option_values_for(current_pricing_options).each_with_index do |variant, index| %>
+                                                                    
+
+                                    
+                              <% if variant.can_supply? %>
+                                       <%= label_tag "variant_id_#{ variant.id }" do %>
+                                          <span class="variant-description">
+                                                    <%= variant_options variant , :class => "dropdown-radio" %>
+
+                                                    <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => variant.price_for(current_pricing_options) , :class => "display-none" %>
+                                            </span>
+                                        <% end %>
+
+                                          
+
+                                <% else %>
+                                        <% unless variant.options_text.include?("mano") %>
+                                              <%= label_tag "variant_id_#{ variant.id }" do %>
+                                                 <span class="variant-description">
+                                                          <text class="light-gray-text">
+                                                          <%= variant_options variant , :class => "dropdown-radio" %></text>
+
+                                                          <%= radio_button_tag "variant_id", variant.id, index == 0, 'data-price' => variant.price_for(current_pricing_options) , :class => "display-none" %>
+
+                                                      
+                                                               <i class="fa fa-exclamation-circle" style="color:red"></i>
+                                                               
+                                                               <%= link_to 'Avisarme cuando esté disponible',{:controller => :stock_requests, :action => :new} , :style => 'color:red'%>
+
+                                                               
+                                                  </span>
+                                               <% end %>
+                                          <% end %>
+                                                
+       
+
+                                          
+                                    <% end %> 
+                                   <% if variant_price variant %>
+                                      <span class="price diff"><%= variant_price variant %></span>
+                                   <% end %> 
+                           
+           
+                    <% end%>
+               <div class="dropp-foot">
+                  <a href="">Guía de tallas</a>
+               </div>
+
+          </div>  
+        </div>
+      </div>
+    <% else %>
+      <%= hidden_field_tag "variant_id", @product.master.id %>
+    <% end %>
+
+    <% if @product.price_for(current_pricing_options) and !@product.price.nil? %>
+      <div data-hook="product_price" class="columns five <%= !@product.has_variants? ? 'alpha' : 'omega' %>">
+
+        <div id="product-price" class="padding-three" >
+
+          <div >
+            <span class="price selling show-product-price" itemprop="price">
+              <%= display_price(@product) %> 
+            </span>
+
+            <span itemprop="priceCurrency" content="<%= current_pricing_options.currency %>"></span><br/>
+
+<!--             If user has subscriptions show points -->
+                 <% if try_spree_current_user.try(:has_spree_role?, "subscriber") %>
+                          <span class="font-size-22 font-weight-400" > 30 puntos</span>
+             
+                  <% end %>
+           
+          </div>
+
+
+        </div>
+
+        <table style="width:100%" class="margin-top-medium">
+          <tr >
+            <th ><h5 class="margin-bottom-small">Elige un periodo</h5><text style="color:#9c9c9c;font-weight:initial;"> Con pislow nunca pierdes, si te gusta mucho una prenda cómprala con descuento al final del periodo de uso </text>   </th> 
+                  
+          </tr>
+          
+          <tr>
+            <td class="cart_options"><%= radio_button_tag "period" , 'week' , false %>
+            <text class="padding-left-small "> Por 7 días</text></td>
+            <td class="cart_options" ><%= radio_button_tag "period" , 'month' , true %>
+             <text class="padding-left-small ">Por mes</text></td>
+          </tr>
+          <tr>
+          <td class="cart_options"  style="width:93% !important"><%= radio_button_tag "period" , 'buy' , false %>
+          <text class="padding-left-small "> Comprar por  <span class="price selling show-product-price" style="color:#626262; font-size: 18px !important" itemprop="price">
+              <%= display_price(@product) %> 
+            </span> </text></td>
+            
+          </tr>
+        </table>
+
+         <% if try_spree_current_user.try(:has_spree_role?, "subscriber") %>
+              <div class="margin-top-medium bg-blue-degrated padding-x-small margin-bottom-small">
+                <%= check_box_tag('use_points', value = "1", checked = true, options = {})%> Desmarca esta opción si quieres pagar y no usar los puntos<br/>
+                
+              </div>
+          <% else %>
+              <div class="margin-top-medium bg-blue-degrated padding-x-small margin-bottom-small">
+                Envío gratis con un plan Pislow<br/>
+                <a href="/recurring/plans" class="uppercase text-gray">Saber más</a>
+              </div>
+          <% end %>
+
+        <div class="add-to-cart margin-top">
+          <%= number_field_tag :quantity, 1, :class => 'title display-none', :min => 1 %> 
+          <%= button_tag :class => 'large primary margin-bottom-small', :id => 'add-to-cart-button', :type => :submit do %>
+            <%= Spree.t(:Añadir) %>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+        <div id="product-price">
+          <br>
+          <div><span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span></div>
+        </div>
+    <% end %>
+
+
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+    $('input[name*="period"]').each(function(){
+          if($(this).is(':checked')) { // Input is checked
+        $(this).parent().css('border', '2px solid #000');
+    } else {
+        $(this).parent().css('border', '1px solid #dcdcdc');
+    }
+    });
+
+});
+
+
+  $('input[name*="period"]').on('change', function() {
+    $('input[name*="period"]').each(function(){
+      $(this).parent().css('border', '1px solid #dcdcdc');
+    });
+
+    if($(this).is(':checked')) { // Input is checked
+        $(this).parent().css('border', '2px solid #000');
+    } else {
+        $(this).parent().css('border', '1px solid #dcdcdc');
+    }
+  });
+
+
+
+</script>
+

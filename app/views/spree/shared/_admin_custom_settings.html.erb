@@ -1,0 +1,28 @@
+
+<%= render 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+	<%= Spree.t("rental_settings") %>
+<% end %>
+
+<%= form_tag(admin_rental_settings_path, :method => :put) do %>
+<div class="row">
+	<form id="additional_services">
+		<div class="col-md-6 col-sm-6  col-md-offset-2">
+			<label for="cleaning_service"><%= Spree.t(:precio_servicio_limpieza) %></label>
+
+			<%= number_field_tag :cleaning_service_price, Spree::Config[:cleaning_service_price] %>
+			EUR	<%= number_field_tag :cleaning_service_porcentage ,Spree::Config[:cleaning_service_porcentage]  %> %
+
+			<br/>
+	   </div>
+
+       <div class="col-md-6 col-sm-6  col-md-offset-2 " style="margin-top:20px">
+			<label for="cleaning_service"><%= Spree.t(:precio_seguro) %></label>
+
+			<input type="number" placeholder="precio fijo"  name="assegurance_service_price"  step='0.01' value='0.00'  />
+			EUR<input type="number" placeholder="porcentaje" min="1" max="100" step="0.01" value="" name="assegurance_service_porcentage" id="assegurance_service_porcentage" />%
+		</div>
+	</form>
+</div>
+<% end %>

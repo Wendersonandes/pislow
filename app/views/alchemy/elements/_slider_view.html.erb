@@ -1,0 +1,44 @@
+
+
+        
+
+
+
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+ 
+
+        <section id="slider" class="no-padding"> 
+
+            <!-- slider -->
+            <div id="owl-demo" class="owl-carousel owl-theme owl-half-slider dark-pagination dark-pagination-without-next-prev-arrow">
+                <!-- slider item -->
+                <%- element.contents.gallery_pictures.each do |image| -%>
+      			<div class="slider_image <%= image.essence.css_class %>">
+		                <div class="item owl-bg-img slide1" >
+
+		                    <div class="container position-relative">
+
+		                        <div class="slider-typography slider-typography-shop text-left">
+		                            <div class="slider-text-middle-main">
+		                                <div class="slider-text-middle padding-left-right-px animated fadeInUp">
+		                                    <span class="owl-subtitle black-text">Season 2015</span>
+		                                    <span class="owl-title black-text xs-margin-bottom-seven">Shopping With Style</span>
+		                                    <a href="shop-with-sidebar.html" class="highlight-button-dark btn margin-four">Check Collection</a>
+		                                    <%= render_essence_view(image, size: '160x120') %>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		           </div>
+      			<%- end -%>      
+                <!-- end slider item -->
+            </div>
+            <!-- end slider -->
+
+        </section>
+
+ 
+  <%- end -%>
+<%- end -%>

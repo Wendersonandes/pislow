@@ -1,0 +1,20 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+
+
+                   <div class="container position-relative" style="background-image:url(<%= show_alchemy_picture_path el.ingredient(:picture) %>); background-size:100%; height:700px; background-repeat: no-repeat;">
+
+                       
+                            <div class="slider-text-middle-main">
+                                <div class="slider-text-middle padding-left-right-px animated fadeInUp">
+                                   
+                                    <span class="owl-title black-text xs-margin-bottom-seven">
+                                     <span class="owl-subtitle black-text"><%= el.render :text %></span>
+                                    <%= el.render :headline %></span>
+                                    
+                                </div>
+                            </div>
+                     
+                    </div>
+  <%- end -%>
+<%- end -%>

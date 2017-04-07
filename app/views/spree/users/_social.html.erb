@@ -1,0 +1,47 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @sechix
+ Watch 4
+  Star 9
+  Fork 13 solidusio-contrib/solidus_social
+ Code  Issues 2  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathsolidus_social/app/views/spree/users/_social.html.erb
+1f07dba  on 12 Apr 2016
+@westonganger westonganger Do not render spree/shared/social if no more authentication methods a…
+11 contributors @ph1ll @JDutil @futhr @westonganger @sbounmy @radar @LBRapid @jhawthorn @jsqu99 @dpritchett @traels
+RawBlameHistory     
+31 lines (28 sloc)  1.34 KB
+<% if Spree::AuthenticationMethod.active_authentication_methods? %>
+  <% @body_id = 'login' %>
+  <div id="existing-customer">
+    <% if spree_current_user.user_authentications %>
+      <% unless spree_current_user.user_authentications.empty? %>
+        <p><strong><%= Spree.t(:you_have_signed_in_with_these_services) %>:</strong></p>
+        <div class="authentications">
+          <% for user_authentication in spree_current_user.user_authentications %>
+            <div class="authentication">
+              <div class="provider columns two">
+                <%= content_tag(:button,Spree.t(:"#{method.provider}") , class: "loginBtn loginBtn--#{method.provider.to_url} uppercase") %>
+                <%= user_authentication.provider %>
+              </div>
+              <div class="uid columns two"><%= user_authentication.uid %></div>
+              <%= link_to 'X', user_authentication, data: { confirm: "#{Spree.t(:remove_authentication_option_confirmation)}" }, method: :delete, class: 'remove' %>
+            </div>
+          <% end %>
+          <div class="clear"></div>
+        </div>
+      <% end %>
+    <% end %>
+    
+    <% if Spree::AuthenticationMethod.available_for(spree_current_user).present? %>
+      <%= content_tag(:p, content_tag(:strong, Spree.t(:add_another_service))) %>
+      <%= render 'spree/shared/social' %>
+    <% end %>
+  </div>
+
+  <div class="clear"></div>
+<% end %>

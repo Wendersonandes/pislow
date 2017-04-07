@@ -1,0 +1,11 @@
+<% if defined?(image) && image %>
+  <%= link_to image.attachment.url(:large), itemprop: "image" do %>
+  	<%= image_tag image.attachment.url(:large), itemprop: "image" %>
+  <% end %>
+<% else %>
+  <%= link_to  @product.display_image.attachment(:large), itemprop: "image" do%>
+  	<%= image_tag @product.display_image.attachment(:large), itemprop: "image" %>
+  <% end %>
+<% end %>
+
+
