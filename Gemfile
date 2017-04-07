@@ -56,7 +56,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
 
+
+gem 'elasticsearch-rails'
 gem 'bonsai-elasticsearch-rails'
+gem 'elasticsearch-model'
 
 gem 'coffee-script-source', '~> 1.12', '>= 1.12.2'
 

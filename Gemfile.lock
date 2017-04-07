@@ -930,6 +930,8 @@ DEPENDENCIES
   delayed_job
   delayed_job_active_record
   dotenv-rails
+  elasticsearch-model
+  elasticsearch-rails
   jbuilder (~> 2.5)
   jquery-rails!
   listen (~> 3.0.5)
