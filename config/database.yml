@@ -84,4 +84,4 @@ production:
   database: Pislow_web_production
   username: Pislow_web
   password: <%= ENV['PISLOW_WEB_DATABASE_PASSWORD'] %>
-  url: <%= ENV['postgres://lqsqzbofapruty:915248b7af7cfb3ff1ad501d9580b61a0d6cf6a542c355ca867a602669268f58@ec2-54-247-81-76.eu-west-1.compute.amazonaws.com:5432/daobadg6ok4unj'] %>
+  url: postgres://lqsqzbofapruty:915248b7af7cfb3ff1ad501d9580b61a0d6cf6a542c355ca867a602669268f58@ec2-54-247-81-76.eu-west-1.compute.amazonaws.com:5432/daobadg6ok4unj
