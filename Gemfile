@@ -58,6 +58,7 @@ end
 
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem 'bonsai-elasticsearch-rails'
 
 
 gem 'coffee-script-source', '~> 1.12', '>= 1.12.2'
