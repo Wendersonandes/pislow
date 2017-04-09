@@ -112,7 +112,7 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'solidus_wishlist', github: 'deseretbook/solidus_wishlist'
 
 # gem 'solidus_crm' , github: 'madetech/solidus_crm'
-gem 'solidus_recommendations', github: 'skukx/solidus_recommendations'
+# gem 'solidus_recommendations', github: 'skukx/solidus_recommendations'
 gem 'solidus_editor', github: 'solidusio-contrib/solidus_editor', branch: 'master'
 gem 'solidus_import_products', github: '2BeDigital/solidus_import_products'
 gem 'delayed_job_active_record'

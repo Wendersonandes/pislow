@@ -20,7 +20,6 @@
 //= require spree/frontend/solidus_reviews
 
 //= require spree/frontend/solidus_product_recommendations
-//= require spree/frontend/solidus_recommendations
 //= require spree/frontend/solidus_trackers
 //= require spree/frontend/solidus_paypal_braintree
 //= require spree/frontend/solidus_product_labeling

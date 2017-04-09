@@ -15,7 +15,6 @@
 
  *= require spree/backend/solidus_product_recommendations
 
- *= require spree/backend/solidus_recommendations
  *= require spree/backend/solidus_trackers
  *= require spree/backend/solidus_paypal_braintree
  *= require spree/backend/solidus_product_labeling
