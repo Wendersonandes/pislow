@@ -53,6 +53,15 @@ GIT
       solidus_core (>= 1.0.0, < 3)
 
 GIT
+  remote: git://github.com/hollar/spree_searchkick.git
+  revision: 70707b3f5f7ee94cb84605e135a26dc1b7d78e63
+  branch: solidus-searchkick2
+  specs:
+    spree_searchkick (3.0.1)
+      searchkick (>= 1.2)
+      solidus_core
+
+GIT
   remote: git://github.com/rails/jquery-rails.git
   revision: 6430f5f24985ffafa535269c5bca21aff63e27cf
   specs:
@@ -412,12 +421,6 @@ GIT
   specs:
     blockuijs-rails (0.1.0)
       rails (>= 3.1)
-
-PATH
-  remote: ../spree_searchkick
-  specs:
-    spree_searchkick (3.0.1)
-      searchkick (>= 1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -816,8 +819,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    searchkick (1.5.1)
-      activemodel
+    searchkick (2.2.0)
+      activemodel (>= 4.1)
       elasticsearch (>= 1)
       hashie
     select2-rails (3.5.10)

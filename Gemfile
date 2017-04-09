@@ -157,6 +157,6 @@ gem 'spree_recently_sold_products', github: 'sechix/spree_recently_sold_products
 # gem 'solidus_asset_variant_options', github: 'solidusio/solidus_asset_variant_options' , branch: 'master'
 # gem 'solidus_elastic_product', github: 'boomerdigital/solidus_elastic_product' , branch: 'master'
 gem 'searchkick'
-gem 'spree_searchkick', :path => '../spree_searchkick' , branch: 'master'
+gem 'spree_searchkick', github: 'hollar/spree_searchkick', branch: 'solidus-searchkick2'
 
 
