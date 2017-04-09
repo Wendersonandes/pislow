@@ -149,14 +149,14 @@ gem 'solidus_waiting_list', github: 'sechix/solidus_waiting_list'
 gem 'spree_report_products_ran_out_of_stock', github: 'sechix/spree_report_products_ran_out_of_stock'
 
 gem 'solidus_special_offer', github: 'samanmohamadi/solidus_special_offer' , branch: 'master'
-
+gem 'sidekiq'
 
 # gem 'spree_abandoned_cart_email', :path => '../spree_abandoned_cart_email'
 gem 'spree_recently_sold_products', github: 'sechix/spree_recently_sold_products'
 
 # gem 'solidus_asset_variant_options', github: 'solidusio/solidus_asset_variant_options' , branch: 'master'
 # gem 'solidus_elastic_product', github: 'boomerdigital/solidus_elastic_product' , branch: 'master'
-# gem 'searchkick'
-# gem 'solidus_searchkick', :path => '../solidus_searchkick' , branch: 'master'
+gem 'searchkick'
+gem 'spree_searchkick', :path => '../spree_searchkick' , branch: 'master'
 
 

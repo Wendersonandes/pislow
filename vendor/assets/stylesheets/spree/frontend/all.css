@@ -28,4 +28,5 @@
  *= require spree/frontend/spree_drop_ship
  *= require spree/frontend/spree_report_products_ran_out_of_stock
  
+ *= require spree/frontend/spree_searchkick
 */
