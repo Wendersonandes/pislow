@@ -53,15 +53,6 @@ GIT
       solidus_core (>= 1.0.0, < 3)
 
 GIT
-  remote: git://github.com/hollar/spree_searchkick.git
-  revision: 70707b3f5f7ee94cb84605e135a26dc1b7d78e63
-  branch: solidus-searchkick2
-  specs:
-    spree_searchkick (3.0.1)
-      searchkick (>= 1.2)
-      solidus_core
-
-GIT
   remote: git://github.com/rails/jquery-rails.git
   revision: 6430f5f24985ffafa535269c5bca21aff63e27cf
   specs:
@@ -141,6 +132,12 @@ GIT
     solidus_product_recommendations (0.0.1)
       deface
       solidus_core (>= 2.1.0, < 3)
+
+GIT
+  remote: git://github.com/sechix/solidus_searchkick.git
+  revision: 61fa0bdfb3fe4e6695eb83269717cd90b8d73f62
+  specs:
+    solidus_searchkick (0.3.0)
 
 GIT
   remote: git://github.com/sechix/solidus_smart_free_shipping.git
@@ -992,6 +989,7 @@ DEPENDENCIES
   solidus_recommendations!
   solidus_related_products
   solidus_reviews!
+  solidus_searchkick!
   solidus_signifyd
   solidus_sitemap!
   solidus_smart_free_shipping!
@@ -1011,7 +1009,6 @@ DEPENDENCIES
   spree_recently_sold_products!
   spree_report_products_ran_out_of_stock!
   spree_scan_and_go!
-  spree_searchkick!
   spring
   spring-watcher-listen (~> 2.0.0)
   stripe

@@ -29,4 +29,3 @@
 //= require spree/backend/spree_drop_ship
 //= require spree/backend/spree_report_products_ran_out_of_stock
 
-//= require spree/backend/spree_searchkick
