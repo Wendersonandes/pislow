@@ -4,13 +4,13 @@ Spree::ProductsController.prepend(Module.new do
 
 	  def index
 	  	  if (cookies["gender"]).include?("woman") 
-             redirect_to('/t/woman_categories/clothes_woman')
-          elsif  (cookies["gender"]).include?("men") 
-             redirect_to('/t/men_categories/clothes_men')
+             redirect_to('/t/woman/clothes_woman')
+          elsif  (cookies["gender"]).include?("man") 
+             redirect_to('/t/man/clothes_man')
           elsif  (cookies["gender"]).include?("kids")
-             redirect_to('/t/kids_categories/clothes_kids')
+             redirect_to('/t/kids/clothes_kids')
           else
-             redirect_to('/t/woman_categories/clothes_woman')
+             redirect_to('/t/woman/clothes_woman')
           end
 	  	
 	  	super

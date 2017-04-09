@@ -1,4 +1,4 @@
-class Spree::MenController < Spree::StoreController
+class Spree::ManController < Spree::StoreController
 
   def create
 

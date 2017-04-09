@@ -6,8 +6,8 @@ module Spree
     def index
           if (cookies["gender"]).include?("woman") 
              redirect_to('/woman')
-          elsif  (cookies["gender"]).include?("men") 
-             redirect_to('/men')
+          elsif  (cookies["gender"]).include?("man") 
+             redirect_to('/man')
           elsif  (cookies["gender"]).include?("kids")
              redirect_to('/kids')
           end

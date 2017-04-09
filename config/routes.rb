@@ -20,7 +20,7 @@ end
 Spree::Core::Engine.routes.draw  do
   get 'woman', :to => 'woman#new', :as => :woman
 
-  get 'men', :to => 'men#new', :as => :men
+  get 'man', :to => 'man#new', :as => :man
 
   get 'kids', :to => 'kids#new', :as => :kids
 

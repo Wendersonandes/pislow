@@ -32,7 +32,16 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-action padding-four">
-                                    <a href="/t/woman_categories" class="highlight-button btn btn-medium button" href="#">Ver productos</a>
+                                   <% if (cookies["gender"]).include?("woman") %>
+                                       <a href="/t/woman" class="highlight-button btn btn-medium button" href="#">Ver productos</a>
+                                   <%  elsif  (cookies["gender"]).include?("man") %>
+                                       <a href="/t/man" class="highlight-button btn btn-medium button" href="#">Ver productos</a>
+                                   <%  elsif  (cookies["gender"]).include?("kids") %>
+                                       <a href="/t/kids" class="highlight-button btn btn-medium button" href="#">Ver productos</a>
+                                   <%  else %>
+                                       <a href="/t/woman" class="highlight-button btn btn-medium button" href="#">Ver productos</a>
+                                   <%  end %>
+                                   
                                 </div>
                             </div>
                         </div>

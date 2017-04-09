@@ -14,7 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require spree/frontend/typeahead.bundle
-//= require spree/frontend/solidus_searchkick
 
 
