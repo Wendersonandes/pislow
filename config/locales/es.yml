@@ -32,6 +32,7 @@ es:
     not_synced: No sincronizado
 
   spree:
+    created_successfully: Creado con éxito
     mega_menu_items: Items Mega menú
     new_admin_mega_menu_mega_menu_item: Nuevo item del mega menú
     mega_menus: Mega menús

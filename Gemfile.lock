@@ -192,6 +192,15 @@ GIT
       solidus_core
 
 GIT
+  remote: git://github.com/skukx/solidus_recommendations.git
+  revision: 7d8f94e16459171e6c7be4646ff61a991c8f8283
+  branch: master
+  specs:
+    solidus_recommendations (0.0.2)
+      elasticsearch-model
+      solidus_core
+
+GIT
   remote: git://github.com/solidusio-contrib/solidus_active_shipping
   revision: 5685926def04434a755cdd4b650ca83d314e9dd0
   specs:
@@ -967,6 +976,7 @@ DEPENDENCIES
   solidus_product_labeling!
   solidus_product_recommendations!
   solidus_prototypes!
+  solidus_recommendations!
   solidus_related_products
   solidus_reviews!
   solidus_signifyd
