@@ -14,25 +14,8 @@
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 
  <!-- Code to conditionally load a header -->
-     
-     <% if controller.controller_name == "woman" %>
-          <%= render partial: "spree/shared/header_woman" %>
-     <% elsif controller.controller_name == "man" %>
-          <%= render partial: "spree/shared/header_man" %>
-     <% elsif controller.controller_name == "kids" %>
-          <%= render partial: "spree/shared/header_kids" %>
-     <% else %>
-          <% if (cookies["gender"]).include?("woman") %>
-                 <%= render partial: "spree/shared/header_woman" %>
-          <% elsif  (cookies["gender"]).include?("man") %>
-                <%= render partial: "spree/shared/header_man" %>
-           <% elsif  (cookies["gender"]).include?("kids") %>
-                 <%= render partial: "spree/shared/header_kids" %>
-       <% end %>
 
-
-     <% end %>
-
+      <%= render partial: "spree/shared/header" %>
      
 
        <% if controller.controller_name == "static_content" or controller.controller_name == "woman" or controller.controller_name == "man" or controller.controller_name == "kids" or 

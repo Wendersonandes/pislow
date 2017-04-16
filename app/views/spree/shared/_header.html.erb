@@ -74,10 +74,31 @@
                         <div class="navbar-collapse collapse">
                             <ul id="accordion" class="nav navbar-nav navbar-right panel-group">
 
-                             <% unless @taxonomies_woman.nil? %> 
- 
-                              <% @taxonomies_woman.each do |taxonomy| %> 
-                              
+
+
+                                 <% if controller.controller_name == "woman" %>
+                                      <% @category = "woman" %>
+                                 <% elsif controller.controller_name == "man" %>
+                                      <% @category = "man" %>
+                                 <% elsif controller.controller_name == "kids" %>
+                                      <% @category = "kids" %>
+                                 <% else %>
+                                      <% if (cookies["gender"]).include?("woman") %>
+                                             <% @category = "woman" %>
+                                      <% elsif  (cookies["gender"]).include?("man") %>
+                                            <% @category = "man" %>
+                                       <% elsif  (cookies["gender"]).include?("kids") %>
+                                            <% @category = "kids" %>
+                                   <% end %>
+
+
+                                 <% end %>
+
+
+                            <% @taxonomies  = Spree::Taxonomy.find_by(name: @category ).root.children %>
+                             <% if @taxonomies %>
+
+                              <% @taxonomies.each do |taxonomy| %> 
                                                               
                                 <!-- menu item -->
                                 <li class="dropdown panel"><a href="#collapse_<%= taxonomy.name %>" class="dropdown-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-hover="dropdown"><%= taxonomy.name %> <i class="fa fa-angle-down"></i></a>

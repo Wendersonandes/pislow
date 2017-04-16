@@ -4,10 +4,6 @@ class ApplicationController < ActionController::Base
  
   @taxonomies = Spree::Taxonomy.all
 
-  @taxonomies_woman  = Spree::Taxonomy.where(name: "Mujer")
-  @taxonomies_man  = Spree::Taxonomy.where(name: "Hombre")
-  @taxonomies_kids  = Spree::Taxonomy.where(name: "Niños")
-
 end
 
 
