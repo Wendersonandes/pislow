@@ -540,19 +540,24 @@ nav .container{ display: table-cell; vertical-align: middle; height: 80px; posit
 .full-width-pull-menu .container {display:table-cell\9 !important;}
 .menu-new{ background:#c11f1f; padding:0 6px 1px 5px; font-size:10px; color:#fff; margin-left:5px;}
 .megamenu-right-icon { display: none !important; }
+
+
+
 @media (max-width: 556px) {
-.accordion-menu  { margin-top:25px }
-#subscription { display:none}
-.sticky-nav{min-height:0 !important; height:0 !important}
-nav .container{ height:0 !important}
-.margin-top-nav{ margin-top: 25px }
+
+    .accordion-menu  { margin-top:25px }
+    #subscription { display:none}
+    .sticky-nav{min-height:0 !important; height:0 !important}
+    nav .container{ height:0 !important}
+    .margin-top-nav{ margin-top: 25px }
 }
+
 @media (min-width: 557px) and (max-width: 768px) {
 .accordion-menu  { margin-top:0px }
 #subscription { display:none}
 .sticky-nav{min-height:0 !important; height:0 !important}
 nav .container{ height:20px !important}
-.dropdown.panel.open{ background-color: #fff}
+
 }
 @media (min-width: 769px) and (max-width: 991px){
 .accordion-menu  { margin-top:25px }
@@ -577,8 +582,7 @@ nav .container{ height:30px !important}
 .sub-menu:hover ul { display: block; }
 .sub-menu a i { position: absolute !important; top: 11px !important; }
 
-.dropdown-menu li a i { color: #c8c8c8 ; float: left; font-size: 14px; margin: 0 10px 0 0; padding: 0; position: relative; right: 0; top: 5px; }
-.dropdown-menu li a:hover i { color: #fff; }
+
 
 .dropdown-menu a.sales { color: #DF0101 !important}
 .dropdown-menu a.sales:hover { color: #FF4000 !important}
@@ -1583,8 +1587,6 @@ figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1
 .highlight-button:hover i {color:#fff !important}
 .quick-buy  .highlight-button:hover i {color:#9c9c9c!important;border-color:#9c9c9c}
 
-.highlight-button-mix { border:1px solid #999 !important; background-color: transparent !important ;  }
-.highlight-button-mix:hover { border:1px solid #fff !important }
 
 .highlight-button-dark { font-family: 'Inconsolata', sans-serif;border:2px solid #000; display: inline-block; padding: 8px 20px 9px; font-size: 12px; color:#fff; background-color: #000;  }
 .highlight-button-dark:hover { font-family: 'Inconsolata', sans-serif;background-color: transparent; border: 2px solid #000; color:#000}
@@ -3987,6 +3989,32 @@ a.quickshop {
   margin: 0 auto;
 }
 div.product-list-item:hover a.quickshop { display: block;}
+
+@media (max-width: 991px) {
+
+
+    .mega-menu-column { color:#000 !important; background-color:#fff !important}
+    .mega-menu-column:hover { color:#000 !important; background-color:#fff !important}
+    .dropdown-header, .dropdown-menu { color:#000 !important; background-color:#fff !important}
+    .dropdown .panel .open ul  { color:#000 !important; background-color:#fff !important}
+    .dropdown .panel .open ul:hover { color:#000 !important; background-color:#fff !important}
+
+    .dropdown-menu .mega-menu:hover { color:#000 !important; background-color:#fff !important}
+    .dropdown-menu li a i ul{ color: #000 !important; float: left; font-size: 14px; margin: 0 10px 0 0; position: relative; right: 0; top: 5px;  }
+    .dropdown-menu li:hover a:hover ul:hover i { color: #fff; background-color:#fff !important ; border-radius: 4px !important}
+
+    .highlight-button-mix { border:1px solid #999 !important; background-color: transparent !important ; padding-left:10px !important; text-align: center !important}
+    .highlight-button-mix:hover { border:1px solid #fff !important; background-color: #c8c8c8 !important; text-align: center !important}
+
+}
+
+@media (min-width: 992px) {
+    .highlight-button-mix { border:1px solid #999 !important; background-color: transparent !important ;  }
+    .highlight-button-mix:hover { border:1px solid #fff !important }
+    .dropdown-menu li a i { color: #c8c8c8 ; float: left; font-size: 14px; margin: 0 10px 0 0; padding: 0; position: relative; right: 0; top: 5px; }
+    .dropdown-menu li a:hover i { color: #fff; }
+
+}
 
 
 /*--------------------------------------*/

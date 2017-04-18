@@ -9,7 +9,7 @@ Spree.config do |config|
   config.use_static_preferences!
   
   require 'spree/product_filters'
- 
+  require 'spree/core/searchkick_filters'
   # Core:
 
   # Default currency for new sites

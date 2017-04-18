@@ -83,13 +83,20 @@
                                  <% elsif controller.controller_name == "kids" %>
                                       <% @category = "kids" %>
                                  <% else %>
-                                      <% if (cookies["gender"]).include?("woman") %>
-                                             <% @category = "woman" %>
-                                      <% elsif  (cookies["gender"]).include?("man") %>
-                                            <% @category = "man" %>
-                                       <% elsif  (cookies["gender"]).include?("kids") %>
-                                            <% @category = "kids" %>
-                                   <% end %>
+                                       <% if cookies["gender"].nil? %>
+                                          <% if (cookies["gender"]).include?("woman") %>
+                                                 <% @category = "woman" %>
+                                          <% elsif  (cookies["gender"]).include?("man") %>
+                                                <% @category = "man" %>
+                                          <% elsif  (cookies["gender"]).include?("kids") %>
+                                                <% @category = "kids" %>
+                                          <% end %>
+
+                                       <% else %>
+                                            <% @category = "woman" %>
+                                       <% end %>
+
+                                   
 
 
                                  <% end %>
@@ -232,7 +239,7 @@
                                 </li>
                                 <!-- end menu item -->
                                 <!-- menu item -->
-                                <li class="dropdown panel"><a href="/t/woman_categories/clothes_woman?utf8=✓&per_page=&search%5Bcondition_any%5D%5B%5D=Segunda+mano">Saldos</a></li>
+                                <li class="dropdown panel"><a href="/t/<%= @category %>?utf8=✓&per_page=&search%5Bcondition_any%5D%5B%5D=Segunda+mano">Saldos</a></li>
                                 <!-- end menu item -->
                                 <!-- menu item -->
                                 <li class="dropdown panel simple-dropdown"><a href="/magazine" >Magazine</a></li>

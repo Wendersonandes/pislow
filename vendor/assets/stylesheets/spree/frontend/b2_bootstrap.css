@@ -2499,11 +2499,19 @@ tbody.collapse.in {
     .open > .dropdown-menu { display: inline-table; float: right; margin: 2px auto 0 !important; white-space: nowrap; width: auto; }
     .dropdown-menu { display: none;}
     .dropdown > .dropdown-menu { float: right; margin: 2px auto 0 !important; white-space: nowrap; width: auto; }
+    .dropdown-menu li a { color: #c8c8c8 !important }
+    .dropdown-menu li a:hover { color: #fff !important; }
 }
+@media (max-width: 991px) {
+
+    .dropdown-menu li a { color: #000 !important }
+    .dropdown-menu li a:hover { color: #fff !important; }
+}
+
+
 .dropdown-menu li {}
 .dropdown-menu li:last-child{ border-bottom:none}
-.dropdown-menu li a { color: #c8c8c8 !important; padding:2px 0; display: block; position: relative; }
-.dropdown-menu li a:hover { color: #fff !important; }
+.dropdown-menu li a {  padding:2px 0; display: block; position: relative; }
 .dropdown-menu li ul { margin-top: 20px}
 .open > a {
     outline: 0;
