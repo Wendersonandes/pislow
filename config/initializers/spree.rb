@@ -53,7 +53,7 @@ Spree.config do |config|
   #   test_mode: !Rails.env.production?
   # )
   
-SolidusSubscriptions::Config.default_gateway { my_gateway }
+SolidusSubscriptions::Config.default_gateway { StripeGateway }
 
 
 end
