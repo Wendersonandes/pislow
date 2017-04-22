@@ -8,7 +8,6 @@ Spree.config do |config|
   # This line resets all preferences! It should be the first line in the block
   config.use_static_preferences!
   
-  require 'spree/product_filters'
   require 'spree/core/searchkick_filters'
   # Core:
 

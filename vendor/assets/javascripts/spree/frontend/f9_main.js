@@ -28,6 +28,8 @@ var hashfilter;
 
 
 $(document).ready(function () {
+
+
     /*==============================================================*/
     // Checkout: minicart in edit order details
     /*==============================================================*/ 
@@ -1364,46 +1366,7 @@ $(document).ready(function () {
     /*==============================================================*/
     //Search - START CODE
     /*==============================================================*/
-    $("input.search-input").bind("keypress", function (event) {
-        if (event.which == 13 && !isMobile) {
-            $("button.search-button").click();
-            event.preventDefault();
-        }
-    });
-    $("input.search-input").bind("keyup", function (event) {
-        if ($(this).val() == null || $(this).val() == "") {
-            $(this).css({"border": "none", "border-bottom": "2px solid red"});
-        }
-        else {
-            $(this).css({"border": "none", "border-bottom": "2px solid #000"});
-        }
-    });
-    function validationSearchForm() {
-        var error = true;
-        $('#search-header input[type=text]').each(function (index) {
-            if (index == 0) {
-                if ($(this).val() == null || $(this).val() == "") {
-                    $("#search-header").find("input:eq(" + index + ")").css({"border": "none", "border-bottom": "2px solid red"});
-                    error = false;
-                }
-                else {
-                    $("#search-header").find("input:eq(" + index + ")").css({"border": "none", "border-bottom": "2px solid #000"});
-                }
-            }
-        });
-        return error;
-    }
-    $("form.search-form, form.search-form-result").submit(function (event) {
-        var error = validationSearchForm();
-        if (error) {
-            var action = $(this).attr('action');
-            action = action == '#' || action == '' ? 'blog-grid-3columns.html' : action;
-            action = action + '?' + $(this).serialize();
-            window.location = action;
-        }
 
-        event.preventDefault();
-    });
     $('.navbar .navbar-collapse a.dropdown-toggle, .accordion-style1 .panel-heading a, .accordion-style2 .panel-heading a, .accordion-style3 .panel-heading a, .toggles .panel-heading a, .toggles-style2 .panel-heading a, .toggles-style3 .panel-heading a, a.carousel-control, .nav-tabs a[data-toggle="tab"], a.shopping-cart').click(function (e) {
         e.preventDefault();
     });

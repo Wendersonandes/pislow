@@ -47,6 +47,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
+
 
 # Solidus and Solidus Au2.1.0thentication
 gem 'solidus', github: 'solidusio/solidus'
@@ -157,5 +162,5 @@ gem 'spree_recently_sold_products', github: 'sechix/spree_recently_sold_products
 # gem 'solidus_asset_variant_options', github: 'solidusio/solidus_asset_variant_options' , branch: 'master'
 # gem 'solidus_elastic_product', github: 'boomerdigital/solidus_elastic_product' , branch: 'master'
 gem 'searchkick'
-gem 'solidus_searchkick', github: 'sechix/solidus_searchkick'
+gem 'solidus_searchkick',  github: 'sechix/solidus_searchkick'
 
