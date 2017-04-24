@@ -142,6 +142,12 @@ GIT
       solidus_core (>= 2.1.0, < 3)
 
 GIT
+  remote: git://github.com/sechix/solidus_searchkick.git
+  revision: 76f221ad7afee638046fe11190bcba9d8c90e682
+  specs:
+    solidus_searchkick (0.3.0)
+
+GIT
   remote: git://github.com/sechix/solidus_smart_free_shipping.git
   revision: 0496c16309654271fa76a771f70f2f52c38b2de6
   branch: master
@@ -455,11 +461,6 @@ GIT
   specs:
     solidus_trackers (1.0.0)
       solidus_core (>= 2.1.0.alpha, < 3)
-
-PATH
-  remote: ../solidus_searchkick
-  specs:
-    solidus_searchkick (0.3.0)
 
 GEM
   remote: https://rubygems.org/
