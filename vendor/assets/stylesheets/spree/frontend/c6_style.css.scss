@@ -1603,8 +1603,11 @@ figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1
 .btn-small-white-border-selected { font-size: 11px; letter-spacing: 2px; padding: 6px 10px; color: #000; margin-right: 25px; background:#fff; border-bottom: 2px solid #000 }
 .btn-small-white-border-selected:hover { background:transparent; color: #999 }
 
+
 @media (max-width: 991px){
+   .mail_nav {display:none !important;}
    .height-nav{ background-color: transparent !important} 
+  
 }
 
 
@@ -3758,7 +3761,7 @@ section{
 
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
- .mail_nav {display:none !important;}
+
  section{
     padding: 60px 0 !important;
   }  

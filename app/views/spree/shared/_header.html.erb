@@ -32,7 +32,9 @@
 
 
 <header id="header" class="row" data-hook>
+
         <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav bg-mid-gray " role="navigation">
+ 
            
                 <div class="gender container ">
 
@@ -54,12 +56,11 @@
                              <% end %>
 
                             <!-- end Gender -->
-                     <div class="pading-one">       
-                                           <!-- Cookies consent -->
-                    <%= render 'cookies_eu/consent_banner', link: '/pages/cookies', target: '_blank'%><br/> </div>                        
-                </div>
+        
         
         </nav>
+
+                        
         <!-- navigation panel -->
         <nav class="navbar navbar-default navbar-fixed-top nav-transparent overlay-nav sticky-nav nav-border-bottom bg-white shop-nav margin-top-nav " role="navigation">
             <div class="container">
@@ -260,7 +261,16 @@
                     </div>
                     <!-- end main menu -->
                 </div>
+
+              <!-- Cookies consent -->
+                <div class="cookies_consent alert alert-warning fade in" role="alert">
+                            <i class="fa fa-question-circle alert-warning"></i>
+                             <%= render 'cookies_eu/consent_banner', link: '/pages/cookies', target: '_blank'%>
+                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                        </div>
+                </div>
             </div>
+
         </nav>
 
 
