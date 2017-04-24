@@ -6,15 +6,17 @@
 <% elsif controller.controller_name == "kids" %>
       <% @taxon = Spree::Taxon.find_by(name: "kids") %> 
 <% else %>
-	<% if (cookies["gender"]).include?("woman") %>
-			<% @taxon = Spree::Taxon.find_by(name: "woman") %>  
-	<% elsif  (cookies["gender"]).include?("man") %>
-			<% @taxon = Spree::Taxon.find_by(name: "man") %> 
-	<% elsif  (cookies["gender"]).include?("kids") %>
-			<% @taxon = Spree::Taxon.find_by(name: "kids") %> 
-	<% else %>
-			<% @taxon = Spree::Taxon.find_by(name: "woman") %>           		       
-	<% end %>		
+  <% unless (cookies["gender"]).nil? %>
+      	<% if (cookies["gender"]).include?("woman") %>
+      			<% @taxon = Spree::Taxon.find_by(name: "woman") %>  
+      	<% elsif  (cookies["gender"]).include?("man") %>
+      			<% @taxon = Spree::Taxon.find_by(name: "man") %> 
+      	<% elsif  (cookies["gender"]).include?("kids") %>
+      			<% @taxon = Spree::Taxon.find_by(name: "kids") %> 
+      	<% else %>
+      			<% @taxon = Spree::Taxon.find_by(name: "woman") %>           		       
+      	<% end %>	
+  <% end %>	
 <% end %>
 
 <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>

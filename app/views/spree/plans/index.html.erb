@@ -32,6 +32,7 @@
                                     </ul>
                                 </div>
                                 <div class="pricing-action padding-four">
+                                <% unless (cookies["gender"]).nil? %>
                                    <% if (cookies["gender"]).include?("woman") %>
                                        <a href="/t/woman" class="highlight-button btn btn-medium button" href="#">Ver productos</a>
                                    <%  elsif  (cookies["gender"]).include?("man") %>
@@ -41,7 +42,7 @@
                                    <%  else %>
                                        <a href="/t/woman" class="highlight-button btn btn-medium button" href="#">Ver productos</a>
                                    <%  end %>
-                                   
+                                <%  end %>   
                                 </div>
                             </div>
                         </div>

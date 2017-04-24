@@ -16,5 +16,5 @@
 //= require_tree .
 //= require spree/frontend/typeahead.bundle
 //= require spree/frontend/solidus_searchkick
-
+//= require cookies_eu
 

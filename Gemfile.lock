@@ -53,6 +53,14 @@ GIT
       solidus_core (>= 1.0.0, < 3)
 
 GIT
+  remote: git://github.com/infinum/cookies_eu.git
+  revision: 9d9a76d04993e8ddec96181fcf49398391245404
+  branch: master
+  specs:
+    cookies_eu (1.6.1)
+      js_cookie_rails
+
+GIT
   remote: git://github.com/rails/jquery-rails.git
   revision: 6430f5f24985ffafa535269c5bca21aff63e27cf
   specs:
@@ -134,12 +142,6 @@ GIT
       solidus_core (>= 2.1.0, < 3)
 
 GIT
-  remote: git://github.com/sechix/solidus_searchkick.git
-  revision: 4a67a40b7d2cf477ebebf0a788e7a97a13596558
-  specs:
-    solidus_searchkick (0.3.0)
-
-GIT
   remote: git://github.com/sechix/solidus_smart_free_shipping.git
   revision: 0496c16309654271fa76a771f70f2f52c38b2de6
   branch: master
@@ -208,7 +210,7 @@ GIT
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_active_shipping
-  revision: 5685926def04434a755cdd4b650ca83d314e9dd0
+  revision: cfdb2e816e11a11badf0c56d7d6277c7cb687c64
   specs:
     solidus_active_shipping (1.0.0)
       active_shipping (~> 1.8.0)
@@ -219,7 +221,7 @@ GIT
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_editor.git
-  revision: b0be9d1df5b698ad7001372dd722961c7802e949
+  revision: be8573de5aa0cd510fbf48ab618b25fdbfb93531
   branch: master
   specs:
     solidus_editor (1.0.0)
@@ -230,7 +232,7 @@ GIT
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_i18n.git
-  revision: 4abcb7a5747fffa4a3555d212d045d0eec19f0af
+  revision: c3a34a3c5d122908756984f869a93f24798dece0
   branch: master
   specs:
     solidus_i18n (1.1.0)
@@ -243,14 +245,14 @@ GIT
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_log_viewer.git
-  revision: 3b50d9a01d08160431389984dc0b3064c3a272eb
+  revision: 08468f1d1fbb3366cc1586f2a92abbc4611f1a43
   specs:
     solidus_log_viewer (1.0.0)
       solidus_backend (>= 1.0, < 3)
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_print_invoice.git
-  revision: ef7462d762c8b9c9464fb5a6afb42f177d678356
+  revision: 5e6f55bc8266e405928d00a618a6284e412444c2
   specs:
     solidus_print_invoice (1.0.2)
       deface
@@ -259,7 +261,7 @@ GIT
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_prototypes.git
-  revision: 482a4d91fdad90ebad8775a6ecf961f092befb57
+  revision: a1ade713e50567bf4d1487fb8890c06364d59b66
   branch: master
   specs:
     solidus_prototypes (0.0.1)
@@ -276,7 +278,7 @@ GIT
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_sitemap.git
-  revision: 787ff5988c5c9b60bedcfcda0377fc7eb3aec4d1
+  revision: 9f98620d1394d6d2d9fa8ca39f10ae11c16a38a7
   branch: master
   specs:
     solidus_sitemap (1.0.0)
@@ -285,7 +287,7 @@ GIT
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_social.git
-  revision: b0ee566eb117831d28796ad5b8fe848147f5324d
+  revision: 3f7d051d818e1ad8eaa262c1c85ee8adb1120eda
   specs:
     solidus_social (1.1.0)
       oa-core
@@ -300,7 +302,7 @@ GIT
 
 GIT
   remote: git://github.com/solidusio-contrib/solidus_static_content.git
-  revision: f188a2abfb287313b8c4ddee8ce6d5e29debd7e9
+  revision: 6da812f08c10a4bb87fb4288edae7c544ad274da
   specs:
     solidus_static_content (1.0.0)
       deface (~> 1.0.2)
@@ -318,28 +320,20 @@ GIT
       state_machines
 
 GIT
-  remote: git://github.com/solidusio-contrib/solidus_trackers.git
-  revision: 4acd644d444c44baf40f64488f505275b8b33163
-  branch: master
-  specs:
-    solidus_trackers (1.0.0)
-      solidus_core (>= 2.1.0.alpha, < 3)
-
-GIT
   remote: git://github.com/solidusio/solidus.git
-  revision: add2c1303d0c603240bf98a9d9393415de8b6553
+  revision: 0a99f3b022dc7822a94a4f67d648c15f32fb5044
   specs:
-    solidus (2.2.0.alpha)
-      solidus_api (= 2.2.0.alpha)
-      solidus_backend (= 2.2.0.alpha)
-      solidus_core (= 2.2.0.alpha)
-      solidus_frontend (= 2.2.0.alpha)
-      solidus_sample (= 2.2.0.alpha)
-    solidus_api (2.2.0.alpha)
+    solidus (2.3.0.alpha)
+      solidus_api (= 2.3.0.alpha)
+      solidus_backend (= 2.3.0.alpha)
+      solidus_core (= 2.3.0.alpha)
+      solidus_frontend (= 2.3.0.alpha)
+      solidus_sample (= 2.3.0.alpha)
+    solidus_api (2.3.0.alpha)
       rabl (= 0.13.0)
-      solidus_core (= 2.2.0.alpha)
+      solidus_core (= 2.3.0.alpha)
       versioncake (~> 3.0)
-    solidus_backend (2.2.0.alpha)
+    solidus_backend (2.3.0.alpha)
       bourbon (>= 4, < 6)
       coffee-rails
       font-awesome-rails (~> 4.0)
@@ -347,9 +341,9 @@ GIT
       jquery-rails
       jquery-ui-rails (~> 5.0.0)
       sass-rails
-      solidus_api (= 2.2.0.alpha)
-      solidus_core (= 2.2.0.alpha)
-    solidus_core (2.2.0.alpha)
+      solidus_api (= 2.3.0.alpha)
+      solidus_core (= 2.3.0.alpha)
+    solidus_core (2.3.0.alpha)
       activemerchant (~> 1.48)
       acts_as_list (~> 0.3)
       awesome_nested_set (~> 3.0, >= 3.0.1)
@@ -370,20 +364,20 @@ GIT
       stringex (~> 1.5.1)
       truncate_html (~> 0.9, >= 0.9.2)
       twitter_cldr (>= 3.0, < 5)
-    solidus_frontend (2.2.0.alpha)
+    solidus_frontend (2.3.0.alpha)
       canonical-rails (~> 0.1.1)
       coffee-rails
       font-awesome-rails (~> 4.0)
       jquery-rails
       sass-rails
-      solidus_api (= 2.2.0.alpha)
-      solidus_core (= 2.2.0.alpha)
-    solidus_sample (2.2.0.alpha)
-      solidus_core (= 2.2.0.alpha)
+      solidus_api (= 2.3.0.alpha)
+      solidus_core (= 2.3.0.alpha)
+    solidus_sample (2.3.0.alpha)
+      solidus_core (= 2.3.0.alpha)
 
 GIT
   remote: git://github.com/solidusio/solidus_gateway.git
-  revision: be17cc51cdbbd8e9878521e5e8f6e40c30c52e77
+  revision: fd5cd49ca00e0083f939b69969891445812ec99d
   specs:
     solidus_gateway (1.1.1)
       activemerchant (~> 1.48, != 1.59.0, != 1.58.0)
@@ -391,11 +385,45 @@ GIT
 
 GIT
   remote: git://github.com/solidusio/solidus_paypal_braintree.git
-  revision: 881ae010712d3dfa61dc899e3e569386b31b3454
+  revision: df6808d8534710972dd23378da16a0de6833c341
   specs:
     solidus_paypal_braintree (0.0.1)
       braintree (~> 2.65)
       solidus (>= 1.0, < 3)
+
+GIT
+  remote: git://github.com/vinsol/solidus_admin_insights.git
+  revision: 405bc5eec985bae7e69b9d85f8d3087c099f55d3
+  specs:
+    solidus_admin_insights (3.0.7)
+      sequel (~> 4.32.0)
+      solidus_core (~> 2.1)
+      wicked_pdf (~> 1.0.6)
+      wkhtmltopdf-binary (~> 0.9.9.3)
+
+GIT
+  remote: git://github.com/vinsol/solidus_digital_assets.git
+  revision: 23e69797fcaf55485d508fb9307c64a43012bb24
+  specs:
+    solidus_digital_assets (2.2.0.alpha)
+      jquery-fileupload-rails (~> 0.4.6)
+      remotipart (~> 1.2)
+      solidus_core (>= 2, < 3)
+
+GIT
+  remote: git://github.com/vinsol/solidus_events_tracker.git
+  revision: 40bb6a1369da6d5a61850f3482a192712daeea1c
+  specs:
+    solidus_events_tracker (2.1.0)
+      solidus_core (~> 2.1)
+
+GIT
+  remote: git://github.com/vinsol/solidus_user_address_book.git
+  revision: 1c4df324c2cb161b29b59bd0186762ea1cb44a2b
+  branch: master
+  specs:
+    solidus_user_address_book (0.0.1)
+      solidus_core (>= 2.1)
 
 GIT
   remote: https://github.com/2beDigital/solidus_contact_us
@@ -419,6 +447,19 @@ GIT
   specs:
     blockuijs-rails (0.1.0)
       rails (>= 3.1)
+
+GIT
+  remote: https://github.com/solidusio-contrib/solidus_trackers.git
+  revision: 6206c392087c8eda5c62e6af4fefd47c2a139d9a
+  branch: master
+  specs:
+    solidus_trackers (1.0.0)
+      solidus_core (>= 2.1.0.alpha, < 3)
+
+PATH
+  remote: ../solidus_searchkick
+  specs:
+    solidus_searchkick (0.3.0)
 
 GEM
   remote: https://rubygems.org/
@@ -485,17 +526,17 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (7.1.4)
-    autoprefixer-rails (6.7.7.1)
+    autoprefixer-rails (6.7.7.2)
       execjs
     awesome_nested_set (3.1.2)
       activerecord (>= 4.0.0, < 5.1)
-    aws-sdk (2.9.4)
-      aws-sdk-resources (= 2.9.4)
-    aws-sdk-core (2.9.4)
+    aws-sdk (2.9.11)
+      aws-sdk-resources (= 2.9.11)
+    aws-sdk-core (2.9.11)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.9.4)
-      aws-sdk-core (= 2.9.4)
+    aws-sdk-resources (2.9.11)
+      aws-sdk-core (= 2.9.11)
     aws-sigv4 (1.0.0)
     barby (0.6.5)
     bcrypt (3.1.11)
@@ -517,7 +558,7 @@ GEM
     bourbon (4.3.4)
       sass (~> 3.4)
       thor (~> 0.19)
-    braintree (2.73.0)
+    braintree (2.74.0)
       builder (>= 2.0.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -547,7 +588,7 @@ GEM
     colorize (0.8.1)
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
-    css_parser (1.4.10)
+    css_parser (1.5.0)
       addressable
     daemons (1.2.4)
     debug_inspector (0.0.2)
@@ -587,17 +628,17 @@ GEM
       logging
       method_source
     ean (0.2.0)
-    elasticsearch (5.0.3)
-      elasticsearch-api (= 5.0.3)
-      elasticsearch-transport (= 5.0.3)
-    elasticsearch-api (5.0.3)
+    elasticsearch (5.0.4)
+      elasticsearch-api (= 5.0.4)
+      elasticsearch-transport (= 5.0.4)
+    elasticsearch-api (5.0.4)
       multi_json
     elasticsearch-model (0.1.9)
       activesupport (> 3)
       elasticsearch (> 0.4)
       hashie
     elasticsearch-rails (0.1.9)
-    elasticsearch-transport (5.0.3)
+    elasticsearch-transport (5.0.4)
       faraday
       multi_json
     erubis (2.7.0)
@@ -608,11 +649,11 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
-    friendly_id (5.2.0)
+    friendly_id (5.2.1)
       activerecord (>= 4.0.0)
     geocoder (1.4.3)
-    globalid (0.3.7)
-      activesupport (>= 4.1.0)
+    globalid (0.4.0)
+      activesupport (>= 4.2.0)
     haml (4.0.7)
       tilt
     handlebars_assets (0.23.1)
@@ -625,15 +666,23 @@ GEM
     htmlentities (4.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.8.1)
     i18n_data (0.7.0)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
     jmespath (1.3.1)
+    jquery-fileupload-rails (0.4.7)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      sass (>= 3.2)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
-    json (2.0.3)
+    js_cookie_rails (2.1.4)
+      railties (>= 3.1)
+    json (2.1.0)
     jwt (1.5.6)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
@@ -645,7 +694,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     little-plugger (1.1.4)
-    logging (2.2.0)
+    logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
     loofah (2.0.3)
@@ -664,9 +713,8 @@ GEM
     minitest (5.10.1)
     monetize (1.6.0)
       money (~> 6.8)
-    money (6.8.2)
+    money (6.9.0)
       i18n (>= 0.6.4, < 0.9)
-      sixarm_ruby_unaccent (>= 1.1.1, < 2)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -727,14 +775,16 @@ GEM
     polyamorous (1.3.1)
       activerecord (>= 3.0)
     polyglot (0.3.5)
+    postcode_validation (0.0.5)
+      httparty
     prawn (1.0.0)
       pdf-core (~> 0.2.2)
       ttfunk (~> 1.1.1)
-    premailer (1.10.2)
+    premailer (1.10.3)
       addressable
       css_parser (>= 1.4.10)
       htmlentities (>= 4.0.0)
-    premailer-rails (1.9.5)
+    premailer-rails (1.9.6)
       actionmailer (>= 3, < 6)
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (2.0.5)
@@ -791,10 +841,11 @@ GEM
     recaptcha (4.1.0)
       json
     redis (3.3.3)
+    remotipart (1.3.1)
     request_store (1.3.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    rest-client (2.0.1)
+    rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
@@ -831,6 +882,7 @@ GEM
       hashie
     select2-rails (3.5.10)
       thor (~> 0.14)
+    sequel (4.32.0)
     sidekiq (4.2.10)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -844,7 +896,6 @@ GEM
       activemodel (> 4, < 5.1)
     sitemap_generator (5.1.0)
       builder
-    sixarm_ruby_unaccent (1.1.1)
     solidus_auth_devise (1.6.2)
       deface (~> 1.0.0)
       devise (~> 4.1)
@@ -899,8 +950,8 @@ GEM
       activerecord (>= 4.1, < 5.1)
       state_machines-activemodel (>= 0.3.0)
     stringex (1.5.1)
-    stripe (2.1.0)
-      faraday (~> 0)
+    stripe (2.4.0)
+      faraday (~> 0.9)
     stripe_tester (0.5.0)
     thor (0.19.4)
     thread_safe (0.3.6)
@@ -918,11 +969,11 @@ GEM
       tzinfo
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
-    uglifier (3.1.13)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.2)
+    unf_ext (0.0.7.4)
     versioncake (3.2.0)
       actionpack (>= 3.2)
       activesupport (>= 3.2)
@@ -940,6 +991,8 @@ GEM
     websocket-extensions (0.1.2)
     whenever (0.9.7)
       chronic (>= 0.6.3)
+    wicked_pdf (1.0.6)
+    wkhtmltopdf-binary (0.9.9.3)
 
 PLATFORMS
   ruby
@@ -957,6 +1010,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   coffee-script-source (~> 1.12, >= 1.12.2)
+  cookies_eu!
   delayed_job
   delayed_job_active_record
   dotenv-rails
@@ -967,6 +1021,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   paperclip
   pg (~> 0.18)
+  postcode_validation
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails_12factor
@@ -978,11 +1033,14 @@ DEPENDENCIES
   solidus!
   solidus_account_recurring!
   solidus_active_shipping!
+  solidus_admin_insights!
   solidus_auth_devise
   solidus_cmd
   solidus_comments
   solidus_contact_us!
+  solidus_digital_assets!
   solidus_editor!
+  solidus_events_tracker!
   solidus_gateway!
   solidus_geocoding
   solidus_i18n!
@@ -1009,6 +1067,7 @@ DEPENDENCIES
   solidus_static_content!
   solidus_subscriptions!
   solidus_trackers!
+  solidus_user_address_book!
   solidus_user_prices!
   solidus_user_roles!
   solidus_waiting_list!

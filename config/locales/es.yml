@@ -32,6 +32,8 @@ es:
     not_synced: No sincronizado
 
   spree:
+    folders:
+        new_folder: Nueva carpeta
     filterable: Añadir al filtro productos
     created_successfully: Creado con éxito
     mega_menu_items: Items Mega menú
@@ -490,6 +492,14 @@ es:
                 image_process_failed: Error en procesar la imagen
 
         tab:
+            promotion_categories: Categorías promoción
+            insights: Informes analíticos
+            finance_analysis: Análisis Financiero
+            product_analysis: Análisis de Producto
+            promotion_analysis: Análisis de Promociones
+            trending_search_analysis: Búsquedas Trending
+            digital_assets: Media Productos
+            user_analysis: Análisis de Usuarios
             reviews: Valoraciones
             mega_menus: Mega menús
             elastic_product_settings: Elastic producto configuración

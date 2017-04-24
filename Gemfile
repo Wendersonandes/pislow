@@ -144,7 +144,12 @@ gem 'solidus_product_recommendations', github: 'sechix/solidus_product_recommend
 gem 'solidus_account_recurring', github: 'sechix/solidus_account_recurring' , branch: 'master'
 
 gem 'stripe'
-gem 'solidus_trackers', github: 'solidusio-contrib/solidus_trackers', branch: 'master'
+
+gem 'solidus_trackers', :git => 'https://github.com/solidusio-contrib/solidus_trackers.git', branch: 'master'
+
+gem 'solidus_events_tracker', github: 'vinsol/solidus_events_tracker'
+gem 'solidus_admin_insights', github: 'vinsol/solidus_admin_insights'
+
 gem 'spree_scan_and_go', github: 'reinaris/spree_scan_and_go'
 gem 'solidus_active_shipping', :git => "git://github.com/solidusio-contrib/solidus_active_shipping"
 gem 'solidus_product_labeling', github: 'sechix/solidus_product_labeling' , branch: 'master'
@@ -162,5 +167,10 @@ gem 'spree_recently_sold_products', github: 'sechix/spree_recently_sold_products
 # gem 'solidus_asset_variant_options', github: 'solidusio/solidus_asset_variant_options' , branch: 'master'
 # gem 'solidus_elastic_product', github: 'boomerdigital/solidus_elastic_product' , branch: 'master'
 gem 'searchkick'
-gem 'solidus_searchkick',  github: 'sechix/solidus_searchkick'
-
+gem 'solidus_searchkick', github: 'sechix/solidus_searchkick'
+gem 'postcode_validation'
+gem 'solidus_digital_assets', github: 'vinsol/solidus_digital_assets'
+gem 'solidus_prototypes', github: 'solidusio-contrib/solidus_prototypes', branch: 'master'
+gem 'solidus_log_viewer', github: 'solidusio-contrib/solidus_log_viewer'
+gem 'solidus_user_address_book', github: 'vinsol/solidus_user_address_book', branch: 'master'
+gem 'cookies_eu' , github: 'infinum/cookies_eu', branch: 'master'

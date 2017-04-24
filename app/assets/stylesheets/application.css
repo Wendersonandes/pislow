@@ -14,5 +14,6 @@
  *= require_self
  *= require_tree ./alchemy/elements
  *= require spree/frontend/solidus_searchkick
+ *= require cookies_eu
 
  */

@@ -1,6 +1,6 @@
 
 class Spree::Admin::RentalSettingsController < Spree::Admin::BaseController
-  before_filter :process_unset_checkboxes, only: [:update]
+  before_action :process_unset_checkboxes, only: [:update]
 
   def update
     Spree::Rentals::Config.set(params[:preferences])

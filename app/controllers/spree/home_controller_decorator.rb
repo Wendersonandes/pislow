@@ -4,6 +4,7 @@ module Spree
     respond_to :html
 
     def index
+      unless (cookies["gender"]).nil?
           if (cookies["gender"]).include?("woman") 
              redirect_to('/woman')
           elsif  (cookies["gender"]).include?("man") 
@@ -11,6 +12,7 @@ module Spree
           elsif  (cookies["gender"]).include?("kids")
              redirect_to('/kids')
           end
+      end
       @searcher = build_searcher(params.merge(include_images: true))
       @products = @searcher.retrieve_products
       @taxonomies = Spree::Taxonomy.includes(root: :children)
