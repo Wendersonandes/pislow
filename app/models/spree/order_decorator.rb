@@ -2,13 +2,11 @@ module Spree
  class Order < Spree::Base
     
  
-
-	  # #order_decorator.rb
-	  # def select_default_shipping
-	  #   create_proposed_shipments
-	  #   shipments.find_each &:update_amounts
-	  #   update_totals
-	  # end
+	  def select_default_shipping
+	    create_proposed_shipments
+	    shipments.find_each &:update_amounts
+	    update_totals
+	  end
 	  def confirmation_required?
 	    return false
 	  end

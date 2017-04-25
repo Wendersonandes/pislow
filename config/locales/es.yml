@@ -32,6 +32,11 @@ es:
     not_synced: No sincronizado
 
   spree:
+    api:
+        key_generated: Clave generada
+        key_cleared: Clave borrada
+    insight:
+        heading: Cabecera
     folders:
         new_folder: Nueva carpeta
     filterable: Añadir al filtro productos
