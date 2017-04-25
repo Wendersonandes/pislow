@@ -1,18 +1,18 @@
 if Rails.env.production?
   attachment_config = {
     s3_credentials: {
-      access_key_id:     ENV['AKIAJTWOFCQPZS5WDWKQ'],
-      secret_access_key: ENV['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'],
-      bucket:            ENV['pislow']
+      access_key_id:     'AKIAJTWOFCQPZS5WDWKQ',
+      secret_access_key: '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',
+      bucket:            'pislow',
     },
 
     storage:        :s3,
     s3_headers:     { 'Cache-Control' => 'max-age=31557600' },
     s3_protocol:    'https',
-    s3_region:      ENV['eu-central-1'],
+    s3_region:      'eu-central-1',
     url:            'pislow.s3-eu-central-1.amazonaws.com',
-    s3_host_alias:  ENV['pislow.s3-eu-central-1.amazonaws.com'],
-    bucket:         ENV['pislow'],
+    s3_host_alias:  'pislow.s3-eu-central-1.amazonaws.com',
+    bucket:         'pislow',
 
 
     styles: {
