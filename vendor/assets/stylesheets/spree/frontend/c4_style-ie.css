@@ -7,15 +7,15 @@
 ***************************************/
 
 /*  scroll down   */
-.scroll-to-down { cursor: url("arrow-down.cur"), default;}
-.scroll-to-down-white { cursor: url("arrow-down-white.cur"), default;}
+.scroll-to-down { cursor: url("../images/arrow-down.cur"), default;}
+.scroll-to-down-white { cursor: url("../images/arrow-down-white.cur"), default;}
 
 /*  Work */
-figure:hover img { cursor: url("icon-zoom-white.cur"), pointer;}
-.work-with-title figure:hover img { cursor: url("icon-zoom-white.cur"), default;}
+figure:hover img { cursor: url("../images/icon-zoom-white.cur"), pointer;}
+.work-with-title figure:hover img { cursor: url("../images/icon-zoom-white.cur"), default;}
 
 /*  home shop   */
-.home-product:hover img { cursor: url("icon-zoom-white.cur"), default;}
+.home-product:hover img { cursor: url("../images/icon-zoom-white.cur"), default;}
 
 /*  popup gallery, lightbox gallery, image popup  */
 .popup-gallery img, .lightbox-gallery img, .image-popup-no-margins img, .image-popup-vertical-fit img { cursor: url("icon-zoom.cur"), default;}
@@ -24,15 +24,15 @@ figure:hover img { cursor: url("icon-zoom-white.cur"), pointer;}
 .mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close, .mfp-image-holder, .mfp-iframe-holder { cursor: url("icon-zoom-out.cur"), default;}
 
 /*  zoom gallery  */
-.zoom-gallery img { cursor: url("icon-zoom2.cur"), default;}
-zoom-in.mfp-zoom { cursor: url("icon-zoom.cur"), default;}
+.zoom-gallery img { cursor: url("../images/icon-zoom2.cur"), default;}
+zoom-in.mfp-zoom { cursor: url("../images/icon-zoom.cur"), default;}
 
 /*  magnific popup content   */
-.mfp-auto-cursor .mfp-content { cursor: url("icon-zoom-out.cur"), default;}
+.mfp-auto-cursor .mfp-content { cursor: url("../images/icon-zoom-out.cur"), default;}
 
 /*owl carousel*/
-.owl-carousel .owl-item{ cursor: url("icon-move.cur"), default;}
-.owl-carousel.light-pagination .owl-item{ cursor: url("icon-move-light.cur"), default;}
+.owl-carousel .owl-item{ cursor: url("../images/icon-move.cur"), default;}
+.owl-carousel.light-pagination .owl-item{ cursor: url("../images/icon-move-light.cur"), default;}
 
 /* search and cart */
 .top-cart a.shopping-cart { padding-bottom: 30px;}
