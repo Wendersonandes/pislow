@@ -42,7 +42,7 @@ attachment_config = {
   s3_headers:     { "Cache-Control" => "max-age=31557600" },
   s3_protocol:    "https",
   s3_region:      ENV['AWS_REGION'],
-  url:            ':pislow.s3-eu-central-1.amazonaws.com',
+  url:            ':s3_domain_url',
   s3_host_alias:  ENV['CDN_HOST'],
   bucket:         ENV['S3_BUCKET_NAME'],
 
