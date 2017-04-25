@@ -169,7 +169,7 @@ gem 'spree_recently_sold_products', github: 'sechix/spree_recently_sold_products
 gem 'searchkick'
 gem 'solidus_searchkick', github: 'sechix/solidus_searchkick'
 gem 'postcode_validation'
-gem 'solidus_digital_assets', github: 'vinsol/solidus_digital_assets'
+
 gem 'solidus_prototypes', github: 'solidusio-contrib/solidus_prototypes', branch: 'master'
 gem 'solidus_log_viewer', github: 'solidusio-contrib/solidus_log_viewer'
 gem 'solidus_user_address_book', github: 'vinsol/solidus_user_address_book', branch: 'master'

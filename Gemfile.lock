@@ -408,15 +408,6 @@ GIT
       wkhtmltopdf-binary (~> 0.9.9.3)
 
 GIT
-  remote: git://github.com/vinsol/solidus_digital_assets.git
-  revision: 23e69797fcaf55485d508fb9307c64a43012bb24
-  specs:
-    solidus_digital_assets (2.2.0.alpha)
-      jquery-fileupload-rails (~> 0.4.6)
-      remotipart (~> 1.2)
-      solidus_core (>= 2, < 3)
-
-GIT
   remote: git://github.com/vinsol/solidus_events_tracker.git
   revision: 40bb6a1369da6d5a61850f3482a192712daeea1c
   specs:
@@ -675,10 +666,6 @@ GEM
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
     jmespath (1.3.1)
-    jquery-fileupload-rails (0.4.7)
-      actionpack (>= 3.1)
-      railties (>= 3.1)
-      sass (>= 3.2)
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     js_cookie_rails (2.1.4)
@@ -842,7 +829,6 @@ GEM
     recaptcha (4.1.0)
       json
     redis (3.3.3)
-    remotipart (1.3.1)
     request_store (1.3.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
@@ -1039,7 +1025,6 @@ DEPENDENCIES
   solidus_cmd
   solidus_comments
   solidus_contact_us!
-  solidus_digital_assets!
   solidus_editor!
   solidus_events_tracker!
   solidus_gateway!
