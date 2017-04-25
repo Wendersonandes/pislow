@@ -3,10 +3,12 @@ module Spree
     
  
 	  def select_default_shipping
-	    create_proposed_shipments
-	    shipments.find_each &:update_amounts
-	    update_totals
+		  #clone_billing_address #uncomment if user just types in one address
+		  create_proposed_shipments #creates the shippings
+		  shipments.first.update_amounts #uses the first shippings
+		  update_totals #updates the order
 	  end
+
 	  def confirmation_required?
 	    return false
 	  end
