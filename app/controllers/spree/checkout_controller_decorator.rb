@@ -14,7 +14,7 @@ module Spree
           @order.select_default_payment unless @order.payment_required?
 
           #we select the shipping for the user
-          # @order.select_default_shipping
+          @order.select_default_shipping
           @order.next
           #default logic for finalizing unless he can't select payment_method
           if @order.completed?

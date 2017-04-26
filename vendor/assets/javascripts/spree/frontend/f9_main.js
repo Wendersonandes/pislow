@@ -28,7 +28,7 @@ var hashfilter;
 
 
 $(document).ready(function () {
-
+   
 
     /*==============================================================*/
     // Checkout: minicart in edit order details
@@ -56,6 +56,7 @@ $(document).ready(function () {
             $('#button_pay').attr('disabled', true); //disable input
         }
     });
+
     /* ===================================
     checkout display cleaning text
     ====================================== */
@@ -2099,10 +2100,13 @@ $(document).ready(function() {
   $('label').click(function() {
     $(this).addClass('js-open').siblings().removeClass('js-open');
     $('.dropp-body,.js-dropp-action').removeClass('js-open');
+
   });
 
 
+ 
 });
+   
 
 /*==============================================================*/
 //Product Zoom

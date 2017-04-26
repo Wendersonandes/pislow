@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
+  state: Provincia
   out_of_stock_product_requests: Peticiones producto fuera de stock
   bank_accounts: Cuentas Bancos
   new_bank_account: Nueva cuenta bancaria
@@ -32,6 +33,7 @@ es:
     not_synced: No sincronizado
 
   spree:
+    editing_shipping_category: Editar categoría de envío
     api:
         key_generated: Clave generada
         key_cleared: Clave borrada

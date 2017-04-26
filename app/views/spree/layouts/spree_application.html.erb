@@ -27,7 +27,7 @@
              <div id=" wrapper" class="bg-white row" data-hook>
 
                    <div id="content" class="columns " data-hook>
-                    <%= taxon_breadcrumbs(@taxon) %>
+                    
                     <%= flash_messages %>
                     <%= yield %>
                    </div>
@@ -48,7 +48,7 @@
        <% elsif controller.controller_name == "checkout" or controller.controller_name == "myclothes"%>
           <div id=" wrapper" class="bg-whitegray row" data-hook>
              <div id="content" class="container columns margin-top-section" data-hook>
-              <%= taxon_breadcrumbs(@taxon) %>
+              
               <%= flash_messages %>
               <%= yield %>
              </div> 
@@ -57,8 +57,7 @@
        <% elsif controller.controller_name == "orders"%>
           <div id=" wrapper" class="bg-whitegray row" data-hook>
              <div id="content" class="container columns margin-top-section margin-two-bottom padding-small width-middle bg-white" data-hook>
-
-                  <%= taxon_breadcrumbs(@taxon) %>
+           
                   <%= flash_messages %>
                   <%= yield %>
 
@@ -70,7 +69,6 @@
           <div id=" wrapper" class="bg-whitegray row" data-hook>
              <div id="content" class="container columns margin-top-section margin-two-bottom padding-small bg-white" data-hook>
 
-                  <%= taxon_breadcrumbs(@taxon) %>
                   <%= flash_messages %>
                   <%= yield %>
 

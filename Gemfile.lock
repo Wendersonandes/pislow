@@ -53,6 +53,14 @@ GIT
       solidus_core (>= 1.0.0, < 3)
 
 GIT
+  remote: git://github.com/elevatorup/solidus_searchkick.git
+  revision: 38a3b14dbd1c220a40a4b7960b2d3c6cd8f67436
+  specs:
+    solidus_searchkick (0.3.2)
+      searchkick (>= 1.2)
+      solidus (>= 1.4.0)
+
+GIT
   remote: git://github.com/infinum/cookies_eu.git
   revision: 9d9a76d04993e8ddec96181fcf49398391245404
   branch: master
@@ -140,12 +148,6 @@ GIT
     solidus_product_recommendations (0.0.1)
       deface
       solidus_core (>= 2.1.0, < 3)
-
-GIT
-  remote: git://github.com/sechix/solidus_searchkick.git
-  revision: 76f221ad7afee638046fe11190bcba9d8c90e682
-  specs:
-    solidus_searchkick (0.3.0)
 
 GIT
   remote: git://github.com/sechix/solidus_smart_free_shipping.git

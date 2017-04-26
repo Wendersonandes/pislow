@@ -1648,6 +1648,22 @@ figure:hover img { -ms-transform: scale(1.1,1.1); -webkit-transform: scale(1.1,1
 .highlight-button-black-background{ border: 4px solid #000; background-color: #000; font-size: 20px; padding: 20px 30px; color: #fff; font-weight: 700}
 .highlight-button-black-background:hover { border: 4px solid #000; background-color: #fff; color: #000}
 
+.btn-success{
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+
+}
+.btn-success:hover, .btn-success:active, .btn-success:visited, .btn-success:focus{
+    color: #5bc0de;
+    background-color: #fff;
+    border-color: #5bc0de;
+
+}
+#checkout div[data-hook="buttons"]{
+    text-align: center;
+}    
+
 .btn-small-black-background { font-size: 11px; letter-spacing: 3px; padding: 6px 25px; border: 2px solid #000; color: #fff; background-color: #000 }
 .btn-small-black-background:hover { background-color:transparent; color: #000; border: 2px solid #000}
 .btn-small-black-border-light { font-size: 10px; letter-spacing: 3px; padding: 6px 25px; border: 1px solid #000; color: #000; }
@@ -2821,7 +2837,7 @@ span.price {
 /*--------------------------------------*/
 /* Checkout
 /*--------------------------------------*/
-
+#checkout #tax-adjustments {display:none}
 .disabled-step {
   opacity: .5;
 }
@@ -2864,6 +2880,7 @@ span.price {
         width:60%;
     }
   }
+.order_total_collection{overflow-y: scroll;height:140px}
 
 .progress-steps {
   list-style: decimal inside;
@@ -2962,7 +2979,7 @@ span.price {
 .stock-shipping-method-title ,#checkout .continue.button.primary {}
 
 .order_details_checkout_header {display:none; }
-#checkout .order_details_checkout_header {display:initial !important; padding-left:20px !important}
+#checkout .order_details_checkout_header {display:initial !important}
 #checkout .order_details_checkout_header h2, h4{padding-left:20px !important}
 
 
@@ -3046,7 +3063,7 @@ span.price {
 }
 
 .order_total_collection{
-  padding:20px;
+  padding:10px;
 }
 
 .cleaning_off , .assegurance_on{
@@ -3124,8 +3141,6 @@ span[data-hook="save_user_address"] {  display:inherit !important }
     section{
     padding: 80px 0 !important;
   } 
-
-    #checkout #bcountry, #checkout #bstate, #checkout #scountry, #checkout #sstate{ width:40% !important; display: initial !important; float:left}
 
       #checkout #bcountry-selection, #checkout .js-address-fields,#checkout #scountry-selection, #checkout .js-address-fields{ width:60% !important;  float:left}
 
@@ -3377,6 +3392,9 @@ span[data-hook="save_user_address"] {  display:inherit !important }
     }
   }
 }
+
+.checkout_content #billing h3{ display:none }
+.checkout_content #shipping h3{ display:none }
 
 p[data-hook="use_billing"] {
   float: right;
@@ -4036,6 +4054,7 @@ div[data-hook="checkout_content"] {
 }
 
 
+
 /*-----------FIN: Add margen container responsive -----------------*/
 div[data-hook="cart_container"] h1, div[data-hook="checkout_header"] h1, div[data-hook="checkout_content"] h1{
     Font-size: 24px;
@@ -4061,6 +4080,12 @@ display: none;
 /*--------------------------------------*/
 /* CHECKOUT ONE PAGE EXTENSION
 /*---------------------------------------*/
+
+div[data-hook="shipping_inner"] {
+     float: left;
+
+}
+
 #order_discount {padding:15px;text-transform:uppercase !important; font-weight:800; }
 .disabled-step {
   opacity: .5;
