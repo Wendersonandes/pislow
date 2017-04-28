@@ -55,6 +55,7 @@ GIT
 GIT
   remote: git://github.com/elevatorup/solidus_searchkick.git
   revision: 8c24f6cca50bf08a2f48c01f51e5922d93f1f400
+  branch: master
   specs:
     solidus_searchkick (0.3.3)
       searchkick (>= 1.2)
