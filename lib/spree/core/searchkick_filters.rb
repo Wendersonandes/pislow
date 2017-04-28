@@ -46,6 +46,58 @@ module Spree
         Spree::Money.new(amount)
       end
 
+      # Provide filtering on the immediate children of a taxon
+      #
+      # This doesn't fit the pattern of the examples above, so there's a few changes.
+      # Firstly, it uses an existing scope which was not built for filtering - and so
+      # has no need of a conditions mapping, and secondly, it has a mapping of name
+      # to the argument type expected by the other scope.
+      #
+      # This technique is useful for filtering on objects (by passing ids) or with a
+      # scope that can be used directly (eg. testing only ever on a single property).
+      #
+      # This scope selects products in any of the active taxons or their children.
+      #
+      def self.taxons_below(taxon)
+        conds = []
+        return Spree::Core::SearchkickFilters.all_taxons if taxon.nil?
+
+        taxon.children.each do |taxons|
+          # conditions as: [label, elasticsearch_query]
+          conds << [taxons, { match: { taxon_names: taxons } }]
+        end
+
+        {
+          name:   taxon.name,
+          scope:  :taxons_id_in_tree_any,
+          labels: taxon.children.sort_by(&:position).map { |t| [t.name, t.id] },
+          conds:  Hash[*conds.flatten]
+        }
+      end
+
+      # Filtering by the list of all taxons
+      #
+      # Similar idea as above, but we don't want the descendants' products, hence
+      # it uses one of the auto-generated scopes from Ransack.
+      #
+      # idea: expand the format to allow nesting of labels?
+      def self.all_taxons
+        conds = []
+        taxons = Spree::Taxonomy.all.map { |t| [t.root] + t.root.descendants }.flatten
+
+        taxons.each do |taxons|
+          # conditions as: [label, elasticsearch_query]
+          conds << [taxons, { match: { taxon_names: taxons } }]
+        end
+
+        {
+          name:   'Categorías',
+          scope:  :taxons_id_equals_any,
+          labels: taxons.sort_by(&:name).map { |t| [t.name, t.id] },
+          conds:  Hash[*conds.flatten]
+        }
+      end
+
 
 #       # Example: filtering by possible brands
 #       #
@@ -160,43 +212,7 @@ module Spree
 #       end
 
 
-#       # Provide filtering on the immediate children of a taxon
-#       #
-#       # This doesn't fit the pattern of the examples above, so there's a few changes.
-#       # Firstly, it uses an existing scope which was not built for filtering - and so
-#       # has no need of a conditions mapping, and secondly, it has a mapping of name
-#       # to the argument type expected by the other scope.
-#       #
-#       # This technique is useful for filtering on objects (by passing ids) or with a
-#       # scope that can be used directly (eg. testing only ever on a single property).
-#       #
-#       # This scope selects products in any of the active taxons or their children.
-#       #
-#       def self.taxons_below(taxon)
-#         return Spree::Core::SearchkickFilters.all_taxons if taxon.nil?
-#         {
-#           name:   taxon.name,
-#           scope:  :taxons_id_in_tree_any,
-#           labels: taxon.children.sort_by(&:position).map { |t| [t.name, t.id] },
-#           conds:  nil
-#         }
-#       end
 
-#       # Filtering by the list of all taxons
-#       #
-#       # Similar idea as above, but we don't want the descendants' products, hence
-#       # it uses one of the auto-generated scopes from Ransack.
-#       #
-#       # idea: expand the format to allow nesting of labels?
-#       def self.all_taxons
-#         taxons = Spree::Taxonomy.all.map { |t| [t.root] + t.root.descendants }.flatten
-#         {
-#           name:   'Categorías',
-#           scope:  :taxons_id_equals_any,
-#           labels: taxons.sort_by(&:name).map { |t| [t.name, t.id] },
-#           conds:  nil # not needed
-#         }
-#       end
 
 #       # Filtering by option values
 #       #

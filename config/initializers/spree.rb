@@ -66,6 +66,7 @@ Spree::Image.attachment_definitions[:attachment][:styles] = {
   }
 
 
+
 Spree::Frontend::Config.configure do |config|
   config.use_static_preferences!
 

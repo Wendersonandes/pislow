@@ -164,10 +164,9 @@ gem 'sidekiq'
 # gem 'spree_abandoned_cart_email', :path => '../spree_abandoned_cart_email'
 gem 'spree_recently_sold_products', github: 'sechix/spree_recently_sold_products'
 
-gem 'solidus_asset_variant_options', github: 'solidusio/solidus_asset_variant_options' , branch: 'master'
 # gem 'solidus_elastic_product', github: 'boomerdigital/solidus_elastic_product' , branch: 'master'
 gem 'searchkick'
-gem 'solidus_searchkick', github: 'elevatorup/solidus_searchkick' , branch: 'master'
+gem 'solidus_searchkick', github: 'elevatorup/solidus_searchkick', branch: 'master'
 gem 'postcode_validation'
 
 gem 'solidus_prototypes', github: 'solidusio-contrib/solidus_prototypes', branch: 'master'
