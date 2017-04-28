@@ -148,7 +148,7 @@ gem 'stripe'
 gem 'solidus_trackers', :git => 'https://github.com/solidusio-contrib/solidus_trackers.git', branch: 'master'
 
 gem 'solidus_events_tracker', github: 'vinsol/solidus_events_tracker'
-gem 'solidus_admin_insights', github: 'vinsol/solidus_admin_insights'
+# gem 'solidus_admin_insights', github: 'vinsol/solidus_admin_insights'
 
 gem 'spree_scan_and_go', github: 'reinaris/spree_scan_and_go'
 gem 'solidus_active_shipping', :git => "git://github.com/solidusio-contrib/solidus_active_shipping"
@@ -164,7 +164,7 @@ gem 'sidekiq'
 # gem 'spree_abandoned_cart_email', :path => '../spree_abandoned_cart_email'
 gem 'spree_recently_sold_products', github: 'sechix/spree_recently_sold_products'
 
-# gem 'solidus_asset_variant_options', github: 'solidusio/solidus_asset_variant_options' , branch: 'master'
+gem 'solidus_asset_variant_options', github: 'solidusio/solidus_asset_variant_options' , branch: 'master'
 # gem 'solidus_elastic_product', github: 'boomerdigital/solidus_elastic_product' , branch: 'master'
 gem 'searchkick'
 gem 'solidus_searchkick', github: 'elevatorup/solidus_searchkick'
