@@ -73,18 +73,18 @@
                                                   <a href="#" data-clear="<%= filter[:name]%>" class="clear-filter">Borrar</a>
                                                     <div class="options scrollable single-column">
                                                      <ul class="filter_choices">
-                                                            <% labels.each do |nm,val| %>
-                                                              <% label = "#{filter[:name]}_#{nm}".gsub(/\s+/,'_') %>
-                                                              <li class="nowrap">
-                                                                <input type="checkbox"
-                                                                       id="<%= label %>"
-                                                                       name="search[<%= filter[:scope].to_s %>][]"
-                                                                       value="<%= val %>"
-                                                                       <%= params[:search] && params[:search][filter[:scope]] && params[:search][filter[:scope]].include?(val.to_s) ? "checked" : "" %> />
-                                                                <label class="nowrap" for="<%= label %>"> <%= nm %> </label>
-                                                              </li>
-                                                            <% end %>
-                                                          </ul>        
+                                                        <% labels.each do |nm,val| %>
+                                                          <% label = "#{filter[:name]}_#{nm}".gsub(/\s+/,'_') %>
+                                                          <li class="nowrap">
+                                                            <input type="checkbox"
+                                                                   id="<%= label %>"
+                                                                   name="filter[<%= filter[:scope].to_s %>][]"
+                                                                   value="<%= val %>"
+                                                                   <%= params[:filter] && params[:filter][filter[:scope]] && params[:filter][filter[:scope]].include?(val.to_s) ? "checked" : "" %> />
+                                                            <label class="nowrap" for="<%= label %>"> <%= nm %> </label>
+                                                          </li>
+                                                        <% end %>
+                                                      </ul>      
                                                      </div> 
                                                                                
                                       
