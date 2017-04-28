@@ -330,7 +330,7 @@ GIT
 
 GIT
   remote: git://github.com/solidusio/solidus.git
-  revision: eba218d4fe575d031d274a9bc9794fdb4b0785ce
+  revision: e4c0d53e12da17c32b81c057da4259ec549b2fbf
   specs:
     solidus (2.3.0.alpha)
       solidus_api (= 2.3.0.alpha)
