@@ -1,13 +1,99 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
-    <div class="headline">
-      <%= el.render :headline %>
-    </div>
-    <div class="picture">
-      <%= el.render :picture %>
-    </div>
-    <div class="text">
-      <%= el.render :text %>
-    </div>
+
+          <section class="wow fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 center-col">
+                        <!-- tab -->
+                        <div class="tab-style1">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <!-- tab navigation -->
+                                    <ul class="nav nav-tabs nav-tabs-light text-center height-auto">
+                                        <li class="active"><a href="#tab_sec1" data-toggle="tab"><%= el.render :headline1 %></a></li>
+                                        <li><a href="#tab_sec2" data-toggle="tab"><%= el.render :headline2 %> </a></li>
+                                        <li><a href="#tab_sec3" data-toggle="tab"><%= el.render :headline3 %></a></li>
+                                    </ul>
+                                    <!-- tab end navigation -->
+                                </div>
+                            </div>
+                            <div class="row"> 
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="wide-separator-line no-margin-lr"></div>
+                                </div>
+                            </div>
+                            <!-- tab content section -->
+                            <div class="tab-content">
+                                <!-- tab content -->
+                                <div class="tab-pane med-text fade in active" id="tab_sec1">
+                                    <div class="row"> 
+                                        <div class="col-md-6 col-sm-12 text-left gray-text">
+                                            <p class="text-large margin-right-ten"><%= el.render :text1_1 %></p>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 text-left text-med gray-text">
+                                            <%= el.render :text1_2 %>
+                                        </div>
+                                    </div>
+                                    <div class="row"> 
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="wide-separator-line no-margin-lr"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 text-center service-year black-text">
+                                            <strong><%= el.render :footer1 %></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end tab content -->
+                                <!-- tab content -->
+                                <div class="tab-pane fade in" id="tab_sec2">
+                                    <div class="row"> 
+                                        <div class="col-md-6 col-sm-12 text-left gray-text">
+                                            <p class="text-large margin-right-ten"><%= el.render :text2_1 %></p>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 text-left text-med gray-text">
+                                            <%= el.render :text2_2 %>
+                                        </div>
+                                    </div>
+                                    <div class="row"> 
+                                        <div class="wide-separator-line"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 text-center service-year black-text">
+                                            <strong><%= el.render :footer2 %></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end tab content -->
+                                <!-- tab content -->
+                                <div class="tab-pane fade in" id="tab_sec3">
+                                    <div class="row"> 
+                                        <div class="col-md-6 col-sm-12 text-left gray-text">
+                                            <p class="text-large margin-right-ten"><%= el.render :text3_1 %></p>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 text-left text-med gray-text">
+                                            <%= el.render :text3_2 %>
+                                        </div>
+                                    </div>
+                                    <div class="row"> 
+                                        <div class="wide-separator-line"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 text-center service-year black-text">
+                                            <strong><%= el.render :footer3 %></strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end tab content -->
+                            </div>
+                            <!-- end tab content section -->
+                        </div>
+                        <!-- end tab -->
+                    </div>
+                </div>
+            </div>
+        </section>
   <%- end -%>
 <%- end -%>

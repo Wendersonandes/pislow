@@ -123,16 +123,56 @@
   hint: true
   unique: false
   contents:
-  - name: headline
+  - name: headline1
     type: EssenceText
     default: :article_headline
     hint: true
-  - name: picture
-    type: EssencePicture
+  - name: headline2
+    type: EssenceText
+    default: :article_headline
     hint: true
-  - name: text
+  - name: headline3
+    type: EssenceText
+    default: :article_headline
+    hint: true
+
+  - name: text1_1
     type: EssenceRichtext
     default: :article_text
+    hint: true
+  - name: text1_2
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
+  - name: footer1
+    type: EssenceText
+    default: :article_headline
+    hint: true
+
+  - name: text2_1
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
+  - name: text2_2
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
+  - name: footer2
+    type: EssenceText
+    default: :article_headline
+    hint: true
+    
+  - name: text3_1
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
+  - name: text3_2
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
+  - name: footer3
+    type: EssenceText
+    default: :article_headline
     hint: true
 
 - name: cite
