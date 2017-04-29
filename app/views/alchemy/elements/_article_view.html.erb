@@ -1,10 +1,12 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
+       <% if essence = element.content_by_name('picture').essence %>
+         <% picture = show_alchemy_picture_path(essence.ingredient, size: "1200x600", crop: true, crop_from: essence.crop_from, crop_size: essence.crop_size) %>
+       <% end %>
 
-        <% picture = element.contents.essence_pictures.find_by(name: "picture").essence %>
-         <section style="background-image:url('<%= show_alchemy_picture_url(picture.ingredient, size: "1200x600", crop: true, crop_from: picture.crop_from, crop_size: picture.crop_size) %>');">
+         <section style="background-image:url(#{picture})" class= "wow fadeIn" >
 
-            <div class="opacity-full bg-dark-gray"></div>
+            <div class="opacity-medium bg-dark-gray"></div>
             <div class="container position-relative">
                 <div class="row">
                     <div class="col-md-6 col-sm-11 center-col text-center">
