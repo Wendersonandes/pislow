@@ -1,8 +1,9 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
+    <%- element.contents.picture.each do |picture| -%>
        
-         <section style="background-image:url('<%= el.render :picture %>');" class= "wow fadeIn" >
-
+         <section style="background-image:url('<%= show_alchemy_picture_path(picture.ingredient, size: '500x500', crop: true) %>');" class= "wow fadeIn" >
+     <%- end -%>
             <div class="opacity-medium bg-dark-gray"></div>
             <div class="container position-relative">
                 <div class="row">
@@ -13,5 +14,6 @@
                 </div>
             </div>
         </section>  
+    
   <%- end -%>
 <%- end -%>
