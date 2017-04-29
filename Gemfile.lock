@@ -310,14 +310,6 @@ GIT
       solidus_core (>= 1.0, < 3)
 
 GIT
-  remote: git://github.com/solidusio-contrib/solidus_static_content.git
-  revision: 6da812f08c10a4bb87fb4288edae7c544ad274da
-  specs:
-    solidus_static_content (1.0.0)
-      deface (~> 1.0.2)
-      solidus (>= 1.1, < 3)
-
-GIT
   remote: git://github.com/solidusio-contrib/solidus_subscriptions.git
   revision: da0931d79388d4676518fd268ac801848b4bc7d1
   branch: master
@@ -909,6 +901,9 @@ GEM
       devise
       signifyd (~> 0.1.5)
       solidus (>= 1.0, < 3)
+    solidus_static_content (1.0.0)
+      deface (~> 1.0.2)
+      solidus (>= 1.1, < 3)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -1039,7 +1034,6 @@ DEPENDENCIES
   solidus_smart_free_shipping!
   solidus_social!
   solidus_special_offer!
-  solidus_static_content!
   solidus_subscriptions!
   solidus_trackers!
   solidus_user_address_book!

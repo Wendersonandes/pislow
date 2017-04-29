@@ -88,7 +88,6 @@ gem 'solidus_product_feed'
 gem 'solidus_papertrail'
 gem 'solidus_log_viewer', github: 'solidusio-contrib/solidus_log_viewer'
 gem 'solidus_sitemap', github: 'solidusio-contrib/solidus_sitemap', branch: 'master'
-gem 'solidus_static_content', github: 'solidusio-contrib/solidus_static_content'
 
 gem "bootstrap-sass"
 
