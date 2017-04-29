@@ -1,6 +1,7 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
- 
+
+        <% picture = element.contents.essence_pictures.find_by(name: "picture").essence %>
          <section style="background-image:url('<%= show_alchemy_picture_url(picture.ingredient, size: "1200x600", crop: true, crop_from: picture.crop_from, crop_size: picture.crop_size) %>');">
 
             <div class="opacity-full bg-dark-gray"></div>
