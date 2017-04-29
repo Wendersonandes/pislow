@@ -1,5 +1,5 @@
 module ApplicationHelper
-	include Spree::PagesHelper
+	
 
 
 
