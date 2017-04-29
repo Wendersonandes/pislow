@@ -17,6 +17,10 @@
     type: EssenceRichtext
     default: :article_text
     hint: true
+  - name: link
+    type: Essencelink
+    default: :article_link
+    hint: true
 
 - name: slider
   unique: false
@@ -76,4 +80,42 @@
   - name: text
     type: EssenceRichtext
     default: :article_text
+    hint: true
+
+- name: interactive_tree_columns
+  hint: true
+  unique: false
+  contents:
+  - name: headline1
+    type: EssenceText
+    default: :interactive_tree_columns_headline1
+    hint: true
+  - name: text1
+    type: EssenceRichtext
+    default: :interactive_tree_columns_text1
+    hint: true
+  - name: picture1
+    type: EssencePicture
+    hint: true
+  - name: headline2
+    type: EssenceText
+    default: :interactive_tree_columns_headline2
+    hint: true
+  - name: text2
+    type: EssenceRichtext
+    default: :interactive_tree_columns_article_text2
+    hint: true
+  - name: picture2
+    type: EssencePicture
+    hint: true
+  - name: headline3
+    type: EssenceText
+    default: :interactive_tree_columns_headline3
+    hint: true
+  - name: text3
+    type: EssenceRichtext
+    default: :interactive_tree_columns_article_text2
+    hint: true
+  - name: picture3
+    type: EssencePicture
     hint: true

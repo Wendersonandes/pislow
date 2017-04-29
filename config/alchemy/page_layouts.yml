@@ -5,11 +5,11 @@
 
 - name: standard
   unique: false
-  elements: [article,slider,html,product_category,product,background_image,background_image_div, background_image_plan]
+  elements: [article,slider,html,product_category,product,background_image,background_image_div, background_image_plan, interactive_tree_columns]
 
 - name: container
   unique: false
-  elements: [article,slider,html,product_category,product,background_image,background_image_div, background_image_plan ]
+  elements: [article,slider,html,product_category,product,background_image,background_image_div, background_image_plan, interactive_tree_columns]
 
 
 
