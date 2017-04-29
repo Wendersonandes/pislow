@@ -778,7 +778,7 @@ nav .container{ height:30px !important}
 ====================================== */
 
 /* page titles */
-.content-top-margin { margin-top: 100px;padding: 50px !important; }
+.content-top-margin { margin-top: 100px }
 .page-title { padding: 80px 0}
 .page-title h1 { letter-spacing: 6px; font-weight: 600; font-size: 20px; margin-bottom: 5px}
 .page-title span {letter-spacing: 1px; font-weight: 400; font-size: 14px;}
@@ -3139,7 +3139,8 @@ span[data-hook="save_user_address"] {  display:inherit !important }
 
 @media (min-width: 769px) {
     section{
-    padding: 80px 0 !important;
+
+    padding: 50px 0 !important;
   } 
 
       #checkout #bcountry-selection, #checkout .js-address-fields,#checkout #scountry-selection, #checkout .js-address-fields{ width:60% !important;  float:left}
@@ -3747,7 +3748,7 @@ table.order-summary {
 @media only screen and (min-width: 992px) and (max-width: 1198px) {
     .sort_section, .refinements{ padding-top:20px;}
 section{
-    padding: 100px 0 !important;
+    padding: 50px 0 !important;
   } 
 
 }
@@ -3755,7 +3756,7 @@ section{
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .sort_section{ padding-top:20px;}
      section{
-    padding: 100px 0 !important;
+    padding: 50px 0 !important;
   } 
 }
 
@@ -3774,7 +3775,7 @@ section{
     margin-top: -15px;
   }
    section{
-    padding: 60px 0 !important;
+    padding: 50px 0 !important;
   } 
 }
 
@@ -3782,7 +3783,7 @@ section{
 @media only screen and (max-width: 767px) {
 
  section{
-    padding: 60px 0 !important;
+    padding: 50px 0 !important;
   }  
   html {
     -webkit-text-size-adjust: none;

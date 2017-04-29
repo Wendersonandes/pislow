@@ -6,7 +6,7 @@
 - name: standard
   unique: false
   elements: [article,slider,html,product_category,product,background_image,background_image_div, background_image_plan, interactive_tree_columns, interactive_three_columns_text, cite,
-  pages_header]
+  pages_header, testimonials_items]
 
 - name: container
   unique: false
