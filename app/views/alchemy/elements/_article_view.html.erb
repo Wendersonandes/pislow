@@ -1,13 +1,16 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
-    <div class="headline">
-      <%= el.render :headline %>
-    </div>
-    <div class="picture">
-      <%= el.render :picture %>
-    </div>
-    <div class="text">
-      <%= el.render :text %>
-    </div>
+        <section class="cover-background magazine">
+            <%= el.render :picture %>
+            <div class="opacity-full bg-dark-gray"></div>
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="col-md-6 col-sm-11 center-col text-center">
+                        <p class="title-large white-text text-uppercase letter-spacing-2"><strong><%= el.render :headline %></strong><p>
+                        <p class="text-large white-text text-uppercase margin-five no-margin-bottom"><%= el.render :text %><p>
+                    </div>
+                </div>
+            </div>
+        </section>  
   <%- end -%>
 <%- end -%>
