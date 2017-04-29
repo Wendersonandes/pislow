@@ -1,0 +1,13 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+  <!-- testimonials item -->
+      <div class="col-md-4 col-sm-6 testimonial-style2 text-center wow fadeInUp">
+        <%= el.render :picture %>
+        <%= el.render :text %>
+                      
+        <span class="name black-text"><%= el.render :headline %></span>
+        <i class="fa fa-quote-left small-icon yellow-text display-block margin-five no-margin-bottom"></i>
+      </div>
+  <!-- end testimonials item -->
+  <%- end -%>
+<%- end -%>

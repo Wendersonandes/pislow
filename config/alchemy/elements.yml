@@ -161,7 +161,7 @@
     type: EssenceText
     default: :article_headline
     hint: true
-    
+
   - name: text3_1
     type: EssenceRichtext
     default: :article_text
@@ -188,3 +188,27 @@
     default: :article_headline
     hint: true
 
+- name: pages_header
+  hint: true
+  unique: false
+  contents:
+  - name: headline
+    type: EssenceText
+    default: :article_headline
+    hint: true
+
+- name: testimonials_items
+  hint: true
+  unique: false
+  contents:
+  - name: headline
+    type: EssenceText
+    default: :article_headline
+    hint: true
+  - name: picture
+    type: EssencePicture
+    hint: true
+  - name: text
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
