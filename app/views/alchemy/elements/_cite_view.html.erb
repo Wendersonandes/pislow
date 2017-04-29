@@ -1,0 +1,16 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+  	        <section class="wow fadeIn">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-10 no-padding-top no-padding-bottom testimonial-style2 center-col text-center position-relative">
+                        <i class="fa fa-quote-left medium-icon black-text margin-five no-margin-top"></i>
+                        <h6 class="black-text"><%= el.render :headline %> </h6>
+                        <span class="name black-text"><%= el.render :headline2 %></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+  <%- end -%>
+<%- end -%>

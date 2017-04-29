@@ -13,18 +13,17 @@
   - name: picture
     type: EssencePicture
     hint: true
+    linkable: true
   - name: text
     type: EssenceRichtext
     default: :article_text
     hint: true
-  - name: link
-    type: Essencelink
-    default: :article_link
-    hint: true
+
 
 - name: slider
   unique: false
   picture_gallery: true
+  linkable: true
 
 - name: html
   hint: true
@@ -119,3 +118,33 @@
   - name: picture3
     type: EssencePicture
     hint: true
+
+- name: interactive_three_columns_text
+  hint: true
+  unique: false
+  contents:
+  - name: headline
+    type: EssenceText
+    default: :article_headline
+    hint: true
+  - name: picture
+    type: EssencePicture
+    hint: true
+  - name: text
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
+
+- name: cite
+  hint: true
+  unique: false
+  contents:
+  - name: headline
+    type: EssenceText
+    default: :article_headline
+    hint: true
+  - name: headline2
+    type: EssenceText
+    default: :article_headline
+    hint: true
+
