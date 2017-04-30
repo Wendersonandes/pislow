@@ -1,8 +1,9 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
 
-   
-         <section style="background:url('<%= el.render :picture %>');" >
+         <% essence =  element.content_by_name('picture').essence %>
+       
+         <section style="background:url('<%= show_alchemy_picture_url(essence.ingredient) %>')" >
 
             <div class="opacity-medium bg-dark-gray"></div>
             <div class="container position-relative">
