@@ -1,7 +1,7 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
     <% essence =  element.content_by_name('picture').essence %>
-    <section class="parallax1 parallax-fix full-screen no-padding" style="background-image:url('<%= show_alchemy_picture_url(essence.ingredient) %>'); background-size:100%; background-repeat: no-repeat; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; min-height: 600px;">
+    <section class="parallax1 parallax-fix full-screen no-padding" style="background-image:url('<%= show_alchemy_picture_url(essence.ingredient) %>'); background-size:100%; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; min-height: 600px;">
             
             <div class="container full-screen position-relative" style="min-height: 400px;">
                 <div class="slider-typography">

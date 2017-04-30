@@ -118,7 +118,7 @@ default_language:
 mailer:
   page_layout_name: contact
   forward_to_page: false
-  mail_success_page: thanks
+  mail_success_page: Gracias!
   mail_from: support@pislow.com
   mail_to: support@pislow.com
   subject: Nuevo mensaje de contacto Web Pislow

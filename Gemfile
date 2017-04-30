@@ -181,5 +181,5 @@ group :production do
   gem 'dalli'
   gem 'kgio'
 end
-
+gem 'simple_form'
 

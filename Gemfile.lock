@@ -1038,6 +1038,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   searchkick
   sidekiq
+  simple_form
   solidus!
   solidus_account_recurring!
   solidus_active_shipping!

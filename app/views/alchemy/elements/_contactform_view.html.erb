@@ -1,0 +1,71 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+
+                      <!-- right part -->
+                    <div class="col-md-4 col-sm-6 col-md-offset-1 bg-gray career-form xs-margin-top-ten">
+                        <p class="title-small text-uppercase black-text"><strong>Superhéroes</strong> aplicar aquí  !</p>
+                        <p class="text-med margin-five">Te diremos algo en menos de 48 horas.</p>
+                        <div class="separator-line bg-black no-margin-lr margin-ten"></div>
+                        <!-- form -->
+                        <form id="careersform" action="javascript:void(0)" method="post">
+                            <div id="success" class="no-margin-lr"></div>
+                            <div class="form-group no-margin-bottom">
+                                <!-- label -->
+                                <label class="text-uppercase">Tu nombre</label>
+                                <!-- end label -->
+                                <!-- input -->
+                                <input type="text" id="name" name="name" class="input-round med-input">
+                                <!-- end input -->
+                            </div>
+                            <div class="form-group no-margin-bottom">
+                                <!-- label -->
+                                <label class="text-uppercase">Email</label>
+                                <!-- end label -->
+                                <!-- input -->
+                                <input type="text" name="email" id="email"  class="input-round med-input">
+                                <!-- end input -->
+                            </div>
+                            <div class="form-group no-margin-bottom">
+                                <!-- label -->
+                                <label class="text-uppercase">Position</label>
+                                <!-- end label -->
+                                <!-- select -->
+                                <div class="select-style input-round med-input">
+                                    <select id="selectposition" name="selectposition">
+                                        <option value="">Selecciona Posición</option>
+                                        <option value="HTML/CSS Developer">HTML/CSS Desarrollador</option>
+                                        <option value="Codeigniter Developer">Ruby on Rails Desarrollador</option>
+                                        <option value="iPhone Developer">Móvil Desarrollador</option>
+                                        <option value="Designer">Diseñador</option>
+                                        <option value="PHP Developer">Ruby Desarrollador</option>
+                                    </select>
+                                </div>
+                                <!-- end select -->
+                            </div>
+                            <div class="form-group no-margin-bottom">
+                                <!-- label -->
+                                <label class="text-uppercase">Mensaje</label>
+                                <!-- end label -->
+                                <!-- textarea -->
+                                <textarea id="comment" name="comment" class="input-round med-input"></textarea>
+                                <!-- end textarea -->
+                            </div>
+                            <div class="form-group no-margin-bottom">
+                                <!-- required  -->
+                                <span class="required margin-three">*Por favor completa todos los campos correctamente</span>
+                                <!-- end required  -->
+                                <!-- button  -->
+                                <button id="careers-button" class="highlight-button-dark btn btn-small button xs-margin-bottom-five" type="submit">Enviar</button>
+                                <!-- end button  -->
+                            </div>
+                        </form>
+                        <!-- end form -->
+                    </div>
+                    <!-- end right part -->
+
+
+    <div class="success_page">
+      <%= el.render :success_page %>
+    </div>
+  <%- end -%>
+<%- end -%>
