@@ -3,7 +3,7 @@
 
          <% essence =  element.content_by_name('picture').essence %>
        
-         <section class="test_alchemy" >
+         <section style="background-image:url('<%= show_alchemy_picture_url(essence.ingredient) %>'); background-size:100%; background-repeat: no-repeat" >
 
             <div class="opacity-medium bg-dark-gray"></div>
             <div class="container position-relative">
