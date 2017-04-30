@@ -173,6 +173,13 @@ gem 'solidus_log_viewer', github: 'solidusio-contrib/solidus_log_viewer'
 gem 'solidus_user_address_book', github: 'vinsol/solidus_user_address_book', branch: 'master'
 gem 'cookies_eu' , github: 'infinum/cookies_eu', branch: 'master'
 gem 'solidus_papertrail' 
-
+gem 'thin'
+ 
+group :production do
+  gem 'rack-cache', require: 'rack/cache'
+  gem "dragonfly-s3_data_store"
+  gem 'dalli'
+  gem 'kgio'
+end
 
 

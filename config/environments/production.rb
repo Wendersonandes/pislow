@@ -83,7 +83,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
+  config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  config.aws_pictures_directory = ENV['AWS_PICTURES_DIRECTORY']
+  config.aws_attachments_directory = ENV['AWS_ATTACHMENTS_DIRECTORY']
  
 
 end
