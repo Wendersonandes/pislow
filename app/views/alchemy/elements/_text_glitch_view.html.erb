@@ -3,9 +3,9 @@
 
     <% essence =  element.content_by_name('picture').essence %>      
 
-    <div class="center_glitch">
+    <div class="center_glitch" style="background-image:url('<%= show_alchemy_picture_url(essence.ingredient) %>'); background-size:100%; background-repeat: no-repeat; min-height: 600px">
 	  <h3 class="center__text_glitch glitch is-glitching" data-text="Magazine" 
-	  style="background-image:url('<%= show_alchemy_picture_url(essence.ingredient) %>'); background-size:100%; background-repeat: no-repeat; min-height: 600px"><%= el.render :headline %></h3>
+	  ><%= el.render :headline %></h3>
 	</div>
   <%- end -%>
 <%- end -%>
