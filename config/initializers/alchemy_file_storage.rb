@@ -5,7 +5,7 @@ if Rails.env.production?
   aws_defaults = {
     access_key_id: Rails.configuration.aws_access_key_id,
     secret_access_key: Rails.configuration.aws_secret_access_key,
-    region: ENV['AWS_REGION']
+    region: ENV['AWS_REGION'],
     storage_headers: {'x-amz-acl' => 'public-read'},
     url_scheme: 'https'
   }
