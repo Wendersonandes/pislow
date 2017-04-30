@@ -1,0 +1,11 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+
+    <% essence =  element.content_by_name('picture').essence %>      
+
+    <div class="center_glitch">
+	  <h2 class="center__text_glitch glitch is-glitching" data-text="Hover me!" 
+	  style="background-image:url('<%= show_alchemy_picture_url(essence.ingredient) %>')"><%= el.render :headline %></h2>
+	</div>
+  <%- end -%>
+<%- end -%>

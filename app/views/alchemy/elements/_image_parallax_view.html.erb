@@ -1,0 +1,20 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <% essence =  element.content_by_name('picture').essence %>
+    <section class="parallax1 parallax-fix full-screen no-padding" style="background-image:url('<%= show_alchemy_picture_url(essence.ingredient) %>'); background-size:100%; background-repeat: no-repeat; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: initial; min-height: 500px;">
+            
+            <div class="container full-screen position-relative" style="min-height: 500px;">
+                <div class="slider-typography">
+                    <div class="slider-text-middle-main">
+                        <div class="slider-text-bottom agency-header">
+                            <img src="http://placehold.it/442x159" alt="">
+                            <h2><%= el.render :headline %></h2>
+                            <span class="black-text"><%= el.render :text %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down"><a href="#about-studio" class="inner-link"><i class="fa fa-angle-down white-text bg-black"></i></a></div>
+      </section>
+  <%- end -%>
+<%- end -%>

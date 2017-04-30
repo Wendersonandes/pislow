@@ -212,3 +212,51 @@
     type: EssenceRichtext
     default: :article_text
     hint: true
+
+- name: article_image_move
+  hint: true
+  unique: false
+  contents:
+  - name: headline
+    type: EssenceText
+    default: :article_headline
+    hint: true
+  - name: picture
+    type: EssencePicture
+    hint: true
+    linkable: true
+  - name: text
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
+
+- name: text_glitch
+  hint: true
+  unique: false
+  contents:
+  - name: headline
+    type: EssenceText
+    default: :article_headline
+    hint: true
+  - name: picture
+    type: EssencePicture
+    hint: true
+    linkable: true
+
+- name: image_parallax
+  hint: true
+  unique: false
+  contents:
+  - name: headline
+    type: EssenceText
+    default: :article_headline
+    hint: true
+  - name: picture
+    type: EssencePicture
+    hint: true
+    linkable: true
+  - name: text
+    type: EssenceRichtext
+    default: :article_text
+    hint: true
+
