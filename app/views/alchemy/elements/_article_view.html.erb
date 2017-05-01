@@ -1,8 +1,8 @@
 <%- cache(element) do -%>
   <%= element_view_for(element) do |el| -%>
 
-         <% essence =  element.content_by_name('picture').essence %>
-         <% unless essence.nil? %> 
+         <% if essence =  element.content_by_name('picture').essence %>
+      
          <section style="background-image:url('<%= show_alchemy_picture_url(essence.ingredient) %>'); background-size:100%; background-repeat: no-repeat" class="wow fadeIn">
 
             <div class="container position-relative">

@@ -182,4 +182,4 @@ group :production do
   gem 'kgio'
 end
 gem 'simple_form'
-
+gem 'capistrano-alchemy', '~> 1.0', group: :development, require: false
