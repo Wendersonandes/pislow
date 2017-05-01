@@ -4309,6 +4309,12 @@ div[data-hook="shipping_inner"] {
   display: flex;
   width: 100vw;
   height: 100vh;
+  background: {
+    color: black;
+    repeat: no-repeat;
+    position: center;
+    size: cover;
+  }
 }
 
 .center__text_glitch {
