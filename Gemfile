@@ -175,7 +175,11 @@ gem 'cookies_eu' , github: 'infinum/cookies_eu', branch: 'master'
 gem 'solidus_papertrail' 
 gem 'thin'
  
-gem 'rack-cache', require: 'rack/cache'
-gem "dragonfly-s3_data_store"
-
+group :production do
+  gem 'rack-cache', require: 'rack/cache'
+  gem "dragonfly-s3_data_store"
+  gem 'dalli'
+  gem 'kgio'
+end
 gem 'simple_form'
+
