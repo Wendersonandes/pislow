@@ -85,7 +85,6 @@ gem 'solidus_editor', github: 'solidusio-contrib/solidus_editor', branch: 'maste
 gem 'solidus_print_invoice' , github: 'solidusio-contrib/solidus_print_invoice'
 gem "solidus_comments"
 gem 'solidus_product_feed'
-gem 'solidus_papertrail'
 gem 'solidus_log_viewer', github: 'solidusio-contrib/solidus_log_viewer'
 gem 'solidus_sitemap', github: 'solidusio-contrib/solidus_sitemap', branch: 'master'
 

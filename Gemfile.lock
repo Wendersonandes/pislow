@@ -756,10 +756,6 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     orm_adapter (0.5.0)
-    paper_trail (4.0.2)
-      activerecord (>= 3.0, < 6.0)
-      activesupport (>= 3.0, < 6.0)
-      request_store (~> 1.1)
     paperclip (5.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -915,9 +911,6 @@ GEM
     solidus_legacy_return_authorizations (1.0.2)
       deface (~> 1.0)
       solidus_core (>= 1.0, < 3)
-    solidus_papertrail (1.0.0)
-      paper_trail (~> 4.0.0)
-      solidus_backend (>= 1.0, < 3)
     solidus_product_feed (1.0.0)
       solidus_backend (>= 1.0, < 3)
     solidus_related_products (1.1.0)
@@ -1055,7 +1048,6 @@ DEPENDENCIES
   solidus_legacy_return_authorizations
   solidus_log_viewer!
   solidus_minicart!
-  solidus_papertrail
   solidus_paypal_braintree!
   solidus_print_invoice!
   solidus_product_feed
