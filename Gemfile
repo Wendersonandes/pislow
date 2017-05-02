@@ -172,7 +172,7 @@ gem 'solidus_prototypes', github: 'solidusio-contrib/solidus_prototypes', branch
 gem 'solidus_log_viewer', github: 'solidusio-contrib/solidus_log_viewer'
 gem 'solidus_user_address_book', github: 'vinsol/solidus_user_address_book', branch: 'master'
 gem 'cookies_eu' , github: 'infinum/cookies_eu', branch: 'master'
-gem 'solidus_papertrail' 
+
 gem 'thin'
  
 group :production do
