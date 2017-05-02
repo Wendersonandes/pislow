@@ -13,6 +13,7 @@ if Rails.env.production?
   }
  
   Dragonfly.app(:alchemy_pictures).configure do
+    verify_urls false
     plugin :imagemagick
     datastore :s3,
       bucket_name: ENV['AWS_PICTURES_DIRECTORY']
