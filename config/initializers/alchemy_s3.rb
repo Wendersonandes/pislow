@@ -1,7 +1,7 @@
 
 if Rails.env.production?
 
-
+  require 'dragonfly'
   require 'dragonfly/s3_data_store'
  
   aws_defaults = {
@@ -15,12 +15,15 @@ if Rails.env.production?
   Dragonfly.app(:alchemy_pictures).configure do
     plugin :imagemagick
     datastore :s3,
-      bucket_name: ENV['AWS_PICTURES_DIRECTORY'],
-    end
+      bucket_name: ENV['AWS_PICTURES_DIRECTORY']
+    
   end
  
   Dragonfly.app(:alchemy_attachments).configure do
     datastore :s3,
-      bucket_name: ENV['AWS_ATTACHMENTS_DIRECTORY'],
+      bucket_name: ENV['AWS_ATTACHMENTS_DIRECTORY']
   end
+
+
+
 end
