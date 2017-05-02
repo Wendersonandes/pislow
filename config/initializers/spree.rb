@@ -56,7 +56,7 @@ SolidusSubscriptions::Config.default_gateway { StripeGateway }
 
 
 end
-
+# this probably not needed
 Spree::Image.attachment_definitions[:attachment][:styles] = {
             micro: '44x56>',
             mini: ' 117x150>',
