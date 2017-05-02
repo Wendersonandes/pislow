@@ -1,4 +1,4 @@
-Spree.config do |config|
+if Rails.env.production?
   attachment_config = {
     s3_credentials: {
       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
@@ -22,7 +22,7 @@ Spree.config do |config|
     },
 
     path:          "/products/:id/:style/:basename.:extension",
-    default_url:   "/products/:id/:style/:basename.:extension",
+    default_url:   "noimage/:style.png",
     default_style: "product"
   }
 
