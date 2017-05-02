@@ -502,8 +502,6 @@ GEM
       activerecord (>= 3.0)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    airbrussh (1.2.0)
-      sshkit (>= 1.6.1, != 1.7.0)
     arel (7.1.4)
     autoprefixer-rails (6.7.7.2)
       execjs
@@ -545,19 +543,6 @@ GEM
     cancancan (1.16.0)
     canonical-rails (0.1.2)
       rails (>= 4.1, < 5.1)
-    capistrano (3.8.1)
-      airbrussh (>= 1.0.0)
-      i18n
-      rake (>= 10.0.0)
-      sshkit (>= 1.9.0)
-    capistrano-alchemy (1.0.0)
-      capistrano-rails (~> 1.1)
-    capistrano-bundler (1.2.0)
-      capistrano (~> 3.1)
-      sshkit (~> 1.2)
-    capistrano-rails (1.2.3)
-      capistrano (~> 3.1)
-      capistrano-bundler (~> 1.1)
     carmen (1.0.2)
       activesupport (>= 3.0.0)
     chronic (0.10.2)
@@ -583,7 +568,6 @@ GEM
     css_parser (1.5.0)
       addressable
     daemons (1.2.4)
-    dalli (2.7.6)
     debug_inspector (0.0.2)
     deface (1.0.2)
       colorize (>= 0.5.8)
@@ -702,7 +686,6 @@ GEM
     kaminari-i18n (0.3.2)
       kaminari
       rails
-    kgio (2.11.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -731,9 +714,6 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
-    net-scp (1.2.1)
-      net-ssh (>= 2.6.5)
-    net-ssh (4.1.0)
     netrc (0.11.0)
     nio4r (2.0.0)
     nokogiri (1.6.8.1)
@@ -961,9 +941,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sshkit (1.13.1)
-      net-scp (>= 1.1.2)
-      net-ssh (>= 2.8.0)
     state_machines (0.4.0)
     state_machines-activemodel (0.4.0)
       activemodel (>= 4.1, < 5.1)
@@ -1033,11 +1010,9 @@ DEPENDENCIES
   bonsai-elasticsearch-rails
   bootstrap-sass
   byebug
-  capistrano-alchemy (~> 1.0)
   coffee-rails (~> 4.2)
   coffee-script-source (~> 1.12, >= 1.12.2)
   cookies_eu!
-  dalli
   delayed_job
   delayed_job_active_record
   dotenv-rails
@@ -1046,7 +1021,6 @@ DEPENDENCIES
   elasticsearch-rails
   jbuilder (~> 2.5)
   jquery-rails!
-  kgio
   listen (~> 3.0.5)
   paperclip
   pg (~> 0.18)
