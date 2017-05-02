@@ -112,7 +112,7 @@ Rails.application.configure do
   
  config.paperclip_defaults = {
   :storage => :s3,
-  :bucket => 'pislow'
+  :bucket => ENV["S3_BUCKET_NAME"]
 
  }
 
