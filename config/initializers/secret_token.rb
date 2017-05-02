@@ -1,1 +1,0 @@
-AlchemyS3::Application.config.secret_key_base = '93cfe03e1786f798107d6896847a39860fdee69a46d5ec6a6e277d2se415c6c5b086212cd38a3ecc8de5f531d81ef04187ce18fc43c780f8495a334c53ae3e6f'
