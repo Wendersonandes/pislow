@@ -107,10 +107,5 @@ Rails.application.configure do
   config.aws_pictures_directory = ENV['AWS_PICTURES_DIRECTORY']
   config.aws_attachments_directory = ENV['AWS_ATTACHMENTS_DIRECTORY']
 
-  config.paperclip_defaults = {
-  :storage  =>  :s3,
-  :bucket   => ENV["S3_BUCKET_NAME"]
-
- }
 
 end
